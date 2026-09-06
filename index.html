@@ -1,0 +1,2260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيرة الحبيب ﷺ | المنهاج والشمائل والمكتبة النبوية</title>
+    <!-- خطوط عربية أنيقة للقراءة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent: #047857;
+            --accent-hover: #065f46;
+            --accent-light: #ecfdf5;
+            --gold: #b45309;
+            --gold-light: #fef3c7;
+            --gold-gradient: linear-gradient(135deg, #d97706, #b45309);
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --radius-full: 9999px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --header-bg: rgba(255, 255, 255, 0.85);
+            --footer-bg: #ffffff;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --accent: #10b981;
+            --accent-hover: #34d399;
+            --accent-light: rgba(16, 185, 129, 0.12);
+            --gold: #f59e0b;
+            --gold-light: rgba(245, 158, 11, 0.12);
+            --gold-gradient: linear-gradient(135deg, #fbbf24, #d97706);
+            --border-color: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.45);
+            --header-bg: rgba(30, 41, 59, 0.85);
+            --footer-bg: #162032;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, .traditional-font {
+            font-family: 'Amiri', serif;
+            letter-spacing: 0.2px;
+        }
+
+        /* حاوية الموقع المركزية */
+        .container {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        /* ==========================================================================
+           الهيدر الانسيابي المطور (Header)
+           ========================================================================== */
+        header {
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        /* شريط علوي جمالي رفيع */
+        .header-top-accent {
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+            background-size: 200% 100%;
+            animation: gradientMove 8s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease;
+        }
+
+        .brand:hover {
+            transform: translateY(-1px);
+        }
+
+        .brand-icon-wrapper {
+            position: relative;
+        }
+
+        .brand-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.35rem;
+            box-shadow: 0 4px 14px rgba(4, 120, 87, 0.28);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .brand:hover .brand-icon {
+            box-shadow: 0 6px 18px rgba(180, 83, 9, 0.35);
+        }
+
+        .brand-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title-top {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .brand-title h1 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--text-primary);
+        }
+
+        .brand-badge {
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.68rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: var(--radius-full);
+            background: var(--accent-light);
+            color: var(--accent);
+            font-weight: 700;
+            border: 1px solid rgba(4, 120, 87, 0.18);
+        }
+
+        .brand-title p {
+            font-size: 0.76rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 450px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-icon-btn {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            height: 38px;
+            border-radius: 10px;
+            padding: 0 0.75rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .nav-icon-btn:hover {
+            color: var(--accent);
+            background: var(--accent-light);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .theme-btn {
+            width: 38px;
+            height: 38px;
+            padding: 0;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 1.05rem;
+        }
+
+        /* ==========================================================================
+           بطاقة الخاطرة اليومية
+           ========================================================================== */
+        .quote-banner {
+            margin: 1.75rem 0;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light));
+            border: 1px solid var(--border-color);
+            border-right: 5px solid var(--accent);
+            border-radius: var(--radius-md);
+            padding: 1.25rem 1.5rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .quote-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .quote-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .quote-refresh-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: var(--transition);
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+        }
+
+        .quote-refresh-btn:hover {
+            color: var(--accent);
+            background: var(--bg-secondary);
+        }
+
+        .quote-content {
+            font-family: 'Amiri', serif;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            font-size: 0.82rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* التبويبات التفاعلية */
+        .tabs-nav {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 0.2rem;
+            scrollbar-width: none;
+        }
+        .tabs-nav::-webkit-scrollbar { display: none; }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 0.75rem 1.3rem;
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            transition: var(--transition);
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--accent);
+            background-color: var(--accent-light);
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            background: var(--bg-secondary);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .badge-count {
+            background: var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.72rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 20px;
+        }
+        .tab-btn.active .badge-count {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        /* الفلترة والبحث */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 240px;
+            max-width: 420px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.65rem 1rem 0.65rem 2.5rem;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .category-filters {
+            display: flex;
+            gap: 0.4rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        .category-filters::-webkit-scrollbar { display: none; }
+
+        .filter-chip {
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .filter-chip.active, .filter-chip:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* محتوى الأقسام */
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.35s ease;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 1. الخط الزمني للسيرة */
+        .timeline {
+            position: relative;
+            padding: 1.5rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 28px;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent), var(--gold));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-right: 65px;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            right: 15px;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 0 0 4px var(--bg-primary);
+            z-index: 2;
+        }
+
+        .timeline-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .timeline-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-period {
+            background: var(--gold-light);
+            color: var(--gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.2rem 0.65rem;
+            border-radius: 12px;
+        }
+
+        .timeline-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .timeline-body {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+
+        .lesson-box {
+            background: var(--accent-light);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-size: 0.88rem;
+            color: var(--accent);
+            border-right: 3px solid var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .card-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.85rem;
+        }
+
+        .action-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.85rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: var(--transition);
+        }
+
+        .action-btn:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .action-btn.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        /* 2. بطاقات الشبكة (الشخصيات، الشمائل، والكتب) */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .person-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .person-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
+        }
+
+        .person-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .avatar-emblem {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--gold-light);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            font-family: 'Amiri', serif;
+            border: 2px solid var(--gold);
+            flex-shrink: 0;
+        }
+
+        .person-info h3 {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .person-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .person-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .person-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .tag-pill {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+            background: var(--accent-light);
+            color: var(--accent);
+            border-radius: 6px;
+        }
+
+        /* 3. المكتبة النبوية */
+        .book-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .book-badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 12px;
+            margin-bottom: 0.8rem;
+        }
+
+        .level-beginner { background: #dcfce7; color: #166534; }
+        .level-intermediate { background: #fef9c3; color: #854d0e; }
+        .level-advanced { background: #fee2e2; color: #991b1b; }
+
+        [data-theme="dark"] .level-beginner { background: rgba(22, 101, 52, 0.25); color: #86efac; }
+        [data-theme="dark"] .level-intermediate { background: rgba(133, 77, 14, 0.25); color: #fde047; }
+        [data-theme="dark"] .level-advanced { background: rgba(153, 27, 27, 0.25); color: #fca5a5; }
+
+        .book-title {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .book-author {
+            font-size: 0.85rem;
+            color: var(--gold);
+            margin-bottom: 0.85rem;
+        }
+
+        .book-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
+        }
+
+        .book-features {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            border-right: 2px solid var(--accent);
+            padding-right: 0.6rem;
+        }
+
+        /* شاشة المحفوظات الفارغة */
+        .empty-state {
+            text-align: center;
+            padding: 3.5rem 1rem;
+            color: var(--text-muted);
+        }
+
+        .empty-icon {
+            font-size: 3rem;
+            margin-bottom: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* نافذة العرض المنبثقة (Modal) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 600px;
+            max-height: 88vh;
+            overflow-y: auto;
+            padding: 1.75rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.25s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            left: 1.25rem;
+            top: 1.25rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+            background: var(--border-color);
+        }
+
+        /* ==========================================================================
+           الفوتر الانسيابي المطور (Footer)
+           ========================================================================== */
+        footer {
+            margin-top: 4rem;
+            background: var(--footer-bg);
+            border-top: 1px solid var(--border-color);
+            position: relative;
+            box-shadow: 0 -4px 20px -2px rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+        }
+
+        .footer-top-strip {
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--accent), var(--gold));
+            opacity: 0.85;
+        }
+
+        .footer-main {
+            padding: 2.5rem 0 1.75rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* بطاقة اقتباس الآية في الفوتر */
+        .footer-quran-box {
+            background: linear-gradient(135deg, var(--bg-primary), var(--accent-light));
+            border: 1px dashed var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.1rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-quran-verse {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .footer-quran-sub {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr 1.2fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .footer-brand-col h4 {
+            font-family: 'Amiri', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .footer-brand-col p {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .footer-links-col h5 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.85rem;
+            position: relative;
+            padding-right: 0.75rem;
+        }
+
+        .footer-links-col h5::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 25%;
+            height: 50%;
+            width: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .footer-nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .footer-nav-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            cursor: pointer;
+        }
+
+        .footer-nav-list a:hover {
+            color: var(--accent);
+            transform: translateX(-4px);
+        }
+
+        .footer-stats-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 0.85rem;
+            border-radius: var(--radius-md);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding: 1.2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .back-to-top-btn {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: var(--transition);
+        }
+
+        .back-to-top-btn:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        /* استجابة الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .brand-title p {
+                display: none;
+            }
+            .brand-badge {
+                display: none;
+            }
+            .timeline::before {
+                right: 18px;
+            }
+            .timeline-item {
+                padding-right: 48px;
+            }
+            .timeline-marker {
+                right: 6px;
+                width: 26px;
+                height: 26px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر الانسيابي المطور -->
+    <header id="mainHeader">
+        <div class="header-top-accent"></div>
+        <div class="container nav-wrapper">
+            <!-- الشعار وهوية الموقع -->
+            <a href="#mainHeader" class="brand" title="الرئيسية">
+                <div class="brand-icon-wrapper">
+                    <div class="brand-icon">ﷺ</div>
+                </div>
+                <div class="brand-title">
+                    <div class="brand-title-top">
+                        <h1>سيرة الحبيب المصطفى</h1>
+                        <span class="brand-badge">إصدار 2026</span>
+                    </div>
+                    <p>الشمائل والصفات الكاملة، المراحل، أمهات المؤمنين، والمكتبة الجامعة</p>
+                </div>
+            </a>
+
+            <!-- الإجراءات السريعة في الهيدر -->
+            <div class="nav-actions">
+                <button class="nav-icon-btn" id="headerBookmarkJump" title="الانتقال السريع إلى المحفوظات">
+                    <span>🔖</span>
+                    <span style="font-size: 0.8rem;">محفوظاتي</span>
+                </button>
+                <button class="nav-icon-btn theme-btn" id="themeToggle" title="تبديل الوضع الليلي / النهاري">
+                    🌙
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- مساحة الخاطرة النبوية والإدارية المتجددة -->
+        <section class="quote-banner" id="quoteSection">
+            <div class="quote-header">
+                <div class="quote-tag">
+                    <span>💡</span> إشراقة وتلميح نبوي وإداري
+                </div>
+                <button class="quote-refresh-btn" id="refreshQuoteBtn">
+                    <span>🔄</span> خاطرة أخرى
+                </button>
+            </div>
+            <div class="quote-content" id="quoteText">جاري تحميل الفائدة النبوية...</div>
+            <div class="quote-author" id="quoteRef"></div>
+        </section>
+
+        <!-- التبويبات الرئيسية -->
+        <div class="tabs-nav" role="tablist">
+            <button class="tab-btn active" data-tab="traits">
+                <span>✨</span> الشمائل والصفات النبوية
+                <span class="badge-count" id="countTraits">0</span>
+            </button>
+            <button class="tab-btn" data-tab="timeline">
+                <span>📜</span> مراحل السيرة النبوية
+                <span class="badge-count" id="countTimeline">0</span>
+            </button>
+            <button class="tab-btn" data-tab="wives">
+                <span>🌸</span> أمهات المؤمنين
+                <span class="badge-count" id="countWives">0</span>
+            </button>
+            <button class="tab-btn" data-tab="library">
+                <span>📚</span> المكتبة النبوية
+                <span class="badge-count" id="countLibrary">0</span>
+            </button>
+            <button class="tab-btn" data-tab="bookmarks">
+                <span>🔖</span> المحفوظات والمكتمل
+                <span class="badge-count" id="countBookmarks">0</span>
+            </button>
+        </div>
+
+        <!-- شريط التصفية والبحث السريع -->
+        <div class="filter-bar">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="ابحث في الصفات، الأحداث، الشخصيات، أو الكتب...">
+            </div>
+            <div class="category-filters" id="categoryFilters">
+                <!-- أزرار التصفية تتغير ديناميكياً حسب التبويب -->
+            </div>
+        </div>
+
+        <!-- تبويب جديد: الشمائل والصفات الكاملة (جسدية وخلقية) -->
+        <div class="tab-pane active" id="pane-traits">
+            <div class="cards-grid" id="traitsContainer">
+                <!-- يُملأ بالجافاسكربت -->
+            </div>
+        </div>
+
+        <!-- تبويب 1: الخط الزمني للسيرة -->
+        <div class="tab-pane" id="pane-timeline">
+            <div class="timeline" id="timelineContainer">
+                <!-- يُملأ بالجافاسكربت -->
+            </div>
+        </div>
+
+        <!-- تبويب 2: أمهات المؤمنين -->
+        <div class="tab-pane" id="pane-wives">
+            <div class="cards-grid" id="wivesContainer">
+                <!-- يُملأ بالجافاسكربت -->
+            </div>
+        </div>
+
+        <!-- تبويب 3: المكتبة النبوية -->
+        <div class="tab-pane" id="pane-library">
+            <div class="cards-grid" id="libraryContainer">
+                <!-- يُملأ بالجافاسكربت -->
+            </div>
+        </div>
+
+        <!-- تبويب 4: المحفوظات وتقدم القراءة -->
+        <div class="tab-pane" id="pane-bookmarks">
+            <div id="bookmarksContainer">
+                <!-- يُملأ بالجافاسكربت -->
+            </div>
+        </div>
+    </main>
+
+    <!-- نافذة منبثقة لتفاصيل العنصر -->
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">✕</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- الفوتر الانسيابي المطور -->
+    <footer>
+        <div class="footer-top-strip"></div>
+        <div class="container footer-main">
+            <!-- اقتباس قرآني مركزي -->
+            <div class="footer-quran-box">
+                <div class="footer-quran-verse">﴿ وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ ﴾</div>
+                <div class="footer-quran-sub">سورة القلم — الآية 4</div>
+            </div>
+
+            <!-- شبكة تفاصيل الفوتر -->
+            <div class="footer-grid">
+                <!-- العمود 1: عن المنهاج -->
+                <div class="footer-brand-col">
+                    <h4>
+                        <span style="color: var(--accent);">✦</span>
+                        منهاج السيرة النبوية والشمائل
+                    </h4>
+                    <p>
+                        بوابة تفاعلية تجمع بين الوصف الكامل الدقيق لشمائل النبي ﷺ خَلقاً وخُلقاً، والتوثيق الدقيق لمحطات السيرة، وسير أمهات المؤمنين ودليل مرجعي لأبرز مصنفات السيرة النبوية العطرة.
+                    </p>
+                    <div class="footer-stats-badge">
+                        <span>✨</span>
+                        <span>محتوى تعليمي وتثقيفي ميسر وموثق من كتب الشمائل والسيرة</span>
+                    </div>
+                </div>
+
+                <!-- العمود 2: تصفح سريع لأقسام التطبيق -->
+                <div class="footer-links-col">
+                    <h5>أقسام المنهاج</h5>
+                    <ul class="footer-nav-list">
+                        <li><a onclick="switchTabDirect('traits')">✨ الشمائل والصفات الكاملة</a></li>
+                        <li><a onclick="switchTabDirect('timeline')">📜 مراحل السيرة العطرة</a></li>
+                        <li><a onclick="switchTabDirect('wives')">🌸 سير أمهات المؤمنين</a></li>
+                        <li><a onclick="switchTabDirect('library')">📚 مصادر ومراجع السيرة</a></li>
+                        <li><a onclick="switchTabDirect('bookmarks')">🔖 قائمتي ومحفوظاتي</a></li>
+                    </ul>
+                </div>
+
+                <!-- العمود 3: دعاء وتذكير -->
+                <div class="footer-links-col">
+                    <h5>الصلاة على النبي ﷺ</h5>
+                    <ul class="footer-nav-list">
+                        <li style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7;">
+                            «إنَّ أوْلى النَّاسِ بي يَومَ القِيامَةِ أكْثَرُهُمْ عَلَيَّ صَلاةً»
+                        </li>
+                        <li style="margin-top: 0.5rem;">
+                            <span style="color: var(--gold); font-size: 0.82rem; font-weight: 600;">سنن الترمذي</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- السطر السفلي الختامي -->
+            <div class="footer-bottom">
+                <div>
+                    تطبيق سيرة النبي محمد ﷺ — صُمم ليكون مرجعاً ميسراً للقراءة والاقتداء
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <span>اللهم صلِّ وسلِّم وبارك على نبينا محمد وعلى آله وصحبه</span>
+                    <button class="back-to-top-btn" onclick="scrollToTop()" title="الصعود لأعلى الصفحة">
+                        <span>⬆</span>
+                        <span>للأعلى</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- المنطق البرمجي وبيانات التطبيق (JS) -->
+    <script>
+        /* ==========================================================================
+           قواعد البيانات (Data Objects): محتوى موثق ومفصل للشمائل والسيرة والزوجات والمكتبة
+           ========================================================================== */
+        
+        const QUOTES_DATA = [
+            {
+                text: "«إنَّما بُعثتُ لأُتمِّمَ مَكارمَ الأخلاق» — الأخلاق هي المعيار الأول في تقييم النجاح القيادي والشخصي، ورسالة كل عمل نبيل.",
+                ref: "مسند أحمد — منطلق البناء التربوي"
+            },
+            {
+                text: "«يَسِّرُوا ولا تُعَسِّرُوا، وبَشِّرُوا ولا تُنَفِّرُوا» — قاعدة إدارية ذهبية في تيسير الإجراءات والتحفيز الإيجابي لفرق العمل والمتعلمين.",
+                ref: "صحيح البخاري — منهج الإدارة والتوجيه"
+            },
+            {
+                text: "«إنَّ اللهَ يُحِبُّ إذا عمِلَ أحدُكُم عمَلاً أنْ يُتْقِنَه» — مبدأ الجودة الشاملة (الإتقان) هو جوهر العمل الإسلامي والإداري المستدام.",
+                ref: "شعب الإيمان للبيهقي — قاعدة الإتقان والتميز"
+            },
+            {
+                text: "«سَيِّدُ القَوْمِ خَادِمُهُمْ» — مفهوم القيادة الخادمة (Servant Leadership) الذي يُقدم فيه القائد راحة فريقه وخدمتهم لتحقيق الرسالة.",
+                ref: "أثر نبوي مشهور — في أصول فن القيادة"
+            },
+            {
+                text: "«أَحَبُّ الأعمالِ إلى اللهِ أدْومُها و إنْ قَلَّ» — مبدأ التراكمية والاستمرارية (Kaizen)؛ الإنجاز الصغير المستمر خير من جهد كبير منقطع.",
+                ref: "صحيح البخاري ومسلم — استراتيجية الإنجاز المستمر"
+            }
+        ];
+
+        /* صفات النبي ﷺ كاملة: الجسدية (الخَلقية) والخُلقية */
+        const TRAITS_DATA = [
+            /* --- الصفات الجسدية (الخَلْقية) --- */
+            {
+                id: "tr1",
+                category: "physical",
+                categoryName: "صفة خَلْقية (جسدية)",
+                title: "الوجه الشريف واللون والإشراق",
+                icon: "🌕",
+                summary: "أزهر اللون، نيّر الوجه يستدير كالقمر ليلة البدر، إذا سُرّ استنار كأنه قطعة قمر.",
+                hadithSource: "متفق عليه عن كعب بن مالك والبراء بن عازب رضي الله عنهما",
+                details: "كان النبي ﷺ أزهر اللون؛ ليس بالأبيض الأمهق (شديد البياض بلا حمرة) ولا بالآدم (الأسمر)، بل أبيض مشرباً بحمرة، يتلألأ وجهه تلألؤ القمر ليلة البدر. وكان وجهه سهلاً مستديراً بعض الشيء، إذا غضب احمرت وجنتاه، وإذا فَرِح استنار وجهه حتى كأنه مرآة تجلو النور.",
+                impact: "كمال المهابة ووضاءة الملامح التي تجمع بين الجلال والمحبة والأنس عند الرؤية."
+            },
+            {
+                id: "tr2",
+                category: "physical",
+                categoryName: "صفة خَلْقية (جسدية)",
+                title: "العينان الكحلاوان والحاجبان والأنف",
+                icon: "👁️",
+                summary: "أدعج العينين، أهدب الأشفار، في عينيه حُمرة يسيرة، أزج الحواجب، أقنى الأنف له نور يعلوه.",
+                hadithSource: "رواه الترمذي في الشمائل المحمدية عن علي وهند بن أبي هالة",
+                details: "كان ﷺ دعج العينين (شديدتا السواد في بياض ناصع)، في بياضهما شكلة (خيوط حمرة لطيفة تزيدهما جمالاً)، طويل الأشفار (الرموش) سابغتها، أزجّ الحواجب (مقوسة وممتدة في غير قَرَن بينهما عِرق يدرّه الغضب)، أقنى الأنف (طويل مستدق الأرنبة مع حدب خفيف في وسطه) يحسبه من لم يتأمله أشمّ من إشراقه ونوره.",
+                impact: "نظرة نافذة مفعمة بالوقار واليقين، تهابها القلوب وتطمئن إليها النفوس."
+            },
+            {
+                id: "tr3",
+                category: "physical",
+                categoryName: "صفة خَلْقية (جسدية)",
+                title: "الرأس وشعر الرأس واللحية الشريفة",
+                icon: "✨",
+                summary: "ضخم الرأس (عظيم الهامة)، رجِل الشعر ليس بسبط ولا جعد، كثيف اللحية مهيبها.",
+                hadithSource: "صحيح البخاري ومسلم والترمذي",
+                details: "كان ﷺ عظيم الهامة، شعره ليس بالسبط المسترسل تماماً ولا بالجعد القطط الملتوي، بل وسطه (رَجِل)، يبلغ أحياناً شحمة أذنيه وأحياناً إلى منكبيه إذا وفَر. وكان كثّ اللحية (عريضة وافرة الشعر)، ولم يكن في رأسه ولحيته عشرون شعرة بيضاء، فكان وقاره في بهاء شبابه.",
+                impact: "هيبة فطرية تعكس اكتمال الفتوة والرجولة وكمال الهيئة."
+            },
+            {
+                id: "tr4",
+                category: "physical",
+                categoryName: "صفة خَلْقية (جسدية)",
+                title: "الفم والأسنان ونبرة الصوت وفصاحته",
+                icon: "🗣️",
+                summary: "ضليع الفم، مفلج الأسنان يخرج النور من ثناياه، في صوته صحل وفخامة رنانة.",
+                hadithSource: "صحيح مسلم والترمذي في الشمائل",
+                details: "كان ﷺ ضليع الفم (واسع الفم، وهي عند العرب من أمارات الفصاحة والبيان)، أشنب الأسنان (فيها رقة وبريق)، مفلج الثنايا (بين أسنانه الأمامية انفراج لطيف)، إذا تكلم رُئي كالنور يخرج من بين ثناياه. وكان صوته جلياً جهورياً رخيماً فيه صحل (بحة يسيرة تضفي عذوبة وخشوعاً).",
+                impact: "بلاغة استثنائية تؤثر في الأسماع وتنفذ إلى أعماق القلوب دون تكلف."
+            },
+            {
+                id: "tr5",
+                category: "physical",
+                categoryName: "صفة خَلْقية (جسدية)",
+                title: "القامة والقوام والهيئة والمشية",
+                icon: "🚶",
+                summary: "ربعة من القوم، معتدل البنية، يتكفأ تكفؤاً إذا مشى كأنما ينحطّ من صَبَب.",
+                hadithSource: "متفق عليه والشمائل المحمدية للترمذي",
+                details: "لم يكن ﷺ بالطويل البائن ولا بالقصير المتردد، وكان إلى الطول أقرب، وإذا مشى مع الطوال طالهم ببركته. سواء البطن والصدر، بعيد ما بين المنكبين، عريض الصدر والكتفين. وإذا مشى تقلع تقلعاً كأنما ينحط من منحدر، يخطو بقوة وعزم وتؤدة بلا خيلاء ولا تماوت، وإذا التفت التفت جميعاً بكل بدنه تقديراً لمن يكلمه.",
+                impact: "مشية العازم الواثق، تواضع جمّ يجمع بين الحيوية، والوقار، وحسن الإقبال على المخاطب."
+            },
+            {
+                id: "tr6",
+                category: "physical",
+                categoryName: "صفة خَلْقية (جسدية)",
+                title: "الكفان والقدمان ولمس اليد الشريفة",
+                icon: "🤝",
+                summary: "رحب الراحة، شثن الكفين والقدمين في صلابة الرجال، وألين من الحرير والديباج.",
+                hadithSource: "صحيح البخاري ومسلم عن أنس بن مالك رضي الله عنه",
+                details: "كان ﷺ عظيم الكفين والقدمين، ممتلئ الأصابع طولاً واستواءً، مع قوة ومتانة (شثن الأطراف)، ومع ذلك قال أنس رضي الله عنه: «ما مسست ديباجاً ولا حريراً ألين من كف رسول الله ﷺ»، وكانت كفه باردة طيبة كأنما أُخرجت من جؤنة عطار.",
+                impact: "يد تجمع بين بأس العمل والقوة، وغاية اللطف والرحمة عند المصافحة والمواساة."
+            },
+            {
+                id: "tr7",
+                category: "physical",
+                categoryName: "صفة خَلْقية (جسدية)",
+                title: "خاتم النبوة والرائحة وطيب العرق",
+                icon: "🌸",
+                summary: "بين كتفيه خاتم النبوة مثل بيضة الحمامة، وأطيب الناس ريحاً وعرقه كاللؤلؤ.",
+                hadithSource: "صحيح مسلم عن أم سليم وجابر بن سمرة رضي الله عنهم",
+                details: "كان بين كتفيه ﷺ «خاتم النبوة» وهو بضعة لحم بارزة كبيضة الحمامة أو زر الحجلة، شامة عليها شعرات، وهي العلامة المذكورة في كتب الأنبياء قبله. وكان أطيب الناس ريحاً طبيعةً بلا عطر، وإذا عَرِق كان عرقه كاللؤلؤ، وكانت أم سليم تجمعه لتضعه في طيبها فيكون أزكى الطيب.",
+                impact: "آية نبوية حية وطهارة ذاتية حباه الله بها لتألفه القلوب وترتاح لحضرته."
+            },
+
+            /* --- الصفات الخُلُقية (الشمائل والآداب) --- */
+            {
+                id: "tr8",
+                category: "moral",
+                categoryName: "صفة خُلُقية (أخلاق وشمائل)",
+                title: "الصدق والأمانة الفائقة",
+                icon: "⚖️",
+                summary: "لُقّب بـ«الصادق الأمين» قبل البعثة، واستأمنه أعداؤه على ودائعهم حتى ليلة هجرته.",
+                hadithSource: "سير أعلام النبلاء وصحيح البخاري في قصة هرقل",
+                details: "اشتهر بالصدق المطلق حتى سأله هرقل الروم لأبي سفيان: «فهل كنتم تتهمونه بالكذب قبل أن يقول ما قال؟» قال: لا، فقال هرقل: «ما كان ليدع الكذب على الناس ويكذب على الله». وظلت قريش رغم كفرها به تستودعه أنفس أموالها حتى أمّر علياً برد الودائع يوم الهجرة.",
+                impact: "المصداقية هي رأس مال القائد والمصلح، وبدونها تفقد الكلمات قوتها وقبولها."
+            },
+            {
+                id: "tr9",
+                category: "moral",
+                categoryName: "صفة خُلُقية (أخلاق وشمائل)",
+                title: "الرحمة العامة والرأفة بالخلق",
+                icon: "🤍",
+                summary: "﴿وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ﴾، وسعت رحمته الصغير والكبير والضعيف والحيوان.",
+                hadithSource: "صحيح مسلم: «إنما أنا رحمة مهداة»",
+                details: "كان أرحم الناس بالصبيان والنساء والضعفاء والمماليك؛ كان يوجز في صلاته إذا سمع بكاء طفل شفقةً على أمه، وحرّم تعذيب البهائم ونهى عن وسمها في الوجه، وعفا عن الأعرابي الذي جذب رداءه بشدة حتى أثّر في رقبته وضحك في وجهه وأمر له بعطاء.",
+                impact: "الرحمة هي الأساس الحقيقي للعدالة وبناء المجتمعات الإنسانية المتماسكة."
+            },
+            {
+                id: "tr10",
+                category: "moral",
+                categoryName: "صفة خُلُقية (أخلاق وشمائل)",
+                title: "التواضع الجم ونبذ الكبرياء",
+                icon: "🌿",
+                summary: "يخصف نعله ويرقع ثوبه ويكون في مهنة أهله، ويجيب دعوة المملوك والمسكين.",
+                hadithSource: "صحيح البخاري عن عائشة، ومسند أحمد",
+                details: "كان ﷺ يجلس بين أصحابه كأحدهم حتى يأتي الغريب فلا يعرفه حتى يسأل: «أيكم محمد؟»، وكان يركب الحمار ويردف خلفه، ويعود المرضى في أقصى المدينة، ويجلس مع المساكين ويأكل مع الخادم، وقال للرجل الذي ارتعد هيبة أمامه: «هوّن عليك فإني لست بملك، إنما أنا ابن امرأة من قريش كانت تأكل القديد بمكة».",
+                impact: "القوة في البساطة؛ فكلما ازداد الإنسان رفعة في مقامه احتاج إلى مزيد من التواضع."
+            },
+            {
+                id: "tr11",
+                category: "moral",
+                categoryName: "صفة خُلُقية (أخلاق وشمائل)",
+                title: "الجود والسخاء والبذل المطلق",
+                icon: "🎁",
+                summary: "كان أجود بالخير من الريح المرسلة، وما سُئل شيئاً على الإسلام إلا أعطاه.",
+                hadithSource: "متفق عليه عن ابن عباس وأنس رضي الله عنهما",
+                details: "أعطى رجلاً غنماً بين جبلين فرجع لقومه قائلاً: «يا قوم أسلموا فإن محمداً يعطي عطاء من لا يخشى الفاقة». وما قال «لا» قط لسائل إلا إذا لم يكن عنده فيعده خيراً، وكان ينفق إنفاق الواثق بأن خزائن الله ملأى لا تغيض.",
+                impact: "الكرم المالي والروحي ينزع الأحقاد ويؤلف القلوب المتنافرة حول الغايات الكبرى."
+            },
+            {
+                id: "tr12",
+                category: "moral",
+                categoryName: "صفة خُلُقية (أخلاق وشمائل)",
+                title: "الشجاعة والبسالة والثبات في الميادين",
+                icon: "🛡️",
+                summary: "كان الصحابة الشجعان إذا اشتد وطيس المعارك احتموا برسول الله ﷺ لقربه من العدو.",
+                hadithSource: "صحيح مسلم ومسند أحمد عن علي بن أبي طالب رضي الله عنه",
+                details: "قال علي رضي الله عنه وهو من أفرس الفرسان: «كنا إذا احمرّ البأس ولقي القومُ القومَ، اتّقينا برسول الله ﷺ، فما يكون منا أحد أدنى إلى القوم منه». وفي غزوة حنين عندما تراجع الناس، ثبت فوق بغلته يتقدم وحيداً ينادي: «أنا النبي لا كذب، أنا ابن عبد المطلب».",
+                impact: "الشجاعة الأخلاقية والميدانية ركيزة حتمية في القائد لإرساء الطمأنينة في أتباعه وقت الأزمات."
+            },
+            {
+                id: "tr13",
+                category: "moral",
+                categoryName: "صفة خُلُقية (أخلاق وشمائل)",
+                title: "الحلم والعفو عند المقدرة التامة",
+                icon: "🕊️",
+                summary: "لا تزيده شدة الجهل عليه إلا حلماً، وعفوه التاريخي عن قريش يوم الفتح: «اذهبوا فأنتم الطلقاء».",
+                hadithSource: "صحيح البخاري وسنن البيهقي الكبرى",
+                details: "ما انتقم لنفسه قط في أمر شخصي، وإنما كان يغضب إذا انتُهكت حرمات الله. تحمّل أذى قومه عشرين عاماً وتآمروا على قتله وطردوه، فلما دخل مكة فاتحاً منتصراً ملك أمرهم وقال: «ما ترون أني فاعل بكم؟ قالوا: أخ كريم وابن أخ كريم»، قال: «لا تثريب عليكم اليوم، اذهبوا فأنتم الطلقاء».",
+                impact: "العفو عند المقدرة قمة النضج الإنساني ووسيلة تحويل الخصوم إلى أصدقاء ومناصرين."
+            },
+            {
+                id: "tr14",
+                category: "moral",
+                categoryName: "صفة خُلُقية (أخلاق وشمائل)",
+                title: "الحياء والأدب الرفيع",
+                icon: "🌸",
+                summary: "كان أشد حياءً من العذراء في خدرها، وإذا كره شيئاً عُرف ذلك في وجهه دون تجريح.",
+                hadithSource: "متفق عليه عن أبي سعيد الخدري رضي الله عنه",
+                details: "لم يكن ﷺ فاحشاً ولا متفحشاً ولا صخاباً في الأسواق، ولا يجابه أحداً بما يكره صراحة تقديراً لمشاعره، بل كان يقول: «ما بال أقوام يفعلون كذا وكذا»، فينبه المخطئ برفق دون إحراجه أو التشهير به أمام الناس.",
+                impact: "الحياء حصن الفضيلة، وأساس اللباقة وحفظ كرامات الناس في التعامل الإنساني."
+            },
+            {
+                id: "tr15",
+                category: "moral",
+                categoryName: "صفة خُلُقية (أخلاق وشمائل)",
+                title: "البشاشة وطلاقة الوجه وحسن التبسم",
+                icon: "😊",
+                summary: "ما رُئي أحد أكثر تبسماً منه، يمازح أصحابه ولا يقول إلا حقاً ويدخل السرور عليهم.",
+                hadithSource: "جامع الترمذي عن جرير بن عبد الله وعبد الله بن الحارث",
+                details: "قال جرير بن عبد الله: «ما رآني رسول الله ﷺ منذ أسلمت إلا تبسّم في وجهي». وكان يمزح مع العجائز والأطفال ولا يقول إلا حقاً وصدقاً، يلقى الجميع بوجه طلق مبتهج يزرع البهجة ويطرد الهموم والرهبة.",
+                impact: "الابتسامة لغة القلوب العالمية، وأقصر طريق لغرس المودة وكسر حواجز الجفاء."
+            }
+        ];
+
+        const TIMELINE_DATA = [
+            {
+                id: "t1",
+                period: "قبل البعثة",
+                year: "571 م - عام الفيل",
+                title: "الميلاد ورعاية الطفولة",
+                summary: "مولد النبي ﷺ يتيماً في مكة المكرمة بمشاعر النور، ورضاعته في بني سعد لدى السيدة حليمة السعدية، حيث ظهرت بوادر البركة وحادثة شق الصدر الأولى.",
+                lessons: "حكمة النشأة يتيماً تزرع في النفس عاطفة الشفقة على الضعفاء، والاعتماد المطلق على رعاية الله تعالى.",
+                details: "ولد النبي ﷺ يوم الإثنين في شهر ربيع الأول. توفي والده عبد الله قبل مولده، ثم توفيت أمه آمنة بنت وهب وهو في السادسة من عمره، فكفله جده عبد المطلب ثم عمه أبو طالب الذي أحسن رعايته وحماه طوال شبابه."
+            },
+            {
+                id: "t2",
+                period: "قبل البعثة",
+                year: "قبل البعثة بـ 15 سنة",
+                title: "العمل بالتجارة ولقب الصادق الأمين",
+                summary: "عمله ﷺ في رعي الغنم ثم في تجارة السيدة خديجة بنت خويلد رضي الله عنها، وشهرته بين أهل مكة بالصدق والأمانة وحسن الخلق.",
+                lessons: "بناء السمعة والمصداقية المهنية والشخصية هو الأساس الصلب لقبول الرسالة والأفكار لاحقاً.",
+                details: "لم يأنف النبي ﷺ من العمل بيده لرعي الغنم لتخفيف المؤونة عن عمه، ثم خرج بتجارة خديجة إلى الشام برفقة غلامها ميسرة، فرأى منه بركة وأمانة فائقة قادت إلى زواجهما المبارك."
+            },
+            {
+                id: "t3",
+                period: "العهد المكي",
+                year: "610 م (عمر 40 عاماً)",
+                title: "نزول الوحي في غار حراء والبعثة",
+                summary: "خلوته ﷺ للتفكر في غار حراء حتى نزل عليه أمين الوحي جبريل عليه السلام بقوله تعالى: ﴿اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ﴾.",
+                lessons: "العزلة الإيجابية والتأمل العميق ركن أساسي لشحذ الرؤية وإعادة ترتيب الأولويات الحياتية والروحية.",
+                details: "عاد النبي ﷺ ترجف بوادره إلى السيدة خديجة وقال: «زمّلوني زمّلوني»، فثبّتته بمقولتها الخالدة: «كلا والله ما يخزيك الله أبداً؛ إنك لتصل الرحم، وتحمل الكل، وتكسب المعدوم، وتقري الضيف، وتعين على نوائب الحق»."
+            },
+            {
+                id: "t4",
+                period: "العهد المكي",
+                year: "السنة 3 إلى 10 للبعثة",
+                title: "الدعوة الجهرية وحصار شِعب أبي طالب",
+                summary: "الصدع بالدعوة فوق الصفا، وتحمل الأذى الشديد، وهجرة المسلمين الأولى والثانية إلى الحبشة، وحصار قريش للهاشميين ثلاث سنوات في الشِّعب.",
+                lessons: "الثبات على المبدأ أمام الأزمات الاقتصادية والاجتماعية، والبحث عن بدائل استراتيجية (أرض الحبشة العادلة).",
+                details: "رغم التنكيل والحصار الجائر في شِعب بني هاشم، ظل النبي ﷺ وأصحابه صابرين حتى أكلوا أوراق الشجر، وأظهرت هذه المحنة صلابة الصف الإسلامي وتجرده للمبدأ."
+            },
+            {
+                id: "t5",
+                period: "العهد المكي",
+                year: "السنة 10 للبعثة",
+                title: "عام الحزن ورحلة الإسراء والمعراج",
+                summary: "وفاة السيدة خديجة وعمه أبي طالب، وتكذيب أهل الطائف له، ثم تكريم الله له برحلة الإسراء من المسجد الحرام للأقصى والعروج للسماوات العلى.",
+                lessons: "الفرج يأتي بعد أشد درجات الكرب، والتكريم الإلهي ينتظر كل من يثبت في ميادين البلاء والصبر.",
+                details: "بعد أن رمى صبيان الطائف النبي ﷺ بالحجارة حتى دميت قدماه، دعا بدعائه الشهير: «اللهم إليك أشكو ضعف قوتي...»، فأكرمه الله بمعجزة الإسراء والمعراج وفُرضت فيها الصلوات الخمس."
+            },
+            {
+                id: "t6",
+                period: "العهد المدني",
+                year: "1 هـ / 622 م",
+                title: "الهجرة النبوية وبناء الدولة في المدينة",
+                summary: "التخطيط المحكم للهجرة مع الصديق أبي بكر، وبناء المسجد النبوي، والمؤاخاة التاريخية بين المهاجرين والأنصار، وكتابة وثيقة المدينة.",
+                lessons: "الجمع بين التوكل على الله والأخذ بأدق الأسباب التنظيمية، وأولوية بناء المجتمع والتكافل قبل القوة المادية.",
+                details: "استخدم النبي ﷺ التمويه، الدليل الخبير (عبد الله بن أريقط)، وإمداد المعلومات (أسماء وعبد الله أبناء أبي بكر)، ليؤسس أول دستور مواطنة وتكافل مدني عبر 'وثيقة المدينة'."
+            },
+            {
+                id: "t7",
+                period: "العهد المدني",
+                year: "2 هـ - 8 هـ",
+                title: "الغزوات الكبرى وصلح الحديبية وفتح مكة",
+                summary: "معركة بدر (الفرقان)، أحد، الأحزاب، ثم صلح الحديبية الذي مهد للفتح الأعظم لمكة المكرمة عام 8 هـ وإعلان العفو العام: «اذهبوا فأنتم الطلقاء».",
+                lessons: "المرونة الدبلوماسية في صلح الحديبية قادت إلى الفتح، والعفو عند المقدرة هو ذروة القيادة الإنسانية.",
+                details: "دخل النبي ﷺ مكة خافضاً رأسه تواضعاً لله، وحطم 360 صنماً حول الكعبة متلواً: ﴿وَقُلْ جَاءَ الْحَقُّ وَزَهَقَ الْبَاطِلُ﴾، وأعطى درساً خالداً في التسامح السياسي والاجتماعي."
+            },
+            {
+                id: "t8",
+                period: "العهد المدني",
+                year: "10 هـ - 11 هـ / 632 م",
+                title: "حجة الوداع والتحاق الحبيب بالرفيق الأعلى",
+                summary: "خطبة الوداع التي رسخت حقوق الإنسان وحرمة الدماء والأموال، ثم مرضه واختياره الرفيق الأعلى في حجرة أم المؤمنين عائشة.",
+                lessons: "الرسالة تكتمل بتمكين المبادئ، والقيادة الحقيقية تصنع أمة قادرة على الاستمرار بعد رحيل القائد.",
+                details: "شهد حجة الوداع أكثر من 100 ألف صحابي، ونزل قوله تعالى: ﴿الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِي﴾. وتوفي النبي ﷺ ضحى يوم الإثنين 12 ربيع الأول سنة 11 هـ."
+            }
+        ];
+
+        const WIVES_DATA = [
+            {
+                id: "w1",
+                name: "خديجة بنت خويلد",
+                title: "أم المؤمنين وسيدة نساء العالمين",
+                marriageYear: "قبل البعثة بـ 15 سنة",
+                attributes: ["الحكمة", "النصرة والمؤازرة", "أول من أسلمت", "طاهرة النسب"],
+                bio: "أولى زوجات النبي ﷺ وأحبهن إلى قلبه. عاش معها 25 عاماً لم يتزوج غيرها حتى توفيت. واستثمرت جاهها ومالها في نصرة الرسالة، وبشرها جبريل عليه السلام ببيت في الجنة من قصب لا صخب فيه ولا نصب.",
+                highlight: "تثبيتها لقلب النبي ﷺ عند فجاءة الوحي وذهابها به إلى ورقة بن نوفل."
+            },
+            {
+                id: "w2",
+                name: "سودة بنت زمعة",
+                title: "صاحبة الإيثار والوفاء",
+                marriageYear: "السنة 10 للبعثة (بعد وفاة خديجة)",
+                attributes: ["الإيثار", "طيبة النفس", "المهاجرة للحبشة"],
+                bio: "أول من تزوجها النبي ﷺ بعد خديجة تطييباً لخاطرها بعد وفاة زوجها السكران بن عمرو إثر هجرتهما للحبشة. عُرفت بروحها المرحة وإيثارها يومها للسيدة عائشة رعايةً لخاطر النبي ﷺ.",
+                highlight: "نموذج في الرعاية الاجتماعية ومواساة الأرامل والمهاجرات الأوائل."
+            },
+            {
+                id: "w3",
+                name: "عائشة بنت أبي بكر الصديق",
+                title: "المُبرَّأة من فوق سبع سموات والفقيهة",
+                marriageYear: "شوال سنة 2 هـ (بالمدينة)",
+                attributes: ["العلم الغزير", "رواية الحديث", "الفصاحة", "الفقه الطبي والشرعي"],
+                bio: "أحب الناس إلى النبي ﷺ وأفقه نساء الأمة على الإطلاق. روت عن النبي ﷺ أكثر من 2210 أحاديث، وكانت مرجعاً لكبار الصحابة في المعضلات والفقه والفرائض والشعر والطب.",
+                highlight: "توفي النبي ﷺ في حجرتها وبين سحرها ونحرها ودُفن في بيتها."
+            },
+            {
+                id: "w4",
+                name: "حفصة بنت عمر بن الخطاب",
+                title: "الصوامة القوامة وحارسة المصحف",
+                marriageYear: "سنة 3 هـ",
+                attributes: ["العبادة والصيام", "حفظ القرآن", "الكتابة والتدوين"],
+                bio: "ابنة الفاروق عمر، ترملت بعد استشهاد زوجها خنيس بن حذافة السهمي في بدر، فتزوجها النبي ﷺ إكراماً لها ولأبيها. كانت تقرأ وتكتب، واؤتمنت على النسخة الأصلية للقرآن الكريم المجموعة زمن أبي بكر.",
+                highlight: "حفظها للمصحف الأم الشريف الذي اعتمد عليه عثمان في النسخ الموحد."
+            },
+            {
+                id: "w5",
+                name: "زينب بنت خزيمة",
+                title: "أم المساكين",
+                marriageYear: "سنة 3 هـ",
+                attributes: ["الجود الفائق", "إطعام الطعام", "الرأفة بالفقراء"],
+                bio: "سُميت بأم المساكين لكثرة عطفها عليهم وإطعامهم في الجاهلية والإسلام. ترملت بعد معركة أحد فتزوجها النبي ﷺ، ولم تمكث معه سوى أشهر معدودة (نحو شهرين أو ثلاثة) حتى توفيت بمكة.",
+                highlight: "تخليد اسمها في التاريخ النبوي بلقب العطاء والعمل الخيري والإنساني."
+            },
+            {
+                id: "w6",
+                name: "أم سلمة (هند بنت أبي أمية)",
+                title: "صاحبة الرأي الصائب والمشورة الحكيمة",
+                marriageYear: "شوال سنة 4 هـ",
+                attributes: ["رجاحة العقل", "البلاغة", "الصبر عند المصائب"],
+                bio: "من المهاجرات الأوائل للحبشة والمدينة. اشتهرت بحكمتها وفضل رأيها في صلح الحديبية حين أشارت على النبي ﷺ بأن يحلق وينحر أمام الصحابة، فاقتدوا به وزالت الأزمة.",
+                highlight: "دعاؤها الصابر عند وفاة زوجها أبي سلمة، فأخلف الله لها خيراً منه برسول الله."
+            },
+            {
+                id: "w7",
+                name: "زينب بنت جحش",
+                title: "سيدة الجود وأطولهن يداً بالخير",
+                marriageYear: "سنة 5 هـ",
+                attributes: ["زواجها بالوحي", "صناعة اليد والصدقة", "التقوى"],
+                bio: "ابنة عمة النبي ﷺ أميمة بنت عبد المطلب. نزل زواجها بأمر وقرآن يتلى لإبطال عادة التبني الجاهلية ﴿فَلَمَّا قَضَى زَيْدٌ مِنْهَا وَطَراً زَوَّجْنَاكَهَا﴾. كانت تعمل بيدها في الدباغة والخرز وتتصدق بكامل دخلها.",
+                highlight: "أول أزواج النبي ﷺ لحوقاً به بعد وفاته لكثرة صدقاتها وجودها."
+            },
+            {
+                id: "w8",
+                name: "جويرية بنت الحارث",
+                title: "أعظم امرأة بركة على قومها",
+                marriageYear: "سنة 5 أو 6 هـ (بني المصطلق)",
+                attributes: ["كثرة التسبيح والذكر", "العزة", "البركة على قومها"],
+                bio: "ابنة زعيم بني المصطلق. وقعت في الأسر بعد الغزوة، فلما تزوجها النبي ﷺ أعتق الصحابة مائة أهل بيت من قومها وقالوا: أصهار رسول الله، فأسلم قومها جميعاً وحسن إسلامهم.",
+                highlight: "حديثها الشهير في الذكر المضاعف: «سبحان الله وبحمده عدد خلقه ورضا نفسه...»."
+            },
+            {
+                id: "w9",
+                name: "أم حبيبة (رملة بنت أبي سفيان)",
+                title: "الصادقة الثابتة على عقيدتها",
+                marriageYear: "سنة 7 هـ (بالحبشة غيابياً)",
+                attributes: ["قوة الإيمان", "التضحية بالقرابة في سبيل العقيدة"],
+                bio: "ابنة قائد قريش أبي سفيان (قبل إسلامه). هاجرت إلى الحبشة وثبتت على دينها حين تنصّر زوجها، فأرسل النبي ﷺ للنجاشي ليعقد له عليها بالحبشة وأصدقها 400 دينار من عنده إكراماً لثباتها.",
+                highlight: "قدمت العقيدة والإيمان على روابط العصبية والجاه القرشي الرفيع."
+            },
+            {
+                id: "w10",
+                name: "صفية بنت حُيَيّ بن أخطب",
+                title: "الحليمة سليلة بني إسرائيل",
+                marriageYear: "سنة 7 هـ (فتح خيبر)",
+                attributes: ["الحلم والأناة", "شرف النسب (من نسل نبي الله هارون)"],
+                bio: "من ذرية هارون عليه السلام، أُعتق مهرها وتزوجها النبي ﷺ تأليفاً للقلوب وإكراماً لها. دافع عنها النبي ﷺ بحنو حين قال لها: «إنكِ لابنة نبي، وإن عمكِ لنبي، وإنكِ لتحت نبي، ففيم تفخر عليكِ؟».",
+                highlight: "موقفها الوفي ودفاعها الصادق عن أمير المؤمنين عثمان في الفتنة."
+            },
+            {
+                id: "w11",
+                name: "ميمونة بنت الحارث",
+                title: "البرّة التقيّة الواصلة للرحم",
+                marriageYear: "سنة 7 هـ (عمرة القضاء)",
+                attributes: ["صلة الرحم", "التقوى العالية", "آخر من تزوج النبي ﷺ"],
+                bio: "أخت أم الفضل زوجة العباس، وهبت نفسها للنبي ﷺ وزُوِّجت منه بسَرِف إبان عمرة القضاء. قالت عنها عائشة: «أما إنها كانت من أتقانا لله وأوصلنا للرحم».",
+                highlight: "توفيت في نفس المكان (سَرِف) الذي بُني بها فيه تخليداً لذكراها العطرة."
+            }
+        ];
+
+        const BOOKS_DATA = [
+            {
+                id: "b1",
+                title: "الرحيق المختوم",
+                author: "صفي الرحمن المباركفوري",
+                level: "beginner",
+                levelText: "للمبتدئين والمتوسطين",
+                pages: "حوالي 520 صفحة",
+                desc: "الكتاب الفائز بالمركز الأول في مسابقة رابطة العالم الإسلامي للسيرة النبوية. يتميز بسلاسة الأسلوب، وتحقيق الروايات التاريخية، والاعتدال في العرض دون إسهاب ممل أو إيجاز مخل.",
+                whyRead: "أفضل مدخل معاصر وشامل يربط أحداث السيرة بتسلسل زمني شائق وموثق من أمهات المصادر."
+            },
+            {
+                id: "b2",
+                title: "سيرة ابن هشام (تهذيب سيرة ابن إسحاق)",
+                author: "عبد الملك بن هشام (ت 218 هـ)",
+                level: "advanced",
+                levelText: "للمتقدمين والباحثين",
+                pages: "مجلدان ضخمان",
+                desc: "الأصل التاريخي الأبرز والأقدم الذي اعتمدت عليه كل كتب السيرة اللاحقة. يوثق الشعر والقبائل والغزوات وأدق تفاصيل البيئة العربية المكية والمدنية بأسانيد العهد الأول.",
+                whyRead: "الرجوع إلى النبع الصافي للألفاظ والروايات الميدانية الأصلية وأشعار صدر الإسلام."
+            },
+            {
+                id: "b3",
+                title: "زاد المعاد في هدي خير العباد",
+                author: "الإمام ابن قيم الجوزية",
+                level: "advanced",
+                levelText: "للمتقدمين وطلاب الفقه",
+                pages: "4 مجلدات مطولة",
+                desc: "موسوعة إسلامية فريدة تجمع بين أحداث السيرة وهدي النبي ﷺ في عباداته ومعاملاته وقضائه وطبه وأخلاقه وعلاقاته الدولية، مستنبطاً الأحكام الفقهية والتربوية.",
+                whyRead: "لفهم السيرة كمنهج حياة يومي وتشريعي وعملي، وليس مجرد سرد لحوادث تاريخية ماضية."
+            },
+            {
+                id: "b4",
+                title: "فقه السيرة النبوية",
+                author: "د. محمد سعيد رمضان البوطي",
+                level: "intermediate",
+                levelText: "للمتوسطين والمفكرين",
+                pages: "حوالي 380 صفحة",
+                desc: "كتاب فكري وتربوي رائع لا يكتفي بسرد الوقائع، بل يغوص في الدلالات والعبر التشريعية والروحية وراء كل حدث في مكة والمدينة والأسرة النبوية.",
+                whyRead: "ممتاز لمن يبحث عن الأبعاد الفكرية والفلسفية والدروس التربوية لكل محطة نبوية."
+            },
+            {
+                id: "b5",
+                title: "هذا الحبيب يا محب",
+                author: "أبو بكر جابر الجزائري",
+                level: "beginner",
+                levelText: "للناشئة والأسرة والمبتدئين",
+                pages: "حوالي 450 صفحة",
+                desc: "كُتب بأسلوب وعظي وتربوي رقيق يفيض محبةً وإجلالاً للجناب النبوي، مع استخلاص فوائد وعبر واضحة في نهاية كل فصل ومحطة.",
+                whyRead: "سهل العبارة جداً، ومثالي للقراءة العائلية وقراءات المبتدئين في جلسات السيرة."
+            },
+            {
+                id: "b6",
+                title: "السيرة النبوية: وقائع وتحليل أحداث",
+                author: "د. علي محمد الصلابي",
+                level: "intermediate",
+                levelText: "للمهتمين بالبناء السياسي والتمكين",
+                pages: "مجلدان",
+                desc: "دراسة تحليلية موسعة تركز على سنن بناء الدولة، والشورى، والقيادة المجتمعية، والتخطيط الاستراتيجي في عهد الرسول ﷺ.",
+                whyRead: "مناسب للمهتمين بالعلوم السياسية، والإدارة العامة، وأسرار التمكين والنهوض الحضاري."
+            }
+        ];
+
+        /* ==========================================================================
+           حالة التطبيق والتخزين المحلي (State & LocalStorage Management)
+           ========================================================================== */
+        
+        const State = {
+            activeTab: 'traits',
+            currentFilter: 'all',
+            searchQuery: '',
+            bookmarks: JSON.parse(localStorage.getItem('seerah_bookmarks') || '[]'),
+            readItems: JSON.parse(localStorage.getItem('seerah_read') || '[]'),
+            theme: localStorage.getItem('seerah_theme') || 'light'
+        };
+
+        // حفظ الحالة في المتصفح
+        function saveState() {
+            localStorage.setItem('seerah_bookmarks', JSON.stringify(State.bookmarks));
+            localStorage.setItem('seerah_read', JSON.stringify(State.readItems));
+        }
+
+        /* ==========================================================================
+           التحكم في الثيم (Dark / Light Mode)
+           ========================================================================== */
+        const themeBtn = document.getElementById('themeToggle');
+
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+            themeBtn.setAttribute('title', theme === 'dark' ? 'تفعيل الوضع النهاري' : 'تفعيل الوضع الليلي');
+            localStorage.setItem('seerah_theme', theme);
+        }
+
+        themeBtn.addEventListener('click', () => {
+            State.theme = State.theme === 'light' ? 'dark' : 'light';
+            applyTheme(State.theme);
+        });
+
+        /* ==========================================================================
+           إدارة الخاطرة والتلميح اليومي
+           ========================================================================== */
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * QUOTES_DATA.length);
+            const quote = QUOTES_DATA[randomIndex];
+            document.getElementById('quoteText').textContent = quote.text;
+            document.getElementById('quoteRef').textContent = quote.ref;
+        }
+
+        document.getElementById('refreshQuoteBtn').addEventListener('click', displayRandomQuote);
+
+        /* ==========================================================================
+           إدارة التبويبات والفلترة
+           ========================================================================== */
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const searchInput = document.getElementById('searchInput');
+        const categoryFiltersContainer = document.getElementById('categoryFilters');
+
+        function updateCounts() {
+            document.getElementById('countTraits').textContent = TRAITS_DATA.length;
+            document.getElementById('countTimeline').textContent = TIMELINE_DATA.length;
+            document.getElementById('countWives').textContent = WIVES_DATA.length;
+            document.getElementById('countLibrary').textContent = BOOKS_DATA.length;
+            document.getElementById('countBookmarks').textContent = State.bookmarks.length + State.readItems.length;
+        }
+
+        function switchTabDirect(tabName) {
+            tabButtons.forEach(b => {
+                if (b.dataset.tab === tabName) {
+                    b.classList.add('active');
+                } else {
+                    b.classList.remove('active');
+                }
+            });
+
+            State.activeTab = tabName;
+            State.currentFilter = 'all';
+
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+            const targetPane = document.getElementById(`pane-${tabName}`);
+            if (targetPane) targetPane.classList.add('active');
+
+            renderCategoryFilters();
+            renderCurrentTab();
+
+            // تمرير سلس نحو بداية محتوى القسم
+            const mainContainer = document.querySelector('main');
+            if (mainContainer) {
+                mainContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchTabDirect(btn.dataset.tab);
+            });
+        });
+
+        // زر الانتقال للمحفوظات في الهيدر
+        document.getElementById('headerBookmarkJump').addEventListener('click', () => {
+            switchTabDirect('bookmarks');
+        });
+
+        // الرجوع لأعلى الصفحة
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // توليد أزرار التصفية طبقاً للتبويب الفعال
+        function renderCategoryFilters() {
+            categoryFiltersContainer.innerHTML = '';
+            let filters = [{ label: 'الكل', value: 'all' }];
+
+            if (State.activeTab === 'traits') {
+                filters.push(
+                    { label: 'الصفات الجسدية (الخَلْقية)', value: 'physical' },
+                    { label: 'الأخلاق والشمائل (الخُلقية)', value: 'moral' }
+                );
+            } else if (State.activeTab === 'timeline') {
+                filters.push(
+                    { label: 'قبل البعثة', value: 'قبل البعثة' },
+                    { label: 'العهد المكي', value: 'العهد المكي' },
+                    { label: 'العهد المدني', value: 'العهد المدني' }
+                );
+            } else if (State.activeTab === 'wives') {
+                filters.push(
+                    { label: 'بمكة', value: 'مكة' },
+                    { label: 'بالمدينة', value: 'المدينة' }
+                );
+            } else if (State.activeTab === 'library') {
+                filters.push(
+                    { label: 'للمبتدئين', value: 'beginner' },
+                    { label: 'للمتوسطين', value: 'intermediate' },
+                    { label: 'للمتقدمين', value: 'advanced' }
+                );
+            } else if (State.activeTab === 'bookmarks') {
+                filters.push(
+                    { label: 'المفضلة 🔖', value: 'bookmarks' },
+                    { label: 'المكتملة للقراءة ✅', value: 'completed' }
+                );
+            }
+
+            filters.forEach(f => {
+                const chip = document.createElement('button');
+                chip.className = `filter-chip ${State.currentFilter === f.value ? 'active' : ''}`;
+                chip.textContent = f.label;
+                chip.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                    chip.classList.add('active');
+                    State.currentFilter = f.value;
+                    renderCurrentTab();
+                });
+                categoryFiltersContainer.appendChild(chip);
+            });
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            State.searchQuery = e.target.value.trim().toLowerCase();
+            renderCurrentTab();
+        });
+
+        /* ==========================================================================
+           التصيير والعرض لكل قسم (Rendering Logic)
+           ========================================================================== */
+
+        function isBookmarked(id) {
+            return State.bookmarks.includes(id);
+        }
+
+        function isRead(id) {
+            return State.readItems.includes(id);
+        }
+
+        function toggleBookmark(id) {
+            if (isBookmarked(id)) {
+                State.bookmarks = State.bookmarks.filter(item => item !== id);
+            } else {
+                State.bookmarks.push(id);
+            }
+            saveState();
+            updateCounts();
+            renderCurrentTab();
+        }
+
+        function toggleRead(id) {
+            if (isRead(id)) {
+                State.readItems = State.readItems.filter(item => item !== id);
+            } else {
+                State.readItems.push(id);
+            }
+            saveState();
+            updateCounts();
+            renderCurrentTab();
+        }
+
+        // عرض تبويب الشمائل والصفات الكاملة
+        function renderTraits() {
+            const container = document.getElementById('traitsContainer');
+            let items = TRAITS_DATA.filter(item => {
+                const matchFilter = State.currentFilter === 'all' || item.category === State.currentFilter;
+                const matchSearch = item.title.toLowerCase().includes(State.searchQuery) ||
+                                    item.summary.toLowerCase().includes(State.searchQuery) ||
+                                    item.details.toLowerCase().includes(State.searchQuery) ||
+                                    item.categoryName.toLowerCase().includes(State.searchQuery);
+                return matchFilter && matchSearch;
+            });
+
+            if (items.length === 0) {
+                container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-icon">✨</div><p>لا توجد صفات تطابق البحث والتصفية.</p></div>`;
+                return;
+            }
+
+            container.innerHTML = items.map(item => {
+                const bookmarked = isBookmarked(item.id);
+                const read = isRead(item.id);
+                const isPhysical = item.category === 'physical';
+                return `
+                    <div class="person-card">
+                        <div>
+                            <div class="person-top">
+                                <div class="avatar-emblem" style="${isPhysical ? 'background: var(--accent-light); color: var(--accent); border-color: var(--accent);' : ''}">
+                                    ${item.icon}
+                                </div>
+                                <div class="person-info">
+                                    <h3>${item.title}</h3>
+                                    <span class="person-meta" style="${isPhysical ? 'color: var(--accent); font-weight: 600;' : 'color: var(--gold); font-weight: 600;'}">
+                                        ${item.categoryName}
+                                    </span>
+                                </div>
+                            </div>
+                            <p class="person-desc">${item.summary}</p>
+                            <div class="lesson-box" style="margin-bottom: 0.85rem; font-size: 0.82rem; padding: 0.55rem 0.8rem;">
+                                <strong>📖 المرجع والأثر:</strong> ${item.hadithSource}
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn" onclick="openModal('trait', '${item.id}')">
+                                <span>🔍 الوصف المستفيض</span>
+                            </button>
+                            <div style="display: flex; gap: 0.4rem;">
+                                <button class="action-btn ${read ? 'active' : ''}" onclick="toggleRead('${item.id}')">
+                                    <span>${read ? '✓ تدبّرتها' : 'وضع علامة قراءة'}</span>
+                                </button>
+                                <button class="action-btn ${bookmarked ? 'active' : ''}" onclick="toggleBookmark('${item.id}')" title="حفظ في المفضلة">
+                                    <span>${bookmarked ? '★' : '☆'}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 1. عرض الخط الزمني
+        function renderTimeline() {
+            const container = document.getElementById('timelineContainer');
+            let items = TIMELINE_DATA.filter(item => {
+                const matchFilter = State.currentFilter === 'all' || item.period.includes(State.currentFilter);
+                const matchSearch = item.title.toLowerCase().includes(State.searchQuery) ||
+                                    item.summary.toLowerCase().includes(State.searchQuery) ||
+                                    item.lessons.toLowerCase().includes(State.searchQuery);
+                return matchFilter && matchSearch;
+            });
+
+            if (items.length === 0) {
+                container.innerHTML = `<div class="empty-state"><div class="empty-icon">📜</div><p>لم يتم العثور على أحداث تطابق البحث والتصفية.</p></div>`;
+                return;
+            }
+
+            container.innerHTML = items.map((item, index) => {
+                const bookmarked = isBookmarked(item.id);
+                const read = isRead(item.id);
+                return `
+                    <div class="timeline-item">
+                        <div class="timeline-marker">${index + 1}</div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <span class="timeline-period">${item.period} (${item.year})</span>
+                                    <h3 style="margin-top: 0.35rem;">${item.title}</h3>
+                                </div>
+                            </div>
+                            <p class="timeline-body">${item.summary}</p>
+                            <div class="lesson-box">
+                                <strong>💡 الأثر والدرس القيادي:</strong> ${item.lessons}
+                            </div>
+                            <div class="card-actions">
+                                <button class="action-btn" onclick="openModal('timeline', '${item.id}')">
+                                    <span>🔍 التفاصيل الكاملة</span>
+                                </button>
+                                <div style="display: flex; gap: 0.4rem;">
+                                    <button class="action-btn ${read ? 'active' : ''}" onclick="toggleRead('${item.id}')">
+                                        <span>${read ? '✓ تمّت دراستها' : 'وضع علامة إتمام'}</span>
+                                    </button>
+                                    <button class="action-btn ${bookmarked ? 'active' : ''}" onclick="toggleBookmark('${item.id}')" title="حفظ في المفضلة">
+                                        <span>${bookmarked ? '★ محفوظة' : '☆ حفظ'}</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 2. عرض أمهات المؤمنين
+        function renderWives() {
+            const container = document.getElementById('wivesContainer');
+            let items = WIVES_DATA.filter(item => {
+                let matchFilter = true;
+                if (State.currentFilter === 'مكة') {
+                    matchFilter = item.marriageYear.includes('البعثة') || item.marriageYear.includes('خديجة');
+                } else if (State.currentFilter === 'المدينة') {
+                    matchFilter = item.marriageYear.includes('هـ');
+                }
+                const matchSearch = item.name.toLowerCase().includes(State.searchQuery) ||
+                                    item.bio.toLowerCase().includes(State.searchQuery) ||
+                                    item.title.toLowerCase().includes(State.searchQuery);
+                return matchFilter && matchSearch;
+            });
+
+            if (items.length === 0) {
+                container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-icon">🌸</div><p>لا توجد نتائج مطابقة لبحثك.</p></div>`;
+                return;
+            }
+
+            container.innerHTML = items.map(wife => {
+                const bookmarked = isBookmarked(wife.id);
+                const read = isRead(wife.id);
+                return `
+                    <div class="person-card">
+                        <div>
+                            <div class="person-top">
+                                <div class="avatar-emblem">${wife.name.charAt(0)}</div>
+                                <div class="person-info">
+                                    <h3>${wife.name}</h3>
+                                    <span class="person-meta">${wife.title}</span>
+                                </div>
+                            </div>
+                            <div style="font-size: 0.82rem; color: var(--gold); margin-bottom: 0.75rem; font-weight: 600;">
+                                💍 زواجها: ${wife.marriageYear}
+                            </div>
+                            <p class="person-desc">${wife.bio}</p>
+                            <div class="person-tags">
+                                ${wife.attributes.map(attr => `<span class="tag-pill">${attr}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn" onclick="openModal('wife', '${wife.id}')">
+                                <span>📖 مآثر ومواقف</span>
+                            </button>
+                            <div style="display:flex; gap:0.4rem;">
+                                <button class="action-btn ${read ? 'active' : ''}" onclick="toggleRead('${wife.id}')">
+                                    <span>${read ? '✓ قُرئت' : 'تحديد مقروء'}</span>
+                                </button>
+                                <button class="action-btn ${bookmarked ? 'active' : ''}" onclick="toggleBookmark('${wife.id}')">
+                                    <span>${bookmarked ? '★' : '☆'}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 3. عرض المكتبة النبوية
+        function renderLibrary() {
+            const container = document.getElementById('libraryContainer');
+            let items = BOOKS_DATA.filter(book => {
+                const matchFilter = State.currentFilter === 'all' || book.level === State.currentFilter;
+                const matchSearch = book.title.toLowerCase().includes(State.searchQuery) ||
+                                    book.author.toLowerCase().includes(State.searchQuery) ||
+                                    book.desc.toLowerCase().includes(State.searchQuery);
+                return matchFilter && matchSearch;
+            });
+
+            if (items.length === 0) {
+                container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-icon">📚</div><p>لا توجد كتب مطابقة للتصفية.</p></div>`;
+                return;
+            }
+
+            container.innerHTML = items.map(book => {
+                const bookmarked = isBookmarked(book.id);
+                const read = isRead(book.id);
+                return `
+                    <div class="book-card">
+                        <div>
+                            <span class="book-badge level-${book.level}">${book.levelText}</span>
+                            <h3 class="book-title">${book.title}</h3>
+                            <div class="book-author">بقلم: ${book.author} • (${book.pages})</div>
+                            <p class="book-desc">${book.desc}</p>
+                            <div class="book-features">
+                                <strong>🎯 لماذا ترشحه للقراءة؟</strong> ${book.whyRead}
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <button class="action-btn ${read ? 'active' : ''}" onclick="toggleRead('${book.id}')">
+                                <span>${read ? '✓ قرأت هذا الكتاب' : 'سأقرؤه / تم'}</span>
+                            </button>
+                            <button class="action-btn ${bookmarked ? 'active' : ''}" onclick="toggleBookmark('${book.id}')">
+                                <span>${bookmarked ? '★ بالمفضلة' : '☆ أضف لقائمتي'}</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 4. عرض المحفوظات وقائمة القراءة
+        function renderBookmarks() {
+            const container = document.getElementById('bookmarksContainer');
+            const showCompletedOnly = State.currentFilter === 'completed';
+            const showBookmarksOnly = State.currentFilter === 'bookmarks';
+
+            const savedIds = showCompletedOnly ? State.readItems : (showBookmarksOnly ? State.bookmarks : [...new Set([...State.bookmarks, ...State.readItems])]);
+
+            if (savedIds.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">🔖</div>
+                        <h3>لا توجد عناصر محفوظة حتى الآن</h3>
+                        <p>استكشف أقسام الشمائل، السيرة، أمهات المؤمنين، أو المكتبة واضغط على زر الحفظ (☆) أو علامة الإتمام (✓).</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '<div class="cards-grid">';
+
+            savedIds.forEach(id => {
+                const traitItem = TRAITS_DATA.find(i => i.id === id);
+                const timelineItem = TIMELINE_DATA.find(i => i.id === id);
+                const wifeItem = WIVES_DATA.find(i => i.id === id);
+                const bookItem = BOOKS_DATA.find(i => i.id === id);
+
+                if (traitItem) {
+                    html += `
+                        <div class="person-card">
+                            <div class="person-top">
+                                <div class="avatar-emblem">${traitItem.icon}</div>
+                                <div>
+                                    <h3>${traitItem.title}</h3>
+                                    <span class="person-meta">${traitItem.categoryName}</span>
+                                </div>
+                            </div>
+                            <p class="person-desc">${traitItem.summary}</p>
+                            <div class="card-actions">
+                                <button class="action-btn" onclick="openModal('trait', '${traitItem.id}')">المزيد</button>
+                                <button class="action-btn active" onclick="toggleBookmark('${traitItem.id}')">إزالة الحفظ</button>
+                            </div>
+                        </div>
+                    `;
+                } else if (timelineItem) {
+                    html += `
+                        <div class="timeline-card" style="margin-bottom: 0;">
+                            <span class="timeline-period">📜 محطة: ${timelineItem.period}</span>
+                            <h3 style="margin: 0.5rem 0;">${timelineItem.title}</h3>
+                            <p class="timeline-body" style="margin-bottom: 0.75rem;">${timelineItem.summary}</p>
+                            <div class="card-actions">
+                                <button class="action-btn" onclick="openModal('timeline', '${timelineItem.id}')">التفاصيل</button>
+                                <button class="action-btn active" onclick="toggleBookmark('${timelineItem.id}')">إزالة الحفظ</button>
+                            </div>
+                        </div>
+                    `;
+                } else if (wifeItem) {
+                    html += `
+                        <div class="person-card">
+                            <div class="person-top">
+                                <div class="avatar-emblem">${wifeItem.name.charAt(0)}</div>
+                                <div>
+                                    <h3>${wifeItem.name}</h3>
+                                    <span class="person-meta">${wifeItem.title}</span>
+                                </div>
+                            </div>
+                            <p class="person-desc">${wifeItem.bio.slice(0, 130)}...</p>
+                            <div class="card-actions">
+                                <button class="action-btn" onclick="openModal('wife', '${wifeItem.id}')">المزيد</button>
+                                <button class="action-btn active" onclick="toggleBookmark('${wifeItem.id}')">إزالة الحفظ</button>
+                            </div>
+                        </div>
+                    `;
+                } else if (bookItem) {
+                    html += `
+                        <div class="book-card">
+                            <div>
+                                <span class="book-badge level-${bookItem.level}">${bookItem.levelText}</span>
+                                <h3 class="book-title">${bookItem.title}</h3>
+                                <div class="book-author">${bookItem.author}</div>
+                                <p class="book-desc">${bookItem.desc.slice(0, 130)}...</p>
+                            </div>
+                            <div class="card-actions">
+                                <span style="font-size: 0.8rem; color: var(--accent);">${isRead(bookItem.id) ? '✅ تمت قراءته' : '🔖 بالقائمة'}</span>
+                                <button class="action-btn active" onclick="toggleBookmark('${bookItem.id}')">إزالة</button>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function renderCurrentTab() {
+            if (State.activeTab === 'traits') renderTraits();
+            else if (State.activeTab === 'timeline') renderTimeline();
+            else if (State.activeTab === 'wives') renderWives();
+            else if (State.activeTab === 'library') renderLibrary();
+            else if (State.activeTab === 'bookmarks') renderBookmarks();
+        }
+
+        /* ==========================================================================
+           النافذة المنبثقة التفصيلية (Modal Controller)
+           ========================================================================== */
+        const modal = document.getElementById('detailModal');
+        const modalBody = document.getElementById('modalBody');
+        const closeModalBtn = document.getElementById('closeModal');
+
+        function openModal(type, id) {
+            let content = '';
+
+            if (type === 'trait') {
+                const trait = TRAITS_DATA.find(t => t.id === id);
+                if (!trait) return;
+                const isPhysical = trait.category === 'physical';
+                content = `
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+                        <div class="avatar-emblem" style="width: 60px; height: 60px; font-size: 1.8rem; ${isPhysical ? 'background: var(--accent-light); color: var(--accent); border-color: var(--accent);' : ''}">
+                            ${trait.icon}
+                        </div>
+                        <div>
+                            <h2 style="color: ${isPhysical ? 'var(--accent)' : 'var(--gold)'}; font-size: 1.5rem;">${trait.title}</h2>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">${trait.categoryName}</p>
+                        </div>
+                    </div>
+                    <div style="font-size: 1rem; color: var(--text-primary); line-height: 1.8; margin-bottom: 1.25rem;">
+                        <p style="margin-bottom: 1rem;">${trait.details}</p>
+                    </div>
+                    <div class="lesson-box" style="font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem;">
+                        <strong>📜 الشاهد والمصدر من كتب الحديث والشمائل:</strong><br>
+                        ${trait.hadithSource}
+                    </div>
+                    <div style="background: var(--gold-light); padding: 0.85rem; border-radius: 8px; color: var(--gold); border-right: 3px solid var(--gold);">
+                        <strong>💡 الثمرة والأثر في النفس والاقتداء:</strong><br>
+                        ${trait.impact}
+                    </div>
+                `;
+            } else if (type === 'timeline') {
+                const item = TIMELINE_DATA.find(i => i.id === id);
+                if (!item) return;
+                content = `
+                    <div style="margin-bottom: 1rem;">
+                        <span class="timeline-period">${item.period} • ${item.year}</span>
+                        <h2 style="margin-top: 0.5rem; color: var(--accent); font-size: 1.6rem;">${item.title}</h2>
+                    </div>
+                    <div style="font-size: 1rem; color: var(--text-primary); line-height: 1.8; margin-bottom: 1.25rem;">
+                        <p style="margin-bottom: 1rem;">${item.details}</p>
+                    </div>
+                    <div class="lesson-box" style="font-size: 0.95rem; line-height: 1.7;">
+                        <strong>💎 الدروس والفوائد القيادية والمستفادة:</strong><br>
+                        ${item.lessons}
+                    </div>
+                `;
+            } else if (type === 'wife') {
+                const wife = WIVES_DATA.find(w => w.id === id);
+                if (!wife) return;
+                content = `
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+                        <div class="avatar-emblem" style="width: 60px; height: 60px; font-size: 1.5rem;">${wife.name.charAt(0)}</div>
+                        <div>
+                            <h2 style="color: var(--gold); font-size: 1.5rem;">${wife.name}</h2>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">${wife.title}</p>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8;">
+                        <p style="margin-bottom: 1rem;">${wife.bio}</p>
+                        <div style="background: var(--gold-light); padding: 0.85rem; border-radius: 8px; color: var(--gold); border-right: 3px solid var(--gold); margin-bottom: 1rem;">
+                            <strong>🌟 موقف ومأثرة خالدة:</strong><br>
+                            ${wife.highlight}
+                        </div>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <strong>الصفات البارزة:</strong>
+                        <div class="person-tags" style="margin-top: 0.5rem;">
+                            ${wife.attributes.map(a => `<span class="tag-pill" style="font-size: 0.82rem;">${a}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            modalBody.innerHTML = content;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        /* ==========================================================================
+           بدء تشغيل التطبيق (Initialization)
+           ========================================================================== */
+        window.addEventListener('DOMContentLoaded', () => {
+            applyTheme(State.theme);
+            displayRandomQuote();
+            updateCounts();
+            renderCategoryFilters();
+            renderCurrentTab();
+        });
+    </script>
+</body>
+</html>
