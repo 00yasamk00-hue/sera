@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سيرة الحبيب ﷺ | المنهاج والشمائل والمكتبة النبوية</title>
-    <!-- خطوط عربية أنيقة للقراءة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
@@ -89,7 +88,6 @@
             padding: 0 1.25rem;
         }
 
-        /* Header */
         header {
             background: var(--header-bg);
             border-bottom: 1px solid var(--border-color);
@@ -239,7 +237,6 @@
             font-size: 1.05rem;
         }
 
-        /* Quote Banner */
         .quote-banner {
             margin: 1.75rem 0;
             background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light));
@@ -303,7 +300,6 @@
             font-weight: 600;
         }
 
-        /* Main Menu Grid (Home View) */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -365,7 +361,6 @@
             font-weight: 600;
         }
 
-        /* Filters and Sections */
         .filter-bar {
             display: flex;
             flex-wrap: wrap;
@@ -447,7 +442,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Timeline */
         .timeline {
             position: relative;
             padding: 1.5rem 0;
@@ -576,7 +570,6 @@
             border-color: var(--accent);
         }
 
-        /* Grid Cards (Persons & Books) */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -644,22 +637,6 @@
             flex-grow: 1;
         }
 
-        .person-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            margin-bottom: 1rem;
-        }
-
-        .tag-pill {
-            font-size: 0.75rem;
-            padding: 0.2rem 0.5rem;
-            background: var(--accent-light);
-            color: var(--accent);
-            border-radius: 6px;
-        }
-
-        /* Books */
         .book-card {
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
@@ -702,12 +679,6 @@
             margin-bottom: 0.2rem;
         }
 
-        .book-author {
-            font-size: 0.85rem;
-            color: var(--gold);
-            margin-bottom: 0.85rem;
-        }
-
         .book-desc {
             font-size: 0.9rem;
             color: var(--text-secondary);
@@ -736,7 +707,77 @@
             opacity: 0.6;
         }
 
-        /* Modal */
+        .prayer-display-card {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light));
+            border: 1px solid var(--accent);
+            padding: 3rem 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .prayer-display-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .prayer-time-badge {
+            display: inline-block;
+            background: var(--gold-light);
+            color: var(--gold);
+            font-size: 0.85rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .prayer-display-text {
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .prayer-display-source {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .prayer-progress-track {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(0,0,0,0.05);
+        }
+
+        [data-theme="dark"] .prayer-progress-track {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .prayer-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--gold));
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .prayer-list-item.active-prayer {
+            border-color: var(--accent);
+            background: var(--accent-light);
+            box-shadow: var(--shadow-lg);
+        }
+
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -802,7 +843,6 @@
             background: var(--border-color);
         }
 
-        /* Footer */
         footer {
             margin-top: 4rem;
             background: var(--footer-bg);
@@ -995,7 +1035,6 @@
 </head>
 <body>
 
-    <!-- الهيدر الانسيابي المطور -->
     <header id="mainHeader">
         <div class="header-top-accent"></div>
         <div class="container nav-wrapper">
@@ -1024,7 +1063,6 @@
     </header>
 
     <main class="container">
-        <!-- مساحة الخاطرة النبوية المتجددة -->
         <section class="quote-banner" id="quoteSection">
             <div class="quote-header">
                 <div class="quote-tag">
@@ -1038,10 +1076,19 @@
             <div class="quote-author" id="quoteRef"></div>
         </section>
 
-        <!-- الصفحة الرئيسية: القائمة الرئيسية للتبويبات -->
         <div id="homeView">
             <h2 style="text-align: center; margin: 2rem 0 1.5rem; color: var(--accent); font-family: 'Amiri', serif;">أقسام المنهاج والسيرة</h2>
             <div class="menu-grid">
+                <div class="menu-card" onclick="openSection('prayers', '📿 الصلاة على النبي (عرض مرئي)')">
+                    <div class="menu-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);">📿</div>
+                    <div class="menu-title">الصلاة على النبي</div>
+                    <div class="menu-badge">عرض مرئي وتوقيت</div>
+                </div>
+                <div class="menu-card" onclick="openSection('stories', '📖 قصص وعبر')">
+                    <div class="menu-icon" style="background: rgba(180, 83, 9, 0.1); color: var(--gold);">📖</div>
+                    <div class="menu-title">قصص وعبر</div>
+                    <div class="menu-badge"><span id="countStories">0</span> قصة</div>
+                </div>
                 <div class="menu-card" onclick="openSection('traits', '✨ الشمائل والصفات النبوية')">
                     <div class="menu-icon">✨</div>
                     <div class="menu-title">الشمائل والصفات النبوية</div>
@@ -1070,7 +1117,6 @@
             </div>
         </div>
 
-        <!-- صفحة العرض الداخلية (تظهر عند النقر على قسم) -->
         <div id="sectionView" style="display: none;">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; gap: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
                 <h2 id="sectionTitle" style="color: var(--accent); margin: 0; font-size: 1.6rem; font-family: 'Amiri', serif;"></h2>
@@ -1082,17 +1128,44 @@
 
             <!-- شريط التصفية والبحث -->
             <div class="filter-bar">
-                <div class="search-box">
+                <div class="search-box" id="searchContainer">
                     <span class="search-icon">🔍</span>
-                    <input type="text" id="searchInput" placeholder="ابحث في الصفات، الأحداث، الشخصيات، أو الكتب...">
+                    <input type="text" id="searchInput" placeholder="ابحث في هذا القسم...">
                 </div>
                 <div class="category-filters" id="categoryFilters">
                     <!-- أزرار التصفية تتغير ديناميكياً -->
                 </div>
             </div>
 
-            <!-- الأقسام المختلفة -->
-            <div class="tab-pane active" id="pane-traits">
+            <div class="tab-pane" id="pane-prayers">
+                <div class="prayer-display-card">
+                    <div class="prayer-time-badge" id="prayerTimeBadge">الصيغة المناسبة للوقت الحالي</div>
+                    <div class="prayer-display-title" id="prayerDisplayTitle">الصلاة الإبراهيمية</div>
+                    <div class="prayer-display-text" id="prayerDisplayText">اللهم صل على محمد...</div>
+                    <div class="prayer-display-source" id="prayerDisplaySource">المصدر</div>
+                    <div class="prayer-progress-track">
+                        <div class="prayer-progress-bar" id="prayerProgressBar"></div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; align-items: center;">
+                    <button class="action-btn" onclick="togglePrayerPause()" id="prayerPauseBtn" style="font-weight: bold; font-size: 0.95rem; padding: 0.5rem 1.5rem;">⏸ إيقاف مؤقت للتلاوة</button>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span style="font-size: 0.9rem; color: var(--text-muted);">توقيت العرض:</span>
+                        <button class="filter-chip active" onclick="setPrayerDuration(15000, this)">15 ثانية</button>
+                        <button class="filter-chip" onclick="setPrayerDuration(30000, this)">30 ثانية</button>
+                        <button class="filter-chip" onclick="setPrayerDuration(60000, this)">دقيقة</button>
+                    </div>
+                </div>
+                <h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-secondary);">كافة الصيغ (انقر للعرض):</h3>
+                <div class="cards-grid" id="prayersListContainer"></div>
+            </div>
+
+            <div class="tab-pane" id="pane-stories">
+                <div class="cards-grid" id="storiesContainer"></div>
+            </div>
+
+            <div class="tab-pane" id="pane-traits">
                 <div class="cards-grid" id="traitsContainer"></div>
             </div>
 
@@ -1114,7 +1187,6 @@
         </div>
     </main>
 
-    <!-- نافذة منبثقة لتفاصيل العنصر -->
     <div class="modal-overlay" id="detailModal">
         <div class="modal-content">
             <button class="modal-close" id="closeModal">✕</button>
@@ -1122,7 +1194,6 @@
         </div>
     </div>
 
-    <!-- الفوتر -->
     <footer>
         <div class="footer-top-strip"></div>
         <div class="container footer-main">
@@ -1138,7 +1209,7 @@
                         منهاج السيرة النبوية والشمائل
                     </h4>
                     <p>
-                        بوابة تفاعلية تجمع بين الوصف الكامل الدقيق لشمائل النبي ﷺ خَلقاً وخُلقاً، والتوثيق الدقيق لمحطات السيرة، وسير أمهات المؤمنين ودليل مرجعي لأبرز مصنفات السيرة النبوية العطرة.
+                        بوابة تفاعلية تجمع بين الوصف الكامل الدقيق لشمائل النبي ﷺ خَلقاً وخُلقاً، والتوثيق الدقيق لمحطات السيرة، وسير أمهات المؤمنين وقصص الأنبياء والصحابة.
                     </p>
                     <div class="footer-stats-badge">
                         <span>✨</span>
@@ -1149,10 +1220,10 @@
                 <div class="footer-links-col">
                     <h5>أقسام المنهاج</h5>
                     <ul class="footer-nav-list">
+                        <li><a onclick="openSection('prayers', '📿 الصلاة على النبي')">📿 الصلاة على النبي مرئياً</a></li>
+                        <li><a onclick="openSection('stories', '📖 قصص وعبر')">📖 قصص الأنبياء والصحابة</a></li>
                         <li><a onclick="openSection('traits', '✨ الشمائل والصفات النبوية')">✨ الشمائل والصفات الكاملة</a></li>
                         <li><a onclick="openSection('timeline', '📜 مراحل السيرة النبوية')">📜 مراحل السيرة العطرة</a></li>
-                        <li><a onclick="openSection('wives', '🌸 أمهات المؤمنين')">🌸 سير أمهات المؤمنين</a></li>
-                        <li><a onclick="openSection('library', '📚 المكتبة النبوية')">📚 مصادر ومراجع السيرة</a></li>
                         <li><a onclick="openSection('bookmarks', '🔖 المحفوظات والمكتمل')">🔖 قائمتي ومحفوظاتي</a></li>
                     </ul>
                 </div>
@@ -1187,9 +1258,7 @@
         </div>
     </footer>
 
-    <!-- المنطق البرمجي وبيانات التطبيق (JS) -->
     <script>
-        /* STREAMING_CHUNK: بيانات التطبيق الأساسية (قواعد البيانات) */
         const QUOTES_DATA = [
             { text: "«إنَّما بُعثتُ لأُتمِّمَ مَكارمَ الأخلاق» — الأخلاق هي المعيار الأول في تقييم النجاح القيادي والشخصي.", ref: "مسند أحمد" },
             { text: "«يَسِّرُوا ولا تُعَسِّرُوا، وبَشِّرُوا ولا تُنَفِّرُوا» — قاعدة إدارية ذهبية في تيسير الإجراءات.", ref: "صحيح البخاري" },
@@ -1198,43 +1267,46 @@
             { text: "«أَحَبُّ الأعمالِ إلى اللهِ أدْومُها و إنْ قَلَّ» — مبدأ التراكمية والاستمرارية.", ref: "صحيح البخاري ومسلم" }
         ];
 
+        // بيانات الصلاة على النبي مع أوقاتها المقترحة
+        const PRAYERS_DATA = [
+            { id: "p1", title: "الصلاة الإبراهيمية", text: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ", source: "صحيح البخاري ومسلم - أكمل الصيغ", recommendedTime: "أفضل صيغة ليوم الجمعة والصباح" },
+            { id: "p2", title: "الصيغة المنجية (فك الكرب)", text: "اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ صَلاَةً تُنْجِينَا بِهَا مِنْ جَمِيعِ الأَهْوَالِ وَالآفَاتِ، وَتَقْضِي لَنَا بِهَا جَمِيعَ الْحَاجَاتِ، وَتُطَهِّرُنَا بِهَا مِنْ جَمِيعِ السَّيِّئَاتِ، وَتَرْفَعُنَا بِهَا عِنْدَكَ أَعْلَى الدَّرَجَاتِ", source: "أوراد الصالحين", recommendedTime: "في المساء وعند الشدائد" },
+            { id: "p3", title: "صيغة الإمام الشافعي", text: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ بِعَدَدِ مَنْ صَلَّى عَلَيْهِ، وَصَلِّ عَلَى مُحَمَّدٍ بِعَدَدِ مَنْ لَمْ يُصَلِّ عَلَيْهِ، وَصَلِّ عَلَى مُحَمَّدٍ كَمَا أَمَرْتَ بِالصَّلاَةِ عَلَيْهِ، وَصَلِّ عَلَى مُحَمَّدٍ كَمَا تُحِبُّ أَنْ يُصَلَّى عَلَيْهِ", source: "كتاب الرسالة", recommendedTime: "للتدبر في أي وقت" },
+            { id: "p4", title: "الصلاة الطبية (طب القلوب)", text: "اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ طِبِّ الْقُلُوبِ وَدَوَائِهَا، وَعَافِيَةِ الأَبْدَانِ وَشِفَائِهَا، وَنُورِ الأَبْصَارِ وَضِيَائِهَا، وَقُوتِ الأَرْوَاحِ وَغِذَائِهَا، وَعَلَى آلِهِ وَصَحْبِهِ وَسَلِّمْ", source: "صيغ المحبين", recommendedTime: "في فترة الظهيرة والراحة" },
+            { id: "p5", title: "الصيغة المختصرة الدائمة", text: "صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ", source: "الصيغة العامة", recommendedTime: "أثناء العمل والمشي" }
+        ];
+
+        // بيانات القصص والعبر
+        const STORIES_DATA = [
+            { id: "s1", category: "prophets", categoryName: "قصص الأنبياء", title: "صبر أيوب عليه السلام", summary: "قصة نبي الله أيوب وكيف ضرب أروع الأمثلة في الصبر على البلاء والمرض.", lessons: "الصبر مفتاح الفرج، والابتلاء اختبار لصدق الإيمان، ولا يأس من رحمة الله.", fullText: "ابتلى الله نبيه أيوب عليه السلام في ماله وولده وجسده، ففقد كل شيء، واشتد به المرض حتى جفاه الناس ولم يبق معه إلا زوجته الصابرة. مكث في البلاء سنوات طويلة، ولم يزدد إلا شكراً وصبراً، حتى دعى ربه (أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ)، فكشف الله عنه البلاء وعوضه في أهله وماله خيراً." },
+            { id: "s2", category: "prophets", categoryName: "قصص الأنبياء", title: "موسى عليه السلام والخضر", summary: "رحلة نبي الله موسى مع العبد الصالح الخضر لتعلم حكمة الله الخفية في الأقدار.", lessons: "فوق كل ذي علم عليم، وحكمة الله قد تخفى على البشر في المصائب الظاهرية.", fullText: "سُئل موسى: من أعلم أهل الأرض؟ فقال: أنا. فعتب الله عليه ودله على العبد الصالح الخضر. رحل موسى إليه وطلب مرافقته ليتعلم منه. اشترط الخضر ألا يسأله عن شيء حتى يبينه له. خرق الخضر السفينة، وقتل الغلام، وبنى الجدار. تعجب موسى واعترض، فبين له الخضر حكمة الله الغيبية في كل حدث، وأن وراء كل منع عطاء." },
+            { id: "s3", category: "companions", categoryName: "قصص الصحابة", title: "إسلام عمر بن الخطاب", summary: "كيف تحول الفاروق عمر من أشد أعداء الإسلام إلى أحد أعظم حماته.", lessons: "الهداية بيد الله، والقرآن يلين القلوب القاسية مهما بلغت شدتها.", fullText: "خرج عمر بن الخطاب متوشحاً سيفه يريد قتل النبي ﷺ، فلقيه رجل وأخبره أن أخته فاطمة وزوجها قد أسلما. غضب عمر وذهب إليهما، فسمعهما يقرآن سورة طه. ضربهما، ثم رق قلبه حين رأى الدماء وطلب قراءة الصحيفة. فلما قرأ (طه مَا أَنزَلْنَا عَلَيْكَ الْقُرْآنَ لِتَشْقَى) شرح الله صدره للإسلام وذهب للنبي وأعلن إسلامه فكبر الصحابة." },
+            { id: "s4", category: "companions", categoryName: "قصص الصحابة", title: "تجهيز جيش العسرة", summary: "موقف عثمان بن عفان في تجهيز جيش تبوك بماله الخاص في وقت الشدة.", lessons: "الإنفاق في سبيل الله وقت الأزمات، والثقة بعوض الله العظيم.", fullText: "في غزوة تبوك (جيش العسرة)، حث النبي ﷺ الصحابة على الإنفاق حيث كان المسلمون في ضائقة. فجاء عثمان بن عفان بألف دينار فصبها في حجر النبي، ثم جهز ثلث الجيش كاملاً بمئات الإبل والخيل والعتاد والزاد. فقال النبي ﷺ وهو يقلب الدنانير: (ما ضر عثمان ما عمل بعد اليوم)." },
+            { id: "s5", category: "islamic", categoryName: "قصص إسلامية", title: "بائعة اللبن وابنتها", summary: "قصة الفتاة التي رفضت غش اللبن خوفاً من الله في عهد أمير المؤمنين عمر.", lessons: "مراقبة الله في السر والعلن، والتقوى طريق الرفعة والبركة.", fullText: "بينما كان أمير المؤمنين عمر بن الخطاب يعس ليلاً، سمع امرأة تأمر ابنتها بخلط اللبن بالماء لتكثيره. فقالت الابنة: إن أمير المؤمنين نهى عن ذلك. قالت الأم: إن عمر لا يرانا الآن. فردت الابنة بصدق ويقين: إن كان عمر لا يرانا، فإن رب عمر يرانا! ففرح عمر بتقواها، وزوجها لأحد أبنائه (عاصم)، فكانت جدة الخليفة العادل عمر بن عبد العزيز." }
+        ];
+
         const TRAITS_DATA = [
-            { id: "tr1", category: "physical", categoryName: "صفة خَلْقية (جسدية)", title: "الوجه الشريف واللون والإشراق", icon: "🌕", summary: "أزهر اللون، نيّر الوجه يستدير كالقمر ليلة البدر.", hadithSource: "متفق عليه عن كعب بن مالك", details: "كان النبي ﷺ أزهر اللون؛ ليس بالأبيض الأمهق ولا بالآدم، بل أبيض مشرباً بحمرة، يتلألأ وجهه تلألؤ القمر ليلة البدر.", impact: "كمال المهابة ووضاءة الملامح." },
-            { id: "tr2", category: "physical", categoryName: "صفة خَلْقية (جسدية)", title: "العينان الكحلاوان", icon: "👁️", summary: "أدعج العينين، أهدب الأشفار، أقنى الأنف له نور يعلوه.", hadithSource: "رواه الترمذي", details: "كان ﷺ دعج العينين، في بياضهما شكلة، طويل الأشفار سابغتها، أزجّ الحواجب.", impact: "نظرة مفعمة بالوقار." },
-            { id: "tr3", category: "physical", categoryName: "صفة خَلْقية (جسدية)", title: "الشعر واللحية الشريفة", icon: "✨", summary: "ضخم الرأس، رجِل الشعر ليس بسبط ولا جعد، كثيف اللحية.", hadithSource: "صحيح البخاري", details: "كان عظيم الهامة، شعره وسطه، كثّ اللحية، ولم يكن في رأسه ولحيته عشرون شعرة بيضاء.", impact: "هيبة فطرية تعكس اكتمال الفتوة." },
-            { id: "tr4", category: "physical", categoryName: "صفة خَلْقية (جسدية)", title: "خاتم النبوة والرائحة", icon: "🌸", summary: "بين كتفيه خاتم النبوة، وأطيب الناس ريحاً.", hadithSource: "صحيح مسلم", details: "كان أطيب الناس ريحاً طبيعةً، وإذا عَرِق كان عرقه كاللؤلؤ، وبين كتفيه خاتم النبوة كبيضة الحمامة.", impact: "آية نبوية حية وطهارة ذاتية." },
-            { id: "tr8", category: "moral", categoryName: "صفة خُلُقية (أخلاق)", title: "الصدق والأمانة الفائقة", icon: "⚖️", summary: "لُقّب بـ«الصادق الأمين» قبل البعثة.", hadithSource: "صحيح البخاري", details: "اشتهر بالصدق المطلق حتى سأله هرقل الروم، وظلت قريش تستودعه أنفس أموالها.", impact: "المصداقية رأس مال القائد." },
-            { id: "tr9", category: "moral", categoryName: "صفة خُلُقية (أخلاق)", title: "الرحمة العامة بالخلق", icon: "🤍", summary: "وسعت رحمته الصغير والكبير والضعيف والحيوان.", hadithSource: "صحيح مسلم", details: "كان أرحم الناس بالصبيان والنساء والضعفاء والمماليك وحرّم تعذيب البهائم.", impact: "الرحمة أساس بناء المجتمعات." },
-            { id: "tr10", category: "moral", categoryName: "صفة خُلُقية (أخلاق)", title: "التواضع الجم", icon: "🌿", summary: "يخصف نعله ويرقع ثوبه ويكون في مهنة أهله.", hadithSource: "صحيح البخاري", details: "كان يجلس بين أصحابه كأحدهم حتى يأتي الغريب فلا يعرفه، ويردف خلفه على الحمار.", impact: "القوة في البساطة والتواضع." },
-            { id: "tr13", category: "moral", categoryName: "صفة خُلُقية (أخلاق)", title: "الحلم والعفو عند المقدرة", icon: "🕊️", summary: "عفوه التاريخي عن قريش يوم الفتح: اذهبوا فأنتم الطلقاء.", hadithSource: "سنن البيهقي", details: "تحمل أذى قومه 20 عاماً، ولما دخل مكة منتصراً قال: لا تثريب عليكم اليوم.", impact: "العفو قمة النضج الإنساني." }
+            { id: "tr1", category: "physical", categoryName: "صفة خَلْقية (جسدية)", title: "الوجه الشريف واللون", icon: "🌕", summary: "أزهر اللون، نيّر الوجه يستدير كالقمر ليلة البدر.", hadithSource: "متفق عليه", details: "كان النبي ﷺ أزهر اللون؛ ليس بالأبيض الأمهق ولا بالآدم، بل أبيض مشرباً بحمرة.", impact: "كمال المهابة." },
+            { id: "tr8", category: "moral", categoryName: "صفة خُلُقية (أخلاق)", title: "الصدق والأمانة الفائقة", icon: "⚖️", summary: "لُقّب بـ«الصادق الأمين» قبل البعثة.", hadithSource: "صحيح البخاري", details: "اشتهر بالصدق المطلق حتى سأله هرقل الروم وظلت قريش تستودعه أنفس أموالها.", impact: "المصداقية رأس مال القائد." },
+            { id: "tr9", category: "moral", categoryName: "صفة خُلُقية (أخلاق)", title: "الرحمة العامة بالخلق", icon: "🤍", summary: "وسعت رحمته الصغير والكبير والحيوان.", hadithSource: "صحيح مسلم", details: "كان أرحم الناس بالصبيان والنساء والضعفاء والمماليك وحرّم تعذيب البهائم.", impact: "الرحمة أساس بناء المجتمعات." }
         ];
 
         const TIMELINE_DATA = [
             { id: "t1", period: "قبل البعثة", year: "571 م", title: "الميلاد ورعاية الطفولة", summary: "مولد النبي ﷺ يتيماً بمكة، ورضاعته في بني سعد.", lessons: "حكمة النشأة يتيماً تزرع الشفقة.", details: "ولد يوم الإثنين في ربيع الأول يتيماً فكفله جده ثم عمه أبو طالب." },
-            { id: "t2", period: "قبل البعثة", year: "قبل البعثة بـ 15 سنة", title: "العمل بالتجارة", summary: "عمله في رعي الغنم ثم في تجارة السيدة خديجة.", lessons: "بناء السمعة المهنية هو الأساس.", details: "خرج بتجارة خديجة للشام ورأت منه أمانة وبركة." },
             { id: "t3", period: "العهد المكي", year: "610 م", title: "نزول الوحي", summary: "خلوته بغار حراء ونزول جبريل عليه السلام.", lessons: "العزلة الإيجابية تصفي الرؤية.", details: "عاد يرجف بوادره إلى خديجة فثبتته." },
-            { id: "t4", period: "العهد المكي", year: "السنة 10 للبعثة", title: "الإسراء والمعراج", summary: "بعد عام الحزن أكرمه الله بمعجزة الإسراء.", lessons: "الفرج بعد الكرب.", details: "بعد أذى الطائف أسري به للمسجد الأقصى وعرج للسماوات." },
-            { id: "t6", period: "العهد المدني", year: "1 هـ", title: "الهجرة النبوية", summary: "التخطيط المحكم للهجرة وبناء المجتمع المدني.", lessons: "الجمع بين التوكل والتخطيط.", details: "أسس المسجد وآخى بين المهاجرين والأنصار وكتب وثيقة المدينة." },
-            { id: "t7", period: "العهد المدني", year: "8 هـ", title: "فتح مكة", summary: "دخول مكة المكرمة منتصراً والعفو العام.", lessons: "العفو عند المقدرة.", details: "حطم الأصنام وعفا عن قريش بكلمته الشهيرة." }
+            { id: "t6", period: "العهد المدني", year: "1 هـ", title: "الهجرة النبوية", summary: "التخطيط المحكم للهجرة وبناء المجتمع المدني.", lessons: "الجمع بين التوكل والتخطيط.", details: "أسس المسجد وآخى بين المهاجرين والأنصار وكتب وثيقة المدينة." }
         ];
 
         const WIVES_DATA = [
-            { id: "w1", name: "خديجة بنت خويلد", title: "سيدة نساء العالمين", marriageYear: "قبل البعثة", attributes: ["أول من أسلمت", "المؤازرة"], bio: "أولى زوجات النبي ﷺ. عاش معها 25 عاماً واستثمرت جاهها في نصرة الرسالة.", highlight: "تثبيتها للنبي عند الوحي." },
-            { id: "w3", name: "عائشة بنت أبي بكر", title: "الفقيهة", marriageYear: "2 هـ", attributes: ["العلم", "رواية الحديث"], bio: "أفقه نساء الأمة، روت أكثر من 2210 أحاديث، ومرجعاً كبيراً للصحابة.", highlight: "توفي النبي في حجرتها." },
-            { id: "w4", name: "حفصة بنت عمر", title: "حارسة المصحف", marriageYear: "3 هـ", attributes: ["حفظ القرآن"], bio: "ابنة الفاروق، اؤتمنت على النسخة الأصلية للقرآن الكريم.", highlight: "حفظها للمصحف الأم." },
-            { id: "w6", name: "أم سلمة", title: "صاحبة الرأي الصائب", marriageYear: "4 هـ", attributes: ["الحكمة", "الرأي"], bio: "اشتهرت بفضل رأيها في صلح الحديبية.", highlight: "مشورتها الحكيمة في الحديبية." },
-            { id: "w7", name: "زينب بنت جحش", title: "أم المساكين (الثانية)", marriageYear: "5 هـ", attributes: ["الجود"], bio: "نزل زواجها بوحي لإبطال التبني، وكانت تعمل بيدها وتتصدق.", highlight: "أطولهن يداً بالخير." },
-            { id: "w10", name: "صفية بنت حُيَيّ", title: "سليلة الأنبياء", marriageYear: "7 هـ", attributes: ["الحلم", "النسب"], bio: "من ذرية هارون عليه السلام، أُعتق مهرها وتزوجها النبي.", highlight: "دفاعها عن عثمان في الفتنة." }
+            { id: "w1", name: "خديجة بنت خويلد", title: "سيدة نساء العالمين", bio: "أولى زوجات النبي ﷺ. عاش معها 25 عاماً واستثمرت جاهها في نصرة الرسالة.", highlight: "تثبيتها للنبي عند الوحي." },
+            { id: "w3", name: "عائشة بنت أبي بكر", title: "الفقيهة", bio: "أفقه نساء الأمة، روت أكثر من 2210 أحاديث، ومرجعاً كبيراً للصحابة.", highlight: "توفي النبي في حجرتها." }
         ];
 
         const BOOKS_DATA = [
-            { id: "b1", title: "الرحيق المختوم", author: "المباركفوري", level: "beginner", levelText: "للمبتدئين", pages: "520 صفحة", desc: "أفضل مدخل معاصر وشامل يربط أحداث السيرة.", whyRead: "سلاسة الأسلوب والتحقيق." },
-            { id: "b2", title: "سيرة ابن هشام", author: "ابن هشام", level: "advanced", levelText: "للمتقدمين", pages: "مجلدان", desc: "الأصل التاريخي الأبرز والأقدم الذي اعتمدت عليه كل الكتب.", whyRead: "الرجوع للنبع الصافي." },
-            { id: "b3", title: "زاد المعاد", author: "ابن قيم الجوزية", level: "advanced", levelText: "للمتقدمين", pages: "4 مجلدات", desc: "موسوعة إسلامية تجمع بين أحداث السيرة وهدي النبي في كل شيء.", whyRead: "السيرة كمنهج حياة." },
-            { id: "b4", title: "فقه السيرة النبوية", author: "البوطي", level: "intermediate", levelText: "للمتوسطين", pages: "380 صفحة", desc: "كتاب يغوص في الدلالات والعبر التشريعية.", whyRead: "للباحثين عن الدروس التربوية." }
+            { id: "b1", title: "الرحيق المختوم", author: "المباركفوري", level: "beginner", levelText: "للمبتدئين", desc: "أفضل مدخل معاصر وشامل يربط أحداث السيرة.", whyRead: "سلاسة الأسلوب والتحقيق." },
+            { id: "b2", title: "سيرة ابن هشام", author: "ابن هشام", level: "advanced", levelText: "للمتقدمين", desc: "الأصل التاريخي الأبرز والأقدم الذي اعتمدت عليه كل الكتب.", whyRead: "الرجوع للنبع الصافي." }
         ];
 
-        /* STREAMING_CHUNK: إدارة حالة التطبيق والتخزين المحلي */
         const State = {
             activeTab: 'home',
             currentFilter: 'all',
@@ -1250,7 +1322,6 @@
             updateCounts();
         }
 
-        /* STREAMING_CHUNK: إدارة الثيم (الوضع الليلي) والتحكم بالشاشة */
         const themeBtn = document.getElementById('themeToggle');
         function applyTheme(theme) {
             document.documentElement.setAttribute('data-theme', theme);
@@ -1275,10 +1346,108 @@
             document.getElementById('countTimeline').textContent = TIMELINE_DATA.length;
             document.getElementById('countWives').textContent = WIVES_DATA.length;
             document.getElementById('countLibrary').textContent = BOOKS_DATA.length;
+            document.getElementById('countStories').textContent = STORIES_DATA.length;
             document.getElementById('countBookmarks').textContent = State.bookmarks.length + State.readItems.length;
         }
 
-        /* STREAMING_CHUNK: إدارة التنقل بين الرئيسية والأقسام */
+        let prayerRotatorInterval = null;
+        let prayerProgressInterval = null;
+        let currentPrayerIdx = 0;
+        let isPrayerPaused = false;
+        let prayerProgress = 0;
+        let PRAYER_DURATION = 15000; // الافتراضي 15 ثانية للتوقيت
+
+        function getRecommendedPrayerIndexByTime() {
+            const date = new Date();
+            const day = date.getDay(); // 5 = الجمعة
+            const hour = date.getHours();
+
+            if (day === 5) return 0; // الصلاة الإبراهيمية للجمعة
+            if (hour >= 4 && hour < 12) return 0; // الصباح
+            if (hour >= 12 && hour < 17) return 3; // الظهر (طب القلوب)
+            if (hour >= 17 && hour < 21) return 1; // المساء (المنجية)
+            return 4; // الليل (المختصرة)
+        }
+
+        function setPrayerDuration(duration, btnElement) {
+            PRAYER_DURATION = duration;
+            const btns = btnElement.parentElement.querySelectorAll('.filter-chip');
+            btns.forEach(b => b.classList.remove('active'));
+            btnElement.classList.add('active');
+            prayerProgress = 0; // إعادة التوقيت
+        }
+
+        function setPrayerDisplay(idx) {
+            currentPrayerIdx = idx;
+            const p = PRAYERS_DATA[idx];
+            document.getElementById('prayerDisplayTitle').textContent = p.title;
+            document.getElementById('prayerDisplayText').textContent = p.text;
+            document.getElementById('prayerDisplaySource').textContent = "المصدر: " + p.source;
+            document.getElementById('prayerTimeBadge').textContent = p.recommendedTime;
+            
+            prayerProgress = 0;
+            document.getElementById('prayerProgressBar').style.width = '0%';
+            
+            // تمييز العنصر النشط في القائمة السفلية
+            document.querySelectorAll('.prayer-list-item').forEach((el, i) => {
+                if(i === idx) el.classList.add('active-prayer');
+                else el.classList.remove('active-prayer');
+            });
+        }
+
+        function startPrayerRotator() {
+            clearInterval(prayerProgressInterval);
+            if(isPrayerPaused) return;
+            
+            prayerProgressInterval = setInterval(() => {
+                if(isPrayerPaused) return;
+                prayerProgress += (100 / (PRAYER_DURATION / 100)); // تحديث الشريط كل 100 ملي ثانية
+                document.getElementById('prayerProgressBar').style.width = prayerProgress + '%';
+                
+                if(prayerProgress >= 100) {
+                    prayerProgress = 0;
+                    currentPrayerIdx = (currentPrayerIdx + 1) % PRAYERS_DATA.length;
+                    setPrayerDisplay(currentPrayerIdx);
+                }
+            }, 100);
+        }
+
+        function stopPrayerRotator() {
+            clearInterval(prayerProgressInterval);
+        }
+
+        function togglePrayerPause() {
+            isPrayerPaused = !isPrayerPaused;
+            const btn = document.getElementById('prayerPauseBtn');
+            if(isPrayerPaused) {
+                btn.innerHTML = '▶ استئناف التلاوة الآلية';
+                btn.style.background = 'var(--accent)';
+                btn.style.color = '#fff';
+            } else {
+                btn.innerHTML = '⏸ إيقاف مؤقت للتلاوة';
+                btn.style.background = 'transparent';
+                btn.style.color = 'var(--text-secondary)';
+                prayerProgress = 0; // إعادة بدأ الشريط عند الاستئناف
+            }
+        }
+
+        function renderPrayers() {
+            const container = document.getElementById('prayersListContainer');
+            container.innerHTML = PRAYERS_DATA.map((p, idx) => `
+                <div class="book-card prayer-list-item" style="cursor:pointer" onclick="setPrayerDisplay(${idx}); if(!isPrayerPaused) togglePrayerPause();">
+                    <div>
+                        <h3 class="book-title" style="color: var(--accent); margin-bottom: 0.8rem;">${p.title}</h3>
+                        <p class="book-desc" style="font-family:'Amiri', serif; font-size:1.15rem; line-height:1.7">${p.text}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            if (State.activeTab === 'prayers') {
+                setPrayerDisplay(getRecommendedPrayerIndexByTime());
+                startPrayerRotator();
+            }
+        }
+
         const searchInput = document.getElementById('searchInput');
         const categoryFiltersContainer = document.getElementById('categoryFilters');
 
@@ -1287,6 +1456,12 @@
             document.getElementById('sectionView').style.display = 'block';
             document.getElementById('sectionTitle').textContent = title;
             
+            // إيقاف التوقيت إذا خرجنا من شاشة الصلاة
+            if(tabName !== 'prayers') stopPrayerRotator();
+            
+            // إخفاء البحث في شاشة الصلاة لأنها لا تحتاجه
+            document.getElementById('searchContainer').style.display = (tabName === 'prayers') ? 'none' : 'block';
+
             State.activeTab = tabName;
             State.currentFilter = 'all';
             searchInput.value = '';
@@ -1301,6 +1476,7 @@
         }
 
         function goHome() {
+            stopPrayerRotator(); // إيقاف التوقيت عند العودة للرئيسية
             document.getElementById('homeView').style.display = 'block';
             document.getElementById('sectionView').style.display = 'none';
             State.activeTab = 'home';
@@ -1315,7 +1491,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        /* STREAMING_CHUNK: إدارة الفلترة والبحث */
         function renderCategoryFilters() {
             categoryFiltersContainer.innerHTML = '';
             let filters = [{ label: 'الكل', value: 'all' }];
@@ -1324,6 +1499,8 @@
             else if (State.activeTab === 'timeline') filters.push({ label: 'العهد المكي', value: 'العهد المكي' }, { label: 'العهد المدني', value: 'العهد المدني' });
             else if (State.activeTab === 'library') filters.push({ label: 'للمبتدئين', value: 'beginner' }, { label: 'للمتقدمين', value: 'advanced' });
             else if (State.activeTab === 'bookmarks') filters.push({ label: 'المفضلة 🔖', value: 'bookmarks' }, { label: 'المكتملة ✅', value: 'completed' });
+            else if (State.activeTab === 'stories') filters.push({ label: 'قصص الأنبياء', value: 'prophets' }, { label: 'قصص الصحابة', value: 'companions' }, { label: 'قصص إسلامية', value: 'islamic' });
+            else if (State.activeTab === 'prayers') filters = []; // لا يوجد فلاتر لشاشة الصلاة
 
             filters.forEach(f => {
                 const chip = document.createElement('button');
@@ -1344,7 +1521,6 @@
             renderCurrentTab();
         });
 
-        /* STREAMING_CHUNK: دوال التصيير وعرض المحتوى */
         function isBookmarked(id) { return State.bookmarks.includes(id); }
         function isRead(id) { return State.readItems.includes(id); }
 
@@ -1360,6 +1536,31 @@
             else State.readItems.push(id);
             saveState();
             renderCurrentTab();
+        }
+
+        function renderStories() {
+            const container = document.getElementById('storiesContainer');
+            let items = STORIES_DATA.filter(item => (State.currentFilter === 'all' || item.category === State.currentFilter) && item.title.toLowerCase().includes(State.searchQuery));
+            if (!items.length) return container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-icon">📖</div><p>لا توجد نتائج.</p></div>`;
+
+            container.innerHTML = items.map(item => `
+                <div class="person-card">
+                    <div>
+                        <div class="person-top">
+                            <div class="avatar-emblem" style="background: rgba(180, 83, 9, 0.1); color: var(--gold); border-color: var(--gold);">📖</div>
+                            <div><h3>${item.title}</h3><span class="person-meta">${item.categoryName}</span></div>
+                        </div>
+                        <p class="person-desc">${item.summary}</p>
+                    </div>
+                    <div class="card-actions">
+                        <button class="action-btn" onclick="openModal('story', '${item.id}')">قراءة القصة</button>
+                        <div style="display: flex; gap: 0.4rem;">
+                            <button class="action-btn ${isRead(item.id) ? 'active' : ''}" onclick="toggleRead('${item.id}')" title="تحديد كمقروء">✓</button>
+                            <button class="action-btn ${isBookmarked(item.id) ? 'active' : ''}" onclick="toggleBookmark('${item.id}')" title="حفظ القصة">★</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
         function renderTraits() {
@@ -1477,6 +1678,9 @@
                 
                 const b = BOOKS_DATA.find(i => i.id === id);
                 if (b) html += `<div class="book-card"><h3>${b.title}</h3><p>${b.desc.slice(0, 100)}...</p><button class="action-btn active" onclick="toggleBookmark('${id}')">إزالة</button></div>`;
+
+                const s = STORIES_DATA.find(i => i.id === id);
+                if (s) html += `<div class="person-card"><h3>${s.title}</h3><p>${s.summary.slice(0, 100)}...</p><button class="action-btn active" onclick="toggleBookmark('${id}')">إزالة</button></div>`;
             });
             container.innerHTML = html + '</div>';
         }
@@ -1487,9 +1691,10 @@
             else if (State.activeTab === 'wives') renderWives();
             else if (State.activeTab === 'library') renderLibrary();
             else if (State.activeTab === 'bookmarks') renderBookmarks();
+            else if (State.activeTab === 'prayers') renderPrayers();
+            else if (State.activeTab === 'stories') renderStories();
         }
 
-        /* STREAMING_CHUNK: نظام النوافذ المنبثقة (Modals) */
         const modal = document.getElementById('detailModal');
         const modalBody = document.getElementById('modalBody');
 
@@ -1504,6 +1709,13 @@
             } else if (type === 'wife') {
                 const w = WIVES_DATA.find(t => t.id === id);
                 content = `<h2>${w.name}</h2><p>${w.bio}</p><br><strong>موقف:</strong> ${w.highlight}`;
+            } else if (type === 'story') {
+                const s = STORIES_DATA.find(t => t.id === id);
+                content = `
+                    <h2 style="color: var(--accent); margin-bottom: 0.2rem;">${s.title}</h2>
+                    <div style="margin-bottom: 1.5rem; color: var(--gold); font-size: 0.9rem; font-weight: bold;">${s.categoryName}</div>
+                    <p style="line-height: 1.9; font-size: 1.15rem; text-align: justify; font-family: 'Amiri', serif;">${s.fullText}</p>
+                    <br><div class="lesson-box"><strong>العبرة المستفادة:</strong> ${s.lessons}</div>`;
             }
             modalBody.innerHTML = content;
             modal.classList.add('active');
@@ -1515,7 +1727,6 @@
             document.body.style.overflow = 'auto';
         };
 
-        /* STREAMING_CHUNK: التهيئة وبدء التشغيل */
         window.addEventListener('DOMContentLoaded', () => {
             applyTheme(State.theme);
             displayRandomQuote();
@@ -1525,6 +1736,3 @@
     </script>
 </body>
 </html>
-```eof
-
-هذا الكود متكامل وقابل للنسخ كملف واحد تماماً، وقد قمت بإصلاح مشكلة التبويبات بالكامل لتعمل الواجهة الآن كنظام **شاشتين**: الشاشة الرئيسية للأقسام، وشاشة المحتوى، مع زر الرجوع الجميل. حقوق التصميم موجودة في الفوتر بالأسفل. جربه الآن وسيعمل 100%.
