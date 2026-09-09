@@ -4,1256 +4,437 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سيرة الحبيب ﷺ | المنهاج والشمائل والمكتبة النبوية</title>
+    
+    <!-- خطوط عربية أنيقة -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #ffffff;
-            --bg-card: #ffffff;
+            /* الألوان الأساسية الديناميكية (تتغير برمجياً حسب القسم) */
+            --accent: #166534;
+            --accent-rgb: 22, 101, 52;
+            
+            /* ألوان الوضع النهاري */
+            --bg-body: #f8fafc;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-element: #ffffff;
             --text-primary: #0f172a;
-            --text-secondary: #475569;
+            --text-secondary: #334155;
             --text-muted: #64748b;
-            --accent: #047857;
-            --accent-hover: #065f46;
-            --accent-light: #ecfdf5;
-            --gold: #b45309;
-            --gold-light: #fef3c7;
-            --gold-gradient: linear-gradient(135deg, #d97706, #b45309);
-            --border-color: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 20px;
-            --radius-full: 9999px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --header-bg: rgba(255, 255, 255, 0.85);
-            --footer-bg: #ffffff;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 25px 50px -12px rgba(var(--accent-rgb), 0.45);
+            
+            /* متغيرات الانسيابية */
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --radius-pill: 9999px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         [data-theme="dark"] {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #1e293b;
-            --text-primary: #f1f5f9;
+            /* ألوان الوضع الليلي (أكثر عمقاً وداكنة جداً لإبراز الألوان بوضوح) */
+            --bg-body: #020617;
+            --bg-glass: rgba(2, 6, 23, 0.85);
+            --bg-card: rgba(15, 23, 42, 0.85);
+            --bg-element: #0f172a;
+            --text-primary: #f8fafc;
             --text-secondary: #cbd5e1;
             --text-muted: #94a3b8;
-            --accent: #10b981;
-            --accent-hover: #34d399;
-            --accent-light: rgba(16, 185, 129, 0.12);
-            --gold: #f59e0b;
-            --gold-light: rgba(245, 158, 11, 0.12);
-            --gold-gradient: linear-gradient(135deg, #fbbf24, #d97706);
-            --border-color: #334155;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.45);
-            --header-bg: rgba(30, 41, 59, 0.85);
-            --footer-bg: #162032;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+            --shadow-hover: 0 25px 50px -12px rgba(var(--accent-rgb), 0.65);
         }
 
         * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+            box-sizing: border-box; margin: 0; padding: 0;
+            font-family: 'Tajawal', sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
-            background-color: var(--bg-primary);
+            background-color: var(--bg-body);
             color: var(--text-primary);
-            line-height: 1.7;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            line-height: 1.8;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            min-height: 100vh; display: flex; flex-direction: column;
+            position: relative; overflow-x: hidden;
         }
 
-        h1, h2, h3, .traditional-font {
-            font-family: 'Amiri', serif;
-            letter-spacing: 0.2px;
+        /* اللمسة الهندسية الإسلامية في الخلفية */
+        body::before {
+            content: ''; position: fixed; inset: 0; z-index: -2;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 30L15 15H45L30 30ZM30 30L45 45V15L30 30ZM30 30L45 45H15L30 30ZM30 30L15 45V15L30 30Z' fill='currentColor' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            color: var(--text-primary); pointer-events: none;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 1.25rem;
+        /* التوهج الديناميكي اللوني في الخلفية (تمت زيادة كثافة اللون) */
+        body::after {
+            content: ''; position: fixed; top: -20%; right: -10%;
+            width: 80vw; height: 80vh;
+            background: radial-gradient(circle, rgba(var(--accent-rgb), 0.28) 0%, transparent 75%);
+            z-index: -1; border-radius: 50%; pointer-events: none;
+            transition: background 0.8s ease;
         }
+
+        h1, h2, h3, .traditional-font { font-family: 'Amiri', serif; letter-spacing: 0.2px; }
+
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
         header {
-            background: var(--header-bg);
+            background: var(--bg-glass);
             border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
+            position: sticky; top: 0; z-index: 50;
+            backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            box-shadow: 0 10px 40px -10px rgba(var(--accent-rgb), 0.2);
             transition: var(--transition);
         }
 
-        .header-top-accent {
-            height: 3px;
-            width: 100%;
-            background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
-            background-size: 200% 100%;
-            animation: gradientMove 8s ease infinite;
+        .header-stripe {
+            height: 5px; width: 100%;
+            background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.9), var(--accent), rgba(var(--accent-rgb), 0.9));
+            background-size: 200% 100%; animation: moveStripe 4s linear infinite;
         }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        @keyframes moveStripe { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
 
-        .nav-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            gap: 1rem;
-        }
+        .nav-wrapper { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; gap: 1rem; }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 0.85rem;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.2s ease;
-            cursor: pointer;
-        }
-
-        .brand:hover {
-            transform: translateY(-1px);
-        }
-
-        .brand-icon-wrapper {
-            position: relative;
-        }
+        .brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit; cursor: pointer; transition: transform 0.3s; }
+        .brand:hover { transform: translateY(-2px); }
 
         .brand-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--accent), var(--gold));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.35rem;
-            box-shadow: 0 4px 14px rgba(4, 120, 87, 0.28);
-            position: relative;
-            z-index: 2;
+            width: 55px; height: 55px; border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--accent), rgba(var(--accent-rgb), 0.6));
+            color: white; font-size: 1.8rem;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 10px 25px -5px rgba(var(--accent-rgb), 0.5);
             transition: var(--transition);
         }
 
-        .brand:hover .brand-icon {
-            box-shadow: 0 6px 18px rgba(180, 83, 9, 0.35);
-        }
+        .brand-title h1 { font-size: 1.6rem; font-weight: 800; line-height: 1.2; color: var(--text-primary); text-shadow: 0 2px 10px rgba(var(--accent-rgb), 0.15); }
+        .brand-title p { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.2rem; font-weight: 500; }
 
-        .brand-title {
-            display: flex;
-            flex-direction: column;
+        .nav-actions { display: flex; gap: 0.75rem; }
+        .icon-btn {
+            background: var(--bg-element); border: 1px solid var(--border-color);
+            color: var(--text-secondary); height: 44px; border-radius: var(--radius-sm);
+            padding: 0 1rem; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.95rem; font-weight: 600; transition: var(--transition); box-shadow: var(--shadow-soft);
         }
-
-        .brand-title-top {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .brand-title h1 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            line-height: 1.25;
-            color: var(--text-primary);
-        }
-
-        .brand-badge {
-            font-family: 'Tajawal', sans-serif;
-            font-size: 0.68rem;
-            padding: 0.15rem 0.5rem;
-            border-radius: var(--radius-full);
-            background: var(--accent-light);
-            color: var(--accent);
-            font-weight: 700;
-            border: 1px solid rgba(4, 120, 87, 0.18);
-        }
-
-        .brand-title p {
-            font-size: 0.76rem;
-            color: var(--text-muted);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 450px;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-icon-btn {
-            background: var(--bg-primary);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-            height: 38px;
-            border-radius: 10px;
-            padding: 0 0.75rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .nav-icon-btn:hover {
-            color: var(--accent);
-            background: var(--accent-light);
-            border-color: var(--accent);
-            transform: translateY(-1px);
-        }
-
-        .theme-btn {
-            width: 38px;
-            height: 38px;
-            padding: 0;
-            justify-content: center;
-            border-radius: 10px;
-            font-size: 1.05rem;
-        }
+        .icon-btn:hover { background: rgba(var(--accent-rgb), 0.1); color: var(--accent); border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 25px -5px rgba(var(--accent-rgb), 0.35); }
+        .icon-btn.icon-only { width: 44px; padding: 0; justify-content: center; font-size: 1.2rem; }
 
         .quote-banner {
-            margin: 1.75rem 0;
-            background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light));
-            border: 1px solid var(--border-color);
-            border-right: 5px solid var(--accent);
-            border-radius: var(--radius-md);
-            padding: 1.25rem 1.5rem;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
+            margin: 2.5rem 0; background: var(--bg-glass); backdrop-filter: blur(25px);
+            border: 1px solid rgba(var(--accent-rgb), 0.25); border-right: 6px solid var(--accent);
+            border-radius: var(--radius-md); padding: 2rem 2.5rem; box-shadow: 0 15px 35px -5px rgba(var(--accent-rgb), 0.2);
+            display: flex; flex-direction: column; gap: 1rem; transition: var(--transition); position: relative; overflow: hidden;
         }
+        .quote-banner::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(var(--accent-rgb), 0.1) 0%, transparent 50%); pointer-events: none;
+        }
+        .quote-banner:hover { box-shadow: 0 25px 50px -10px rgba(var(--accent-rgb), 0.3); transform: translateY(-4px); border-color: rgba(var(--accent-rgb), 0.45); }
+        .quote-header { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
+        .quote-tag { font-size: 0.85rem; font-weight: 800; color: var(--accent); text-transform: uppercase; text-shadow: 0 2px 10px rgba(var(--accent-rgb), 0.2); }
+        .quote-content { font-family: 'Amiri', serif; font-size: 1.45rem; color: var(--text-primary); line-height: 1.8; position: relative; z-index: 1; }
+        .quote-author { font-size: 0.95rem; font-weight: 700; opacity: 0.8; color: var(--accent); position: relative; z-index: 1; }
 
-        .quote-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .quote-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-        }
-
-        .quote-refresh-btn {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            transition: var(--transition);
-            padding: 0.2rem 0.5rem;
-            border-radius: 6px;
-        }
-
-        .quote-refresh-btn:hover {
-            color: var(--accent);
-            background: var(--bg-secondary);
-        }
-
-        .quote-content {
-            font-family: 'Amiri', serif;
-            font-size: 1.15rem;
-            color: var(--text-primary);
-            line-height: 1.8;
-        }
-
-        .quote-author {
-            font-size: 0.82rem;
-            color: var(--gold);
-            font-weight: 600;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
 
         .menu-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 2.5rem 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            cursor: pointer;
-            text-decoration: none;
+            background: var(--bg-card); backdrop-filter: blur(16px); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 2.5rem 1.5rem; text-align: center;
+            cursor: pointer; position: relative; overflow: hidden; transition: var(--transition);
+            box-shadow: var(--shadow-soft); display: flex; flex-direction: column; align-items: center;
         }
-
-        .menu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
+        
+        .menu-card::before {
+            content: ''; position: absolute; inset: 0; opacity: 0;
+            background: radial-gradient(circle at center, rgba(var(--card-rgb), 0.15) 0%, transparent 80%); transition: var(--transition);
         }
+        .menu-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 5px;
+            background: var(--card-color); transform: scaleX(0); transition: transform 0.4s ease;
+        }
+        
+        .menu-card:hover { transform: translateY(-8px); border-color: var(--card-color); box-shadow: 0 25px 50px -12px rgba(var(--card-rgb), 0.4); }
+        .menu-card:hover::before { opacity: 1; }
+        .menu-card:hover::after { transform: scaleX(1); }
 
         .menu-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 50%;
-            background: var(--accent-light);
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            width: 80px; height: 80px; border-radius: 50%;
+            background: linear-gradient(135deg, rgba(var(--card-rgb), 0.1), rgba(var(--card-rgb), 0.25)); color: var(--card-color);
+            display: flex; align-items: center; justify-content: center; font-size: 3rem;
+            margin-bottom: 1.5rem; transition: var(--transition); border: 1px solid rgba(var(--card-rgb), 0.25);
         }
-
-        .menu-title {
-            font-size: 1.35rem;
-            color: var(--text-primary);
-            font-family: 'Amiri', serif;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .menu-badge {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            padding: 0.25rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-        }
-
+        .menu-card:hover .menu-icon { transform: scale(1.15) rotate(5deg); background: var(--card-color); color: white; box-shadow: 0 15px 30px -5px rgba(var(--card-rgb), 0.5); border-color: transparent; }
         .filter-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+            margin-bottom: 2rem; background: var(--bg-card); padding: 1.25rem;
+            border-radius: var(--radius-md); box-shadow: var(--shadow-soft); border: 1px solid var(--border-color);
         }
-
-        .search-box {
-            position: relative;
-            flex: 1;
-            min-width: 240px;
-            max-width: 420px;
-        }
-
+        .search-box { position: relative; flex: 1; min-width: 260px; }
         .search-box input {
-            width: 100%;
-            padding: 0.65rem 1rem 0.65rem 2.5rem;
-            border-radius: 30px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            outline: none;
-            transition: var(--transition);
+            width: 100%; padding: 0.85rem 1.2rem 0.85rem 3rem; border-radius: var(--radius-pill);
+            border: 1px solid var(--border-color); background: var(--bg-element); color: var(--text-primary);
+            font-size: 0.95rem; outline: none; transition: var(--transition);
         }
+        .search-box input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.15); }
+        .search-icon { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--accent); font-size: 1.2rem; }
 
-        .search-box input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            pointer-events: none;
-        }
-
-        .category-filters {
-            display: flex;
-            gap: 0.4rem;
-            overflow-x: auto;
-            scrollbar-width: none;
-        }
+        .category-filters { display: flex; gap: 0.5rem; overflow-x: auto; scrollbar-width: none; }
         .category-filters::-webkit-scrollbar { display: none; }
-
         .filter-chip {
-            padding: 0.4rem 0.9rem;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            background: var(--bg-secondary);
-            color: var(--text-secondary);
-            font-size: 0.82rem;
-            cursor: pointer;
-            transition: var(--transition);
-            white-space: nowrap;
+            padding: 0.6rem 1.2rem; border-radius: var(--radius-pill); border: 1px solid var(--border-color);
+            background: var(--bg-element); color: var(--text-secondary); font-size: 0.9rem; font-weight: 600;
+            cursor: pointer; transition: var(--transition); white-space: nowrap;
         }
-
         .filter-chip.active, .filter-chip:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
+            background: var(--accent); color: white; border-color: var(--accent);
+            box-shadow: 0 6px 15px rgba(var(--accent-rgb), 0.25); transform: translateY(-2px);
         }
 
-        .tab-pane {
-            display: none;
-            animation: fadeIn 0.35s ease;
-        }
-        .tab-pane.active {
-            display: block;
-        }
+        .tab-pane { display: none; animation: fadeSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .tab-pane.active { display: block; }
+        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
 
-        .timeline {
-            position: relative;
-            padding: 1.5rem 0;
+        .data-card {
+            background: var(--bg-card); backdrop-filter: blur(12px); border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-soft);
+            transition: var(--transition); display: flex; flex-direction: column; position: relative;
         }
+        .data-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: rgba(var(--accent-rgb), 0.4); }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 28px;
-            width: 3px;
-            background: linear-gradient(180deg, var(--accent), var(--gold));
-            border-radius: 3px;
+        .card-header { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.25rem; }
+        .card-icon {
+            width: 60px; height: 60px; border-radius: 50%;
+            background: rgba(var(--accent-rgb), 0.1); color: var(--accent);
+            display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+            font-family: 'Amiri', serif; border: 2px solid rgba(var(--accent-rgb), 0.2); flex-shrink: 0;
         }
+        .card-title { font-size: 1.25rem; color: var(--text-primary); margin-bottom: 0.2rem; }
+        .card-meta { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+        .card-body { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; flex-grow: 1; margin-bottom: 1.5rem; }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-            padding-right: 65px;
-        }
-
-        .timeline-marker {
-            position: absolute;
-            right: 15px;
-            top: 0;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: var(--bg-secondary);
-            border: 3px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 0.8rem;
-            font-weight: bold;
-            box-shadow: 0 0 0 4px var(--bg-primary);
-            z-index: 2;
-        }
-
-        .timeline-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .timeline-card:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .timeline-period {
-            background: var(--gold-light);
-            color: var(--gold);
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 0.2rem 0.65rem;
-            border-radius: 12px;
-        }
-
-        .timeline-card h3 {
-            font-size: 1.3rem;
-            color: var(--text-primary);
-        }
-
-        .timeline-body {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            line-height: 1.75;
-        }
-
-        .lesson-box {
-            background: var(--accent-light);
-            border-radius: 8px;
-            padding: 0.75rem 1rem;
-            font-size: 0.88rem;
-            color: var(--accent);
-            border-right: 3px solid var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .card-actions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-top: 1px solid var(--border-color);
-            padding-top: 0.85rem;
-        }
-
+        .card-actions { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: 1.2rem; }
         .action-btn {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            padding: 0.35rem 0.85rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.82rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: var(--transition);
+            background: var(--bg-element); border: 1px solid var(--border-color); color: var(--text-secondary);
+            padding: 0.5rem 1.2rem; border-radius: var(--radius-pill); cursor: pointer; font-size: 0.9rem; font-weight: 700;
+            display: flex; align-items: center; gap: 0.4rem; transition: var(--transition);
         }
+        .action-btn:hover { color: var(--accent); border-color: var(--accent); background: rgba(var(--accent-rgb), 0.1); transform: translateY(-2px); box-shadow: 0 8px 20px -5px rgba(var(--accent-rgb), 0.35); }
+        .action-btn.active { background: linear-gradient(135deg, var(--accent), rgba(var(--accent-rgb), 0.8)); color: #fff; border-color: transparent; box-shadow: 0 8px 20px rgba(var(--accent-rgb), 0.45); }
 
-        .action-btn:hover {
-            color: var(--accent);
-            border-color: var(--accent);
+        /* الخط الزمني */
+        .timeline { position: relative; padding: 2rem 0; }
+        .timeline::before {
+            content: ''; position: absolute; top: 0; bottom: 0; right: 30px; width: 4px;
+            background: linear-gradient(to bottom, transparent, var(--accent), transparent); border-radius: 4px;
         }
-
-        .action-btn.active {
-            background: var(--accent);
-            color: #fff;
-            border-color: var(--accent);
+        .timeline-item { position: relative; margin-bottom: 2.5rem; padding-right: 75px; }
+        .timeline-marker {
+            position: absolute; right: 15px; top: 0; width: 34px; height: 34px; border-radius: 50%;
+            background: var(--bg-card); border: 4px solid var(--accent); display: flex;
+            align-items: center; justify-content: center; color: var(--accent); font-size: 0.85rem; font-weight: bold;
+            box-shadow: 0 0 0 6px var(--bg-body); z-index: 2; transition: var(--transition);
         }
+        .timeline-item:hover .timeline-marker { transform: scale(1.2); background: var(--accent); color: white; }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+        .prayer-visualizer {
+            background: var(--bg-card); border: 1px solid rgba(var(--accent-rgb), 0.2);
+            border-radius: var(--radius-lg); padding: 3.5rem 2rem; text-align: center;
+            margin-bottom: 2.5rem; box-shadow: var(--shadow-hover); position: relative; overflow: hidden;
         }
-
-        .person-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
+        .prayer-visualizer::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at center, rgba(var(--accent-rgb), 0.08) 0%, transparent 70%); pointer-events: none;
         }
-
-        .person-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--gold);
+        .prayer-title { font-size: 1.5rem; color: var(--accent); margin-bottom: 1rem; font-weight: bold; }
+        .prayer-text { font-family: 'Amiri', serif; font-size: 2.4rem; color: var(--text-primary); line-height: 1.8; margin: 1.5rem 0; }
+        
+        .prayer-controls {
+            display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+            background: var(--bg-element); padding: 1rem 2rem; border-radius: var(--radius-pill);
+            border: 1px solid var(--border-color); display: inline-flex; margin-top: 2rem;
         }
-
-        .person-top {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .avatar-emblem {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: var(--gold-light);
-            color: var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            font-weight: bold;
-            font-family: 'Amiri', serif;
-            border: 2px solid var(--gold);
-            flex-shrink: 0;
-        }
-
-        .person-info h3 {
-            font-size: 1.2rem;
-            color: var(--text-primary);
-        }
-
-        .person-meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .person-desc {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.65;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-
-        .book-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        .book-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .book-badge {
-            align-self: flex-start;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.25rem 0.65rem;
-            border-radius: 12px;
-            margin-bottom: 0.8rem;
-        }
-
-        .level-beginner { background: #dcfce7; color: #166534; }
-        .level-intermediate { background: #fef9c3; color: #854d0e; }
-        .level-advanced { background: #fee2e2; color: #991b1b; }
-
-        [data-theme="dark"] .level-beginner { background: rgba(22, 101, 52, 0.25); color: #86efac; }
-        [data-theme="dark"] .level-intermediate { background: rgba(133, 77, 14, 0.25); color: #fde047; }
-        [data-theme="dark"] .level-advanced { background: rgba(153, 27, 27, 0.25); color: #fca5a5; }
-
-        .book-title {
-            font-size: 1.25rem;
-            color: var(--text-primary);
-            margin-bottom: 0.2rem;
-        }
-
-        .book-desc {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            margin-bottom: 1.2rem;
-            flex-grow: 1;
-        }
-
-        .book-features {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            border-right: 2px solid var(--accent);
-            padding-right: 0.6rem;
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 3.5rem 1rem;
-            color: var(--text-muted);
-        }
-
-        .empty-icon {
-            font-size: 3rem;
-            margin-bottom: 0.8rem;
-            opacity: 0.6;
-        }
-
-        .prayer-display-card {
-            background: linear-gradient(135deg, var(--bg-secondary), var(--accent-light));
-            border: 1px solid var(--accent);
-            padding: 3rem 2rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition);
-        }
-
-        .prayer-display-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .prayer-time-badge {
-            display: inline-block;
-            background: var(--gold-light);
-            color: var(--gold);
-            font-size: 0.85rem;
-            padding: 0.2rem 0.8rem;
-            border-radius: 20px;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .prayer-display-text {
-            font-family: 'Amiri', serif;
-            font-size: 2.2rem;
-            line-height: 1.8;
-            color: var(--text-primary);
-            margin-bottom: 1.5rem;
-        }
-
-        .prayer-display-source {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .prayer-progress-track {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: rgba(0,0,0,0.05);
-        }
-
-        [data-theme="dark"] .prayer-progress-track {
-            background: rgba(255,255,255,0.05);
-        }
-
-        .prayer-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent), var(--gold));
-            width: 0%;
-            transition: width 0.1s linear;
-        }
-
-        .prayer-list-item.active-prayer {
-            border-color: var(--accent);
-            background: var(--accent-light);
-            box-shadow: var(--shadow-lg);
-        }
+        
+        .progress-track { width: 100%; height: 8px; background: rgba(0,0,0,0.05); border-radius: var(--radius-pill); overflow: hidden; margin-top: 2.5rem; }
+        .progress-bar { height: 100%; width: 0%; background: var(--accent); transition: width 0.1s linear; }
 
         .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.55);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            z-index: 100;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s ease;
-            backdrop-filter: blur(4px);
+            position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6);
+            display: flex; align-items: center; justify-content: center; padding: 1rem; z-index: 100;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(8px);
         }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
         .modal-content {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-lg);
-            width: 100%;
-            max-width: 600px;
-            max-height: 88vh;
-            overflow-y: auto;
-            padding: 1.75rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            position: relative;
-            transform: scale(0.95);
-            transition: transform 0.25s ease;
+            background: var(--bg-card); border-radius: var(--radius-lg); width: 100%; max-width: 650px;
+            max-height: 85vh; overflow-y: auto; padding: 2.5rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color); transform: scale(0.95); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-            left: 1.25rem;
-            top: 1.25rem;
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: 50%;
-            width: 34px;
-            height: 34px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            transition: var(--transition);
-        }
-
-        .modal-close:hover {
-            color: var(--text-primary);
-            background: var(--border-color);
-        }
-
-        footer {
-            margin-top: 4rem;
-            background: var(--footer-bg);
-            border-top: 1px solid var(--border-color);
-            position: relative;
-            box-shadow: 0 -4px 20px -2px rgba(0, 0, 0, 0.03);
-            transition: var(--transition);
-        }
-
-        .footer-top-strip {
-            height: 3px;
-            width: 100%;
-            background: linear-gradient(90deg, var(--gold), var(--accent), var(--gold));
-            opacity: 0.85;
-        }
-
-        .footer-main {
-            padding: 2.5rem 0 1.75rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .footer-quran-box {
-            background: linear-gradient(135deg, var(--bg-primary), var(--accent-light));
-            border: 1px dashed var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.1rem 1.5rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .footer-quran-verse {
-            font-family: 'Amiri', serif;
-            font-size: 1.2rem;
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .footer-quran-sub {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            margin-top: 0.3rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1.2fr 1.2fr;
-            gap: 2rem;
-            align-items: start;
-        }
-
-        .footer-brand-col h4 {
-            font-family: 'Amiri', serif;
-            font-size: 1.2rem;
-            color: var(--text-primary);
-            margin-bottom: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .footer-brand-col p {
-            font-size: 0.86rem;
-            color: var(--text-muted);
-            line-height: 1.75;
-        }
-
-        .footer-links-col h5 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.85rem;
-            position: relative;
-            padding-right: 0.75rem;
-        }
-
-        .footer-links-col h5::before {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 25%;
-            height: 50%;
-            width: 3px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        .footer-nav-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.45rem;
-        }
-
-        .footer-nav-list a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            cursor: pointer;
-        }
-
-        .footer-nav-list a:hover {
-            color: var(--accent);
-            transform: translateX(-4px);
-        }
-
-        .footer-stats-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            padding: 0.5rem 0.85rem;
-            border-radius: var(--radius-md);
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border-color);
-            padding: 1.2rem 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-        }
-
-        .back-to-top-btn {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            padding: 0.35rem 0.85rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.78rem;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            transition: var(--transition);
-        }
-
-        .back-to-top-btn:hover {
-            color: var(--accent);
-            border-color: var(--accent);
-            background: var(--accent-light);
-            transform: translateY(-2px);
-        }
+        .modal-overlay.active .modal-content { transform: scale(1); }
+        
+        footer { margin-top: 4rem; padding: 3rem 0; background: var(--bg-glass); border-top: 1px solid var(--border-color); backdrop-filter: blur(10px); }
 
         @media (max-width: 768px) {
-            .brand-title p {
-                display: none;
-            }
-            .brand-badge {
-                display: none;
-            }
-            .timeline::before {
-                right: 18px;
-            }
-            .timeline-item {
-                padding-right: 48px;
-            }
-            .timeline-marker {
-                right: 6px;
-                width: 26px;
-                height: 26px;
-            }
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
+            .brand-title p { display: none; }
+            .prayer-text { font-size: 1.8rem; }
+            .timeline-item { padding-right: 55px; }
+            .timeline-marker { right: 10px; }
+            .timeline::before { right: 25px; }
         }
     </style>
 </head>
 <body>
 
-    <header id="mainHeader">
-        <div class="header-top-accent"></div>
+    <header>
+        <div class="header-stripe"></div>
         <div class="container nav-wrapper">
             <a onclick="goHome()" class="brand" title="الرئيسية">
-                <div class="brand-icon-wrapper">
-                    <div class="brand-icon">ﷺ</div>
-                </div>
+                <div class="brand-icon">ﷺ</div>
                 <div class="brand-title">
-                    <div class="brand-title-top">
-                        <h1>سيرة الحبيب المصطفى</h1>
-                        <span class="brand-badge">إصدار 2026</span>
-                    </div>
-                    <p>الشمائل والصفات الكاملة، المراحل، أمهات المؤمنين، والمكتبة الجامعة</p>
+                    <h1>سيرة الحبيب المصطفى</h1>
+                    <p>منهاج تفاعلي شامل للشمائل والمراحل والقصص</p>
                 </div>
             </a>
             <div class="nav-actions">
-                <button class="nav-icon-btn" id="headerBookmarkJump" title="الانتقال السريع إلى المحفوظات">
-                    <span>🔖</span>
-                    <span style="font-size: 0.8rem;">محفوظاتي</span>
+                <button class="icon-btn" onclick="openSection('bookmarks', '🔖 المحفوظات والمكتمل')">
+                    <span>🔖</span> <span style="display: none; @media(min-width: 600px){display:inline;}">محفوظاتي</span>
                 </button>
-                <button class="nav-icon-btn theme-btn" id="themeToggle" title="تبديل الوضع الليلي / النهاري">
-                    🌙
-                </button>
+                <button class="icon-btn icon-only" id="themeToggle" title="تغيير المظهر">🌙</button>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section class="quote-banner" id="quoteSection">
-            <div class="quote-header">
-                <div class="quote-tag">
-                    <span>💡</span> إشراقة وتلميح نبوي وإداري
-                </div>
-                <button class="quote-refresh-btn" id="refreshQuoteBtn">
-                    <span>🔄</span> خاطرة أخرى
-                </button>
-            </div>
-            <div class="quote-content" id="quoteText">جاري تحميل الفائدة النبوية...</div>
-            <div class="quote-author" id="quoteRef"></div>
-        </section>
-
+    <main class="container" style="flex: 1;">
+        
         <div id="homeView">
-            <h2 style="text-align: center; margin: 2rem 0 1.5rem; color: var(--accent); font-family: 'Amiri', serif;">أقسام المنهاج والسيرة</h2>
+            <section class="quote-banner">
+                <div class="quote-header">
+                    <div class="quote-tag">💡 إشراقة نبوية متجددة</div>
+                    <button class="icon-btn" id="refreshQuoteBtn" style="height: 36px;"><span>🔄</span> فائدة أخرى</button>
+                </div>
+                <div class="quote-content" id="quoteText">جاري التحميل...</div>
+                <div class="quote-author" id="quoteRef"></div>
+            </section>
+
+            <h2 style="text-align: center; margin: 1rem 0 2rem; color: var(--text-primary); font-family: 'Amiri', serif; font-size: 2.2rem;">أقسام المنهاج والسيرة</h2>
+            
             <div class="menu-grid">
-                <div class="menu-card" onclick="openSection('prayers', '📿 الصلاة على النبي (عرض مرئي)')">
-                    <div class="menu-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent);">📿</div>
+                <!-- الألوان المستقلة يتم تمريرها عبر المتغيرات المحلية (ألوان مشبعة لزيادة التأثير) -->
+                <div class="menu-card" style="--card-color: #0d9488; --card-rgb: 13, 148, 136;" onclick="openSection('prayers', '📿 الصلاة على النبي')">
+                    <div class="menu-icon">📿</div>
                     <div class="menu-title">الصلاة على النبي</div>
-                    <div class="menu-badge">عرض مرئي وتوقيت</div>
+                    <div class="menu-badge"><span id="countPrayers">0</span> صيغ وتلاوة</div>
                 </div>
-                <div class="menu-card" onclick="openSection('stories', '📖 قصص وعبر')">
-                    <div class="menu-icon" style="background: rgba(180, 83, 9, 0.1); color: var(--gold);">📖</div>
+                <div class="menu-card" style="--card-color: #ea580c; --card-rgb: 234, 88, 12;" onclick="openSection('stories', '📖 قصص وعبر')">
+                    <div class="menu-icon">📖</div>
                     <div class="menu-title">قصص وعبر</div>
-                    <div class="menu-badge"><span id="countStories">0</span> قصة</div>
+                    <div class="menu-badge"><span id="countStories">0</span> قصة ملهمة</div>
                 </div>
-                <div class="menu-card" onclick="openSection('traits', '✨ الشمائل والصفات النبوية')">
+                <div class="menu-card" style="--card-color: #059669; --card-rgb: 5, 150, 105;" onclick="openSection('traits', '✨ الشمائل والصفات')">
                     <div class="menu-icon">✨</div>
-                    <div class="menu-title">الشمائل والصفات النبوية</div>
-                    <div class="menu-badge"><span id="countTraits">0</span> عنصر</div>
+                    <div class="menu-title">الشمائل والصفات</div>
+                    <div class="menu-badge"><span id="countTraits">0</span> وصف جسدي وخلقي</div>
                 </div>
-                <div class="menu-card" onclick="openSection('timeline', '📜 مراحل السيرة النبوية')">
+                <div class="menu-card" style="--card-color: #2563eb; --card-rgb: 37, 99, 235;" onclick="openSection('timeline', '📜 مراحل السيرة')">
                     <div class="menu-icon">📜</div>
-                    <div class="menu-title">مراحل السيرة النبوية</div>
-                    <div class="menu-badge"><span id="countTimeline">0</span> محطة</div>
+                    <div class="menu-title">مراحل السيرة</div>
+                    <div class="menu-badge"><span id="countTimeline">0</span> محطة تاريخية</div>
                 </div>
-                <div class="menu-card" onclick="openSection('wives', '🌸 أمهات المؤمنين')">
+                <div class="menu-card" style="--card-color: #db2777; --card-rgb: 219, 39, 119;" onclick="openSection('wives', '🌸 أمهات المؤمنين')">
                     <div class="menu-icon">🌸</div>
                     <div class="menu-title">أمهات المؤمنين</div>
-                    <div class="menu-badge"><span id="countWives">0</span> سيرة</div>
+                    <div class="menu-badge"><span id="countWives">0</span> سيرة عطرة</div>
                 </div>
-                <div class="menu-card" onclick="openSection('library', '📚 المكتبة النبوية')">
+                <div class="menu-card" style="--card-color: #7c3aed; --card-rgb: 124, 58, 237;" onclick="openSection('library', '📚 المكتبة النبوية')">
                     <div class="menu-icon">📚</div>
                     <div class="menu-title">المكتبة النبوية</div>
-                    <div class="menu-badge"><span id="countLibrary">0</span> كتاب</div>
-                </div>
-                <div class="menu-card" onclick="openSection('bookmarks', '🔖 المحفوظات والمكتمل')">
-                    <div class="menu-icon" style="background: var(--gold-light); color: var(--gold);">🔖</div>
-                    <div class="menu-title">المحفوظات والمكتمل</div>
-                    <div class="menu-badge"><span id="countBookmarks">0</span> محفوظ</div>
+                    <div class="menu-badge"><span id="countLibrary">0</span> مرجع وكتاب</div>
                 </div>
             </div>
         </div>
 
-        <div id="sectionView" style="display: none;">
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; gap: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                <h2 id="sectionTitle" style="color: var(--accent); margin: 0; font-size: 1.6rem; font-family: 'Amiri', serif;"></h2>
-                <button class="nav-icon-btn" onclick="goHome()" style="background: var(--accent); color: white; border-color: var(--accent); padding: 0.5rem 1.25rem; border-radius: 12px;">
-                    <span style="font-size: 1.1rem;">🔙</span> 
-                    <span>الرجوع للرئيسية</span>
+        <div id="sectionView" style="display: none; padding-top: 1rem;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 2rem; gap: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
+                <h2 id="sectionTitle" style="color: var(--accent); margin: 0; font-size: 2rem; font-family: 'Amiri', serif;"></h2>
+                <button class="icon-btn active" onclick="goHome()" style="border-radius: var(--radius-pill); padding: 0.5rem 1.5rem;">
+                    <span style="font-size: 1.1rem;">🔙</span> <span>الرجوع للرئيسية</span>
                 </button>
             </div>
 
-            <!-- شريط التصفية والبحث -->
-            <div class="filter-bar">
-                <div class="search-box" id="searchContainer">
+            <!-- البحث والفلاتر -->
+            <div class="filter-bar" id="searchContainer">
+                <div class="search-box">
                     <span class="search-icon">🔍</span>
                     <input type="text" id="searchInput" placeholder="ابحث في هذا القسم...">
                 </div>
-                <div class="category-filters" id="categoryFilters">
-                    <!-- أزرار التصفية تتغير ديناميكياً -->
-                </div>
+                <div class="category-filters" id="categoryFilters"></div>
             </div>
 
+            <!-- محتوى الأقسام (Tabs) -->
+            <!-- 1. الصلاة على النبي -->
             <div class="tab-pane" id="pane-prayers">
-                <div class="prayer-display-card">
-                    <div class="prayer-time-badge" id="prayerTimeBadge">الصيغة المناسبة للوقت الحالي</div>
-                    <div class="prayer-display-title" id="prayerDisplayTitle">الصلاة الإبراهيمية</div>
-                    <div class="prayer-display-text" id="prayerDisplayText">اللهم صل على محمد...</div>
-                    <div class="prayer-display-source" id="prayerDisplaySource">المصدر</div>
-                    <div class="prayer-progress-track">
-                        <div class="prayer-progress-bar" id="prayerProgressBar"></div>
+                <div class="prayer-visualizer">
+                    <span style="background: rgba(var(--accent-rgb), 0.15); color: var(--accent); padding: 0.4rem 1.2rem; border-radius: var(--radius-pill); font-size: 0.9rem; font-weight: bold; border: 1px solid rgba(var(--accent-rgb), 0.3);" id="prayerTimeBadge">وقت التوصية</span>
+                    <h3 class="prayer-title" id="prayerDisplayTitle" style="margin-top: 1.5rem;"></h3>
+                    <div class="prayer-text" id="prayerDisplayText"></div>
+                    <div id="prayerDisplaySource" style="color: var(--text-muted); font-size: 1rem; font-weight: bold;"></div>
+                    
+                    <div class="progress-track"><div class="progress-bar" id="prayerProgressBar"></div></div>
+                    
+                    <div class="prayer-controls">
+                        <button class="icon-btn" onclick="togglePrayerPause()" id="prayerPauseBtn" style="font-weight: bold;">⏸ إيقاف العرض</button>
+                        <div style="width: 1px; height: 24px; background: var(--border-color);"></div>
+                        <span style="font-size: 0.95rem; color: var(--text-secondary); font-weight: bold;">المدة:</span>
+                        <button class="filter-chip active" onclick="setPrayerDuration(15000, this)">15 ث</button>
+                        <button class="filter-chip" onclick="setPrayerDuration(30000, this)">30 ث</button>
+                        <button class="filter-chip" onclick="setPrayerDuration(60000, this)">60 ث</button>
                     </div>
                 </div>
-                
-                <div style="text-align: center; margin-bottom: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                    <button class="action-btn" onclick="togglePrayerPause()" id="prayerPauseBtn" style="font-weight: bold; font-size: 0.95rem; padding: 0.5rem 1.5rem;">⏸ إيقاف مؤقت للتلاوة</button>
-                    <div style="display: flex; gap: 0.5rem; align-items: center;">
-                        <span style="font-size: 0.9rem; color: var(--text-muted);">توقيت العرض:</span>
-                        <button class="filter-chip active" onclick="setPrayerDuration(15000, this)">15 ثانية</button>
-                        <button class="filter-chip" onclick="setPrayerDuration(30000, this)">30 ثانية</button>
-                        <button class="filter-chip" onclick="setPrayerDuration(60000, this)">دقيقة</button>
-                    </div>
-                </div>
-                <h3 style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-secondary);">كافة الصيغ (انقر للعرض):</h3>
+                <h3 style="margin: 2rem 0 1.5rem; font-size: 1.4rem; color: var(--text-primary); border-right: 4px solid var(--accent); padding-right: 15px;">كافة الصيغ المباركة</h3>
                 <div class="cards-grid" id="prayersListContainer"></div>
             </div>
 
-            <div class="tab-pane" id="pane-stories">
-                <div class="cards-grid" id="storiesContainer"></div>
-            </div>
-
-            <div class="tab-pane" id="pane-traits">
-                <div class="cards-grid" id="traitsContainer"></div>
-            </div>
-
-            <div class="tab-pane" id="pane-timeline">
-                <div class="timeline" id="timelineContainer"></div>
-            </div>
-
-            <div class="tab-pane" id="pane-wives">
-                <div class="cards-grid" id="wivesContainer"></div>
-            </div>
-
-            <div class="tab-pane" id="pane-library">
-                <div class="cards-grid" id="libraryContainer"></div>
-            </div>
-
-            <div class="tab-pane" id="pane-bookmarks">
-                <div id="bookmarksContainer"></div>
-            </div>
+            <!-- باقي الأقسام -->
+            <div class="tab-pane" id="pane-stories"><div class="cards-grid" id="storiesContainer"></div></div>
+            <div class="tab-pane" id="pane-traits"><div class="cards-grid" id="traitsContainer"></div></div>
+            <div class="tab-pane" id="pane-timeline"><div class="timeline" id="timelineContainer"></div></div>
+            <div class="tab-pane" id="pane-wives"><div class="cards-grid" id="wivesContainer"></div></div>
+            <div class="tab-pane" id="pane-library"><div class="cards-grid" id="libraryContainer"></div></div>
+            <div class="tab-pane" id="pane-bookmarks"><div class="cards-grid" id="bookmarksContainer"></div></div>
         </div>
     </main>
 
     <div class="modal-overlay" id="detailModal">
-        <div class="modal-content">
-            <button class="modal-close" id="closeModal">✕</button>
+        <div class="modal-content" style="position: relative;">
+            <button class="icon-btn icon-only" id="closeModal" style="position: absolute; left: 1.5rem; top: 1.5rem; border-radius: 50%;">✕</button>
             <div id="modalBody"></div>
         </div>
     </div>
 
     <footer>
-        <div class="footer-top-strip"></div>
-        <div class="container footer-main">
-            <div class="footer-quran-box">
-                <div class="footer-quran-verse">﴿ وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ ﴾</div>
-                <div class="footer-quran-sub">سورة القلم — الآية 4</div>
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div style="font-family: 'Amiri', serif; font-size: 1.8rem; color: var(--text-primary); font-weight: bold;">﴿ وَإِنَّكَ لَعَلَىٰ خُلُقٍ عَظِيمٍ ﴾</div>
+                <div style="font-size: 1rem; color: var(--accent); margin-top: 0.5rem; font-weight: bold;">سورة القلم — الآية 4</div>
             </div>
-
-            <div class="footer-grid">
-                <div class="footer-brand-col">
-                    <h4>
-                        <span style="color: var(--accent);">✦</span>
-                        منهاج السيرة النبوية والشمائل
-                    </h4>
-                    <p>
-                        بوابة تفاعلية تجمع بين الوصف الكامل الدقيق لشمائل النبي ﷺ خَلقاً وخُلقاً، والتوثيق الدقيق لمحطات السيرة، وسير أمهات المؤمنين وقصص الأنبياء والصحابة.
-                    </p>
-                    <div class="footer-stats-badge">
-                        <span>✨</span>
-                        <span>محتوى تعليمي وتثقيفي ميسر وموثق</span>
-                    </div>
-                </div>
-
-                <div class="footer-links-col">
-                    <h5>أقسام المنهاج</h5>
-                    <ul class="footer-nav-list">
-                        <li><a onclick="openSection('prayers', '📿 الصلاة على النبي')">📿 الصلاة على النبي مرئياً</a></li>
-                        <li><a onclick="openSection('stories', '📖 قصص وعبر')">📖 قصص الأنبياء والصحابة</a></li>
-                        <li><a onclick="openSection('traits', '✨ الشمائل والصفات النبوية')">✨ الشمائل والصفات الكاملة</a></li>
-                        <li><a onclick="openSection('timeline', '📜 مراحل السيرة النبوية')">📜 مراحل السيرة العطرة</a></li>
-                        <li><a onclick="openSection('bookmarks', '🔖 المحفوظات والمكتمل')">🔖 قائمتي ومحفوظاتي</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links-col">
-                    <h5>الصلاة على النبي ﷺ</h5>
-                    <ul class="footer-nav-list">
-                        <li style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.7;">
-                            «إنَّ أوْلى النَّاسِ بي يَومَ القِيامَةِ أكْثَرُهُمْ عَلَيَّ صَلاةً»
-                        </li>
-                        <li style="margin-top: 0.5rem;">
-                            <span style="color: var(--gold); font-size: 0.82rem; font-weight: 600;">سنن الترمذي</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <div style="line-height: 1.8;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                <div style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
                     تطبيق سيرة النبي محمد ﷺ — صُمم ليكون مرجعاً ميسراً للقراءة والاقتداء
-                    <br>
-                    <span style="color: var(--accent); font-weight: bold; font-size: 0.95rem;">تصميم عبد الحافظ أبو عمرة</span>
+                    <br><strong style="color: var(--accent); font-size: 1.1rem;">تصميم وتطوير: عبد الحافظ أبو عمرة</strong>
                 </div>
-                <div style="display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;">
-                    <span>اللهم صلِّ وسلِّم وبارك على نبينا محمد وعلى آله وصحبه</span>
-                    <button class="back-to-top-btn" onclick="scrollToTop()" title="الصعود لأعلى الصفحة">
-                        <span>⬆</span>
-                        <span>للأعلى</span>
-                    </button>
-                </div>
+                <button class="icon-btn active" onclick="window.scrollTo({top:0, behavior:'smooth'})">⬆ الصعود للأعلى</button>
             </div>
         </div>
     </footer>
@@ -1263,63 +444,74 @@
             { text: "«إنَّما بُعثتُ لأُتمِّمَ مَكارمَ الأخلاق» — الأخلاق هي المعيار الأول في تقييم النجاح القيادي والشخصي.", ref: "مسند أحمد" },
             { text: "«يَسِّرُوا ولا تُعَسِّرُوا، وبَشِّرُوا ولا تُنَفِّرُوا» — قاعدة إدارية ذهبية في تيسير الإجراءات.", ref: "صحيح البخاري" },
             { text: "«إنَّ اللهَ يُحِبُّ إذا عمِلَ أحدُكُم عمَلاً أنْ يُتْقِنَه» — مبدأ الجودة الشاملة والإتقان.", ref: "شعب الإيمان للبيهقي" },
-            { text: "«سَيِّدُ القَوْمِ خَادِمُهُمْ» — مفهوم القيادة الخادمة وتغليب المصلحة العامة.", ref: "أثر نبوي" },
-            { text: "«أَحَبُّ الأعمالِ إلى اللهِ أدْومُها و إنْ قَلَّ» — مبدأ التراكمية والاستمرارية.", ref: "صحيح البخاري ومسلم" }
+            { text: "«سَيِّدُ القَوْمِ خَادِمُهُمْ» — مفهوم القيادة الخادمة وتغليب المصلحة العامة.", ref: "أثر نبوي" }
         ];
 
-        // بيانات الصلاة على النبي مع أوقاتها المقترحة
         const PRAYERS_DATA = [
-            { id: "p1", title: "الصلاة الإبراهيمية", text: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ", source: "صحيح البخاري ومسلم - أكمل الصيغ", recommendedTime: "أفضل صيغة ليوم الجمعة والصباح" },
-            { id: "p2", title: "الصيغة المنجية (فك الكرب)", text: "اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ صَلاَةً تُنْجِينَا بِهَا مِنْ جَمِيعِ الأَهْوَالِ وَالآفَاتِ، وَتَقْضِي لَنَا بِهَا جَمِيعَ الْحَاجَاتِ، وَتُطَهِّرُنَا بِهَا مِنْ جَمِيعِ السَّيِّئَاتِ، وَتَرْفَعُنَا بِهَا عِنْدَكَ أَعْلَى الدَّرَجَاتِ", source: "أوراد الصالحين", recommendedTime: "في المساء وعند الشدائد" },
-            { id: "p3", title: "صيغة الإمام الشافعي", text: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ بِعَدَدِ مَنْ صَلَّى عَلَيْهِ، وَصَلِّ عَلَى مُحَمَّدٍ بِعَدَدِ مَنْ لَمْ يُصَلِّ عَلَيْهِ، وَصَلِّ عَلَى مُحَمَّدٍ كَمَا أَمَرْتَ بِالصَّلاَةِ عَلَيْهِ، وَصَلِّ عَلَى مُحَمَّدٍ كَمَا تُحِبُّ أَنْ يُصَلَّى عَلَيْهِ", source: "كتاب الرسالة", recommendedTime: "للتدبر في أي وقت" },
-            { id: "p4", title: "الصلاة الطبية (طب القلوب)", text: "اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ طِبِّ الْقُلُوبِ وَدَوَائِهَا، وَعَافِيَةِ الأَبْدَانِ وَشِفَائِهَا، وَنُورِ الأَبْصَارِ وَضِيَائِهَا، وَقُوتِ الأَرْوَاحِ وَغِذَائِهَا، وَعَلَى آلِهِ وَصَحْبِهِ وَسَلِّمْ", source: "صيغ المحبين", recommendedTime: "في فترة الظهيرة والراحة" },
-            { id: "p5", title: "الصيغة المختصرة الدائمة", text: "صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ", source: "الصيغة العامة", recommendedTime: "أثناء العمل والمشي" }
+            { id: "p1", title: "الصلاة الإبراهيمية", text: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ...", source: "متفق عليه", recommendedTime: "أفضل صيغة ليوم الجمعة والصلاة" },
+            { id: "p2", title: "الصيغة المنجية", text: "اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ صَلاَةً تُنْجِينَا بِهَا مِنْ جَمِيعِ الأَهْوَالِ وَالآفَاتِ وتَقْضِي لَنَا بِهَا جَمِيعَ الْحَاجَاتِ...", source: "أوراد الصالحين", recommendedTime: "عند الشدائد وفك الكرب" },
+            { id: "p3", title: "الصلاة الطبية", text: "اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ طِبِّ الْقُلُوبِ وَدَوَائِهَا، وَعَافِيَةِ الأَبْدَانِ وَشِفَائِهَا، وَنُورِ الأَبْصَارِ وَضِيَائِهَا...", source: "صيغ المحبين", recommendedTime: "في فترة الراحة والشفاء" },
+            { id: "p4", title: "صيغة الإمام الشافعي", text: "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ بِعَدَدِ مَنْ صَلَّى عَلَيْهِ، وَصَلِّ عَلَى مُحَمَّدٍ بِعَدَدِ مَنْ لَمْ يُصَلِّ عَلَيْهِ...", source: "كتاب الرسالة", recommendedTime: "للتدبر في أي وقت" },
+            { id: "p5", title: "الصيغة المختصرة (للورد)", text: "صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ", source: "صيغة عامة", recommendedTime: "أثناء العمل والمشي والإكثار" }
         ];
 
-        // بيانات القصص والعبر
         const STORIES_DATA = [
-            { id: "s1", category: "prophets", categoryName: "قصص الأنبياء", title: "صبر أيوب عليه السلام", summary: "قصة نبي الله أيوب وكيف ضرب أروع الأمثلة في الصبر على البلاء والمرض.", lessons: "الصبر مفتاح الفرج، والابتلاء اختبار لصدق الإيمان، ولا يأس من رحمة الله.", fullText: "ابتلى الله نبيه أيوب عليه السلام في ماله وولده وجسده، ففقد كل شيء، واشتد به المرض حتى جفاه الناس ولم يبق معه إلا زوجته الصابرة. مكث في البلاء سنوات طويلة، ولم يزدد إلا شكراً وصبراً، حتى دعى ربه (أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ)، فكشف الله عنه البلاء وعوضه في أهله وماله خيراً." },
-            { id: "s2", category: "prophets", categoryName: "قصص الأنبياء", title: "موسى عليه السلام والخضر", summary: "رحلة نبي الله موسى مع العبد الصالح الخضر لتعلم حكمة الله الخفية في الأقدار.", lessons: "فوق كل ذي علم عليم، وحكمة الله قد تخفى على البشر في المصائب الظاهرية.", fullText: "سُئل موسى: من أعلم أهل الأرض؟ فقال: أنا. فعتب الله عليه ودله على العبد الصالح الخضر. رحل موسى إليه وطلب مرافقته ليتعلم منه. اشترط الخضر ألا يسأله عن شيء حتى يبينه له. خرق الخضر السفينة، وقتل الغلام، وبنى الجدار. تعجب موسى واعترض، فبين له الخضر حكمة الله الغيبية في كل حدث، وأن وراء كل منع عطاء." },
-            { id: "s3", category: "companions", categoryName: "قصص الصحابة", title: "إسلام عمر بن الخطاب", summary: "كيف تحول الفاروق عمر من أشد أعداء الإسلام إلى أحد أعظم حماته.", lessons: "الهداية بيد الله، والقرآن يلين القلوب القاسية مهما بلغت شدتها.", fullText: "خرج عمر بن الخطاب متوشحاً سيفه يريد قتل النبي ﷺ، فلقيه رجل وأخبره أن أخته فاطمة وزوجها قد أسلما. غضب عمر وذهب إليهما، فسمعهما يقرآن سورة طه. ضربهما، ثم رق قلبه حين رأى الدماء وطلب قراءة الصحيفة. فلما قرأ (طه مَا أَنزَلْنَا عَلَيْكَ الْقُرْآنَ لِتَشْقَى) شرح الله صدره للإسلام وذهب للنبي وأعلن إسلامه فكبر الصحابة." },
-            { id: "s4", category: "companions", categoryName: "قصص الصحابة", title: "تجهيز جيش العسرة", summary: "موقف عثمان بن عفان في تجهيز جيش تبوك بماله الخاص في وقت الشدة.", lessons: "الإنفاق في سبيل الله وقت الأزمات، والثقة بعوض الله العظيم.", fullText: "في غزوة تبوك (جيش العسرة)، حث النبي ﷺ الصحابة على الإنفاق حيث كان المسلمون في ضائقة. فجاء عثمان بن عفان بألف دينار فصبها في حجر النبي، ثم جهز ثلث الجيش كاملاً بمئات الإبل والخيل والعتاد والزاد. فقال النبي ﷺ وهو يقلب الدنانير: (ما ضر عثمان ما عمل بعد اليوم)." },
-            { id: "s5", category: "islamic", categoryName: "قصص إسلامية", title: "بائعة اللبن وابنتها", summary: "قصة الفتاة التي رفضت غش اللبن خوفاً من الله في عهد أمير المؤمنين عمر.", lessons: "مراقبة الله في السر والعلن، والتقوى طريق الرفعة والبركة.", fullText: "بينما كان أمير المؤمنين عمر بن الخطاب يعس ليلاً، سمع امرأة تأمر ابنتها بخلط اللبن بالماء لتكثيره. فقالت الابنة: إن أمير المؤمنين نهى عن ذلك. قالت الأم: إن عمر لا يرانا الآن. فردت الابنة بصدق ويقين: إن كان عمر لا يرانا، فإن رب عمر يرانا! ففرح عمر بتقواها، وزوجها لأحد أبنائه (عاصم)، فكانت جدة الخليفة العادل عمر بن عبد العزيز." }
+            { id: "s1", category: "prophets", categoryName: "قصص الأنبياء", title: "صبر أيوب عليه السلام", summary: "قصة نبي الله أيوب وكيف ضرب أروع الأمثلة في الصبر على البلاء.", lessons: "الصبر مفتاح الفرج، والابتلاء اختبار لصدق الإيمان.", fullText: "ابتلى الله نبيه أيوب عليه السلام في ماله وولده وجسده، ففقد كل شيء، ولكنه لم يفقد يقينه بالله... فدعى ربه بصدق (أَنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ)، فكشف الله عنه البلاء وأخلفه خيراً." },
+            { id: "s2", category: "companions", categoryName: "قصص الصحابة", title: "إسلام عمر بن الخطاب", summary: "كيف تحول الفاروق عمر من أشد أعداء الإسلام إلى أعظم حماته.", lessons: "الهداية بيد الله، والقرآن يلين أشد القلوب قسوة.", fullText: "خرج عمر متوشحاً سيفه يريد قتل النبي، فدلوه على بيت أخته التي أسلمت... فلما سمع وقرأ (طه مَا أَنزَلْنَا عَلَيْكَ الْقُرْآنَ لِتَشْقَى) شرح الله صدره للإسلام وذهب ليعلن إسلامه علانية." },
+            { id: "s3", category: "islamic", categoryName: "قصص إسلامية", title: "بائعة اللبن وابنتها", summary: "الفتاة التي رفضت غش اللبن خوفاً من الله في عهد عمر.", lessons: "مراقبة الله في السر والعلن أعظم درجات الإحسان.", fullText: "أمرت الأم ابنتها بخلط اللبن بالماء، فقالت الابنة: إن أمير المؤمنين نهى عن ذلك. فقالت الأم: إن عمر لا يرانا. فردت الفتاة بكلمة خُلدت: إن كان عمر لا يرانا، فإن رب عمر يرانا! فسمعها عمر وزوجها لأحد أبنائه." }
         ];
 
         const TRAITS_DATA = [
-            { id: "tr1", category: "physical", categoryName: "صفة خَلْقية (جسدية)", title: "الوجه الشريف واللون", icon: "🌕", summary: "أزهر اللون، نيّر الوجه يستدير كالقمر ليلة البدر.", hadithSource: "متفق عليه", details: "كان النبي ﷺ أزهر اللون؛ ليس بالأبيض الأمهق ولا بالآدم، بل أبيض مشرباً بحمرة.", impact: "كمال المهابة." },
-            { id: "tr8", category: "moral", categoryName: "صفة خُلُقية (أخلاق)", title: "الصدق والأمانة الفائقة", icon: "⚖️", summary: "لُقّب بـ«الصادق الأمين» قبل البعثة.", hadithSource: "صحيح البخاري", details: "اشتهر بالصدق المطلق حتى سأله هرقل الروم وظلت قريش تستودعه أنفس أموالها.", impact: "المصداقية رأس مال القائد." },
-            { id: "tr9", category: "moral", categoryName: "صفة خُلُقية (أخلاق)", title: "الرحمة العامة بالخلق", icon: "🤍", summary: "وسعت رحمته الصغير والكبير والحيوان.", hadithSource: "صحيح مسلم", details: "كان أرحم الناس بالصبيان والنساء والضعفاء والمماليك وحرّم تعذيب البهائم.", impact: "الرحمة أساس بناء المجتمعات." }
+            { id: "tr1", category: "physical", categoryName: "خَلْقية (الجسد)", title: "الوجه الشريف والإشراق", icon: "🌕", summary: "أزهر اللون، نيّر الوجه يستدير كالقمر.", details: "كان النبي ﷺ أزهر اللون (أبيض مشرب بحمرة)، يتلألأ وجهه تلألؤ القمر ليلة البدر، وإذا سُرّ استنار وجهه.", impact: "كمال المهابة ووضاءة الملامح التي تزرع الطمأنينة." },
+            { id: "tr2", category: "moral", categoryName: "خُلُقية (الأخلاق)", title: "الصدق والأمانة", icon: "⚖️", summary: "لُقّب بـ«الصادق الأمين» قبل البعثة وبعدها.", details: "اشتهر بالصدق المطلق حتى سأله هرقل، وظلت قريش تستودعه أموالها رغم عداوتهم لدعوته.", impact: "المصداقية هي رأس مال القائد الناجح." },
+            { id: "tr3", category: "moral", categoryName: "خُلُقية (الأخلاق)", title: "التواضع الجم", icon: "🌿", summary: "كان يخصف نعله ويرقع ثوبه ويكون في مهنة أهله.", details: "كان يجلس بين أصحابه كأحدهم حتى يأتي الغريب فلا يعرفه، ويردف خلفه على الحمار.", impact: "القوة في البساطة والتواضع يرفع الشأن." }
         ];
 
         const TIMELINE_DATA = [
-            { id: "t1", period: "قبل البعثة", year: "571 م", title: "الميلاد ورعاية الطفولة", summary: "مولد النبي ﷺ يتيماً بمكة، ورضاعته في بني سعد.", lessons: "حكمة النشأة يتيماً تزرع الشفقة.", details: "ولد يوم الإثنين في ربيع الأول يتيماً فكفله جده ثم عمه أبو طالب." },
-            { id: "t3", period: "العهد المكي", year: "610 م", title: "نزول الوحي", summary: "خلوته بغار حراء ونزول جبريل عليه السلام.", lessons: "العزلة الإيجابية تصفي الرؤية.", details: "عاد يرجف بوادره إلى خديجة فثبتته." },
-            { id: "t6", period: "العهد المدني", year: "1 هـ", title: "الهجرة النبوية", summary: "التخطيط المحكم للهجرة وبناء المجتمع المدني.", lessons: "الجمع بين التوكل والتخطيط.", details: "أسس المسجد وآخى بين المهاجرين والأنصار وكتب وثيقة المدينة." }
+            { id: "t1", period: "قبل البعثة", year: "571 م", title: "الميلاد ورعاية الطفولة", summary: "مولد النبي ﷺ يتيماً بمكة، ورضاعته في بني سعد.", lessons: "حكمة النشأة يتيماً تزرع الشفقة والاعتماد على الله.", details: "ولد يوم الإثنين يتيماً فكفله جده عبدالمطلب ثم عمه أبو طالب." },
+            { id: "t2", period: "العهد المكي", year: "610 م", title: "نزول الوحي (اقرأ)", summary: "خلوته بغار حراء ونزول جبريل عليه السلام.", lessons: "العزلة الإيجابية تصفي الرؤية وتؤهل للمهام العظيمة.", details: "نزل عليه جبريل بأول آيات اقرأ، وعاد يرجف فثبتته خديجة." },
+            { id: "t3", period: "العهد المدني", year: "1 هـ", title: "الهجرة النبوية", summary: "التخطيط المحكم للهجرة وبناء المجتمع المدني.", lessons: "الجمع بين التوكل على الله والتخطيط الدقيق والأخذ بالأسباب.", details: "أسس المسجد، وآخى بين المهاجرين والأنصار، ووضع وثيقة المدينة." }
         ];
 
         const WIVES_DATA = [
-            { id: "w1", name: "خديجة بنت خويلد", title: "سيدة نساء العالمين", bio: "أولى زوجات النبي ﷺ. عاش معها 25 عاماً واستثمرت جاهها في نصرة الرسالة.", highlight: "تثبيتها للنبي عند الوحي." },
-            { id: "w3", name: "عائشة بنت أبي بكر", title: "الفقيهة", bio: "أفقه نساء الأمة، روت أكثر من 2210 أحاديث، ومرجعاً كبيراً للصحابة.", highlight: "توفي النبي في حجرتها." }
+            { id: "w1", name: "خديجة بنت خويلد", title: "سيدة نساء العالمين", bio: "أولى زوجات النبي ﷺ وأول من آمن به مطلقاً. عاش معها 25 عاماً واستثمرت مالها لنصرة الدين.", highlight: "تثبيتها للنبي عند بدء الوحي وبشارتها ببيت في الجنة." },
+            { id: "w2", name: "عائشة بنت أبي بكر", title: "الفقيهة العالمة", bio: "أفقه نساء الأمة، روت آلاف الأحاديث، وكانت مرجعاً كبيراً للصحابة في الدين والشعر والطب.", highlight: "توفي النبي ﷺ في حجرتها ورأسه بين سحرها ونحرها." },
+            { id: "w3", name: "أم سلمة", title: "صاحبة الرأي الصائب", bio: "هند بنت أبي أمية، اشتهرت برجاحة العقل والحكمة، وهاجرت الهجرتين.", highlight: "مشورتها الحكيمة والفاصلة للنبي ﷺ يوم صلح الحديبية." }
         ];
 
         const BOOKS_DATA = [
-            { id: "b1", title: "الرحيق المختوم", author: "المباركفوري", level: "beginner", levelText: "للمبتدئين", desc: "أفضل مدخل معاصر وشامل يربط أحداث السيرة.", whyRead: "سلاسة الأسلوب والتحقيق." },
-            { id: "b2", title: "سيرة ابن هشام", author: "ابن هشام", level: "advanced", levelText: "للمتقدمين", desc: "الأصل التاريخي الأبرز والأقدم الذي اعتمدت عليه كل الكتب.", whyRead: "الرجوع للنبع الصافي." }
+            { id: "b1", title: "الرحيق المختوم", level: "beginner", levelText: "للمبتدئين", desc: "للمباركفوري. أفضل مدخل معاصر وشامل يربط أحداث السيرة بأسلوب أدبي سلس وجذاب." },
+            { id: "b2", title: "سيرة ابن هشام", level: "advanced", levelText: "للمتقدمين", desc: "الأصل التاريخي الأبرز والأقدم الذي اعتمدت عليه كل الكتب والمراجع اللاحقة." },
+            { id: "b3", title: "فقه السيرة النبوية", level: "intermediate", levelText: "للمتوسطين", desc: "للدكتور البوطي. يغوص في الدلالات والعبر التشريعية والتربوية المستنبطة من السيرة." }
         ];
 
         const State = {
-            activeTab: 'home',
-            currentFilter: 'all',
-            searchQuery: '',
-            bookmarks: JSON.parse(localStorage.getItem('seerah_bookmarks') || '[]'),
-            readItems: JSON.parse(localStorage.getItem('seerah_read') || '[]'),
+            activeTab: 'home', currentFilter: 'all', searchQuery: '',
+            bookmarks: JSON.parse(localStorage.getItem('seerah_bk') || '[]'),
+            readItems: JSON.parse(localStorage.getItem('seerah_rd') || '[]'),
             theme: localStorage.getItem('seerah_theme') || 'light'
         };
 
-        function saveState() {
-            localStorage.setItem('seerah_bookmarks', JSON.stringify(State.bookmarks));
-            localStorage.setItem('seerah_read', JSON.stringify(State.readItems));
-            updateCounts();
+        // الهوية اللونية المستقلة للأقسام (تم تحديثها لألوان أكثر حيوية وتأثيراً)
+        const SECTION_COLORS = {
+            prayers: { light: '#0d9488', dark: '#2dd4bf' }, // لون تركوازي ساطع
+            stories: { light: '#ea580c', dark: '#f97316' }, // لون برتقالي ناري وحيوي
+            traits:  { light: '#059669', dark: '#34d399' }, // أخضر زمردي مشرق
+            timeline:{ light: '#2563eb', dark: '#60a5fa' }, // أزرق ملكي متوهج
+            wives:   { light: '#db2777', dark: '#f472b6' }, // وردي قوي
+            library: { light: '#7c3aed', dark: '#a78bfa' }, // بنفسجي فاقع
+            bookmarks:{light: '#d97706', dark: '#fbbf24' }, // ذهبي لامع
+            home:    { light: '#166534', dark: '#4ade80' }  // أخضر إسلامي عميق جداً/مشرق
+        };
+
+        const hexToRgb = hex => { let r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16); return `${r}, ${g}, ${b}`; };
+
+        function updateAppColors(tabName) {
+            const colors = SECTION_COLORS[tabName] || SECTION_COLORS.home;
+            const isDark = State.theme === 'dark';
+            const hex = isDark ? colors.dark : colors.light;
+            document.documentElement.style.setProperty('--accent', hex);
+            document.documentElement.style.setProperty('--accent-rgb', hexToRgb(hex));
         }
 
         const themeBtn = document.getElementById('themeToggle');
@@ -1327,411 +519,246 @@
             document.documentElement.setAttribute('data-theme', theme);
             themeBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
             localStorage.setItem('seerah_theme', theme);
+            updateAppColors(State.activeTab); 
+        }
+        themeBtn.addEventListener('click', () => { State.theme = State.theme === 'light' ? 'dark' : 'light'; applyTheme(State.theme); });
+
+        function saveState() {
+            localStorage.setItem('seerah_bk', JSON.stringify(State.bookmarks));
+            localStorage.setItem('seerah_rd', JSON.stringify(State.readItems));
+            updateCounts();
         }
 
-        themeBtn.addEventListener('click', () => {
-            State.theme = State.theme === 'light' ? 'dark' : 'light';
-            applyTheme(State.theme);
-        });
-
         function displayRandomQuote() {
-            const quote = QUOTES_DATA[Math.floor(Math.random() * QUOTES_DATA.length)];
-            document.getElementById('quoteText').textContent = quote.text;
-            document.getElementById('quoteRef').textContent = quote.ref;
+            const q = QUOTES_DATA[Math.floor(Math.random() * QUOTES_DATA.length)];
+            document.getElementById('quoteText').textContent = q.text; document.getElementById('quoteRef').textContent = q.ref;
         }
         document.getElementById('refreshQuoteBtn').addEventListener('click', displayRandomQuote);
 
         function updateCounts() {
+            document.getElementById('countPrayers').textContent = PRAYERS_DATA.length;
+            document.getElementById('countStories').textContent = STORIES_DATA.length;
             document.getElementById('countTraits').textContent = TRAITS_DATA.length;
             document.getElementById('countTimeline').textContent = TIMELINE_DATA.length;
             document.getElementById('countWives').textContent = WIVES_DATA.length;
             document.getElementById('countLibrary').textContent = BOOKS_DATA.length;
-            document.getElementById('countStories').textContent = STORIES_DATA.length;
-            document.getElementById('countBookmarks').textContent = State.bookmarks.length + State.readItems.length;
         }
-
-        let prayerRotatorInterval = null;
-        let prayerProgressInterval = null;
-        let currentPrayerIdx = 0;
-        let isPrayerPaused = false;
-        let prayerProgress = 0;
-        let PRAYER_DURATION = 15000; // الافتراضي 15 ثانية للتوقيت
-
-        function getRecommendedPrayerIndexByTime() {
-            const date = new Date();
-            const day = date.getDay(); // 5 = الجمعة
-            const hour = date.getHours();
-
-            if (day === 5) return 0; // الصلاة الإبراهيمية للجمعة
-            if (hour >= 4 && hour < 12) return 0; // الصباح
-            if (hour >= 12 && hour < 17) return 3; // الظهر (طب القلوب)
-            if (hour >= 17 && hour < 21) return 1; // المساء (المنجية)
-            return 4; // الليل (المختصرة)
-        }
-
-        function setPrayerDuration(duration, btnElement) {
-            PRAYER_DURATION = duration;
-            const btns = btnElement.parentElement.querySelectorAll('.filter-chip');
-            btns.forEach(b => b.classList.remove('active'));
-            btnElement.classList.add('active');
-            prayerProgress = 0; // إعادة التوقيت
-        }
-
-        function setPrayerDisplay(idx) {
-            currentPrayerIdx = idx;
-            const p = PRAYERS_DATA[idx];
-            document.getElementById('prayerDisplayTitle').textContent = p.title;
-            document.getElementById('prayerDisplayText').textContent = p.text;
-            document.getElementById('prayerDisplaySource').textContent = "المصدر: " + p.source;
-            document.getElementById('prayerTimeBadge').textContent = p.recommendedTime;
-            
-            prayerProgress = 0;
-            document.getElementById('prayerProgressBar').style.width = '0%';
-            
-            // تمييز العنصر النشط في القائمة السفلية
-            document.querySelectorAll('.prayer-list-item').forEach((el, i) => {
-                if(i === idx) el.classList.add('active-prayer');
-                else el.classList.remove('active-prayer');
-            });
-        }
-
-        function startPrayerRotator() {
-            clearInterval(prayerProgressInterval);
-            if(isPrayerPaused) return;
-            
-            prayerProgressInterval = setInterval(() => {
-                if(isPrayerPaused) return;
-                prayerProgress += (100 / (PRAYER_DURATION / 100)); // تحديث الشريط كل 100 ملي ثانية
-                document.getElementById('prayerProgressBar').style.width = prayerProgress + '%';
-                
-                if(prayerProgress >= 100) {
-                    prayerProgress = 0;
-                    currentPrayerIdx = (currentPrayerIdx + 1) % PRAYERS_DATA.length;
-                    setPrayerDisplay(currentPrayerIdx);
-                }
-            }, 100);
-        }
-
-        function stopPrayerRotator() {
-            clearInterval(prayerProgressInterval);
-        }
-
-        function togglePrayerPause() {
-            isPrayerPaused = !isPrayerPaused;
-            const btn = document.getElementById('prayerPauseBtn');
-            if(isPrayerPaused) {
-                btn.innerHTML = '▶ استئناف التلاوة الآلية';
-                btn.style.background = 'var(--accent)';
-                btn.style.color = '#fff';
-            } else {
-                btn.innerHTML = '⏸ إيقاف مؤقت للتلاوة';
-                btn.style.background = 'transparent';
-                btn.style.color = 'var(--text-secondary)';
-                prayerProgress = 0; // إعادة بدأ الشريط عند الاستئناف
-            }
-        }
-
-        function renderPrayers() {
-            const container = document.getElementById('prayersListContainer');
-            container.innerHTML = PRAYERS_DATA.map((p, idx) => `
-                <div class="book-card prayer-list-item" style="cursor:pointer" onclick="setPrayerDisplay(${idx}); if(!isPrayerPaused) togglePrayerPause();">
-                    <div>
-                        <h3 class="book-title" style="color: var(--accent); margin-bottom: 0.8rem;">${p.title}</h3>
-                        <p class="book-desc" style="font-family:'Amiri', serif; font-size:1.15rem; line-height:1.7">${p.text}</p>
-                    </div>
-                </div>
-            `).join('');
-
-            if (State.activeTab === 'prayers') {
-                setPrayerDisplay(getRecommendedPrayerIndexByTime());
-                startPrayerRotator();
-            }
-        }
-
-        const searchInput = document.getElementById('searchInput');
-        const categoryFiltersContainer = document.getElementById('categoryFilters');
 
         function openSection(tabName, title) {
             document.getElementById('homeView').style.display = 'none';
             document.getElementById('sectionView').style.display = 'block';
             document.getElementById('sectionTitle').textContent = title;
             
-            // إيقاف التوقيت إذا خرجنا من شاشة الصلاة
-            if(tabName !== 'prayers') stopPrayerRotator();
+            if(tabName !== 'prayers') clearInterval(prayerInterval);
+            document.getElementById('searchContainer').style.display = (tabName === 'prayers') ? 'none' : 'flex';
+
+            State.activeTab = tabName; State.currentFilter = 'all'; 
+            document.getElementById('searchInput').value = ''; State.searchQuery = '';
             
-            // إخفاء البحث في شاشة الصلاة لأنها لا تحتاجه
-            document.getElementById('searchContainer').style.display = (tabName === 'prayers') ? 'none' : 'block';
-
-            State.activeTab = tabName;
-            State.currentFilter = 'all';
-            searchInput.value = '';
-            State.searchQuery = '';
-
+            updateAppColors(tabName);
             document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
             document.getElementById(`pane-${tabName}`).classList.add('active');
 
-            renderCategoryFilters();
-            renderCurrentTab();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            renderCategoryFilters(); renderCurrentTab(); window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function goHome() {
-            stopPrayerRotator(); // إيقاف التوقيت عند العودة للرئيسية
+            clearInterval(prayerInterval);
             document.getElementById('homeView').style.display = 'block';
             document.getElementById('sectionView').style.display = 'none';
-            State.activeTab = 'home';
+            State.activeTab = 'home'; updateAppColors('home');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        document.getElementById('headerBookmarkJump').addEventListener('click', () => {
-            openSection('bookmarks', '🔖 المحفوظات والمكتمل');
-        });
+        let prayerInterval = null, currentPrayerIdx = 0, isPrayerPaused = false, prayerProgress = 0, PRAYER_DURATION = 15000; 
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        function getRecommendedPrayerIndex() {
+            const h = new Date().getHours(), d = new Date().getDay();
+            if (d === 5) return 0; // الجمعة
+            if (h >= 4 && h < 12) return 4; // صباح
+            if (h >= 12 && h < 17) return 3; // تدبر
+            if (h >= 17 && h < 21) return 1; // شدائد
+            return 2; // ليل
+        }
+
+        function setPrayerDuration(duration, btn) {
+            PRAYER_DURATION = duration;
+            document.querySelectorAll('.prayer-controls .filter-chip').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active'); prayerProgress = 0;
+        }
+
+        function setPrayerDisplay(idx) {
+            currentPrayerIdx = idx; const p = PRAYERS_DATA[idx];
+            document.getElementById('prayerDisplayTitle').textContent = p.title;
+            document.getElementById('prayerDisplayText').textContent = p.text;
+            document.getElementById('prayerDisplaySource').textContent = "المصدر: " + p.source;
+            document.getElementById('prayerTimeBadge').textContent = p.recommendedTime;
+            prayerProgress = 0; document.getElementById('prayerProgressBar').style.width = '0%';
+            
+            document.querySelectorAll('.prayer-card-item').forEach((el, i) => {
+                if(i === idx) { el.style.borderColor = 'var(--accent)'; el.style.boxShadow = 'var(--shadow-hover)'; }
+                else { el.style.borderColor = 'var(--border-color)'; el.style.boxShadow = 'var(--shadow-soft)'; }
+            });
+        }
+
+        function startPrayerRotator() {
+            clearInterval(prayerInterval); if(isPrayerPaused) return;
+            prayerInterval = setInterval(() => {
+                if(isPrayerPaused) return;
+                prayerProgress += (100 / (PRAYER_DURATION / 100)); // Update every 100ms
+                document.getElementById('prayerProgressBar').style.width = prayerProgress + '%';
+                if(prayerProgress >= 100) { currentPrayerIdx = (currentPrayerIdx + 1) % PRAYERS_DATA.length; setPrayerDisplay(currentPrayerIdx); }
+            }, 100);
+        }
+
+        function togglePrayerPause() {
+            isPrayerPaused = !isPrayerPaused; const btn = document.getElementById('prayerPauseBtn');
+            if(isPrayerPaused) { btn.innerHTML = '▶ استئناف العرض'; btn.classList.add('active'); } 
+            else { btn.innerHTML = '⏸ إيقاف العرض'; btn.classList.remove('active'); prayerProgress = 0; }
         }
 
         function renderCategoryFilters() {
-            categoryFiltersContainer.innerHTML = '';
+            const container = document.getElementById('categoryFilters'); container.innerHTML = '';
             let filters = [{ label: 'الكل', value: 'all' }];
-
-            if (State.activeTab === 'traits') filters.push({ label: 'جسدية (خَلْقية)', value: 'physical' }, { label: 'أخلاق (خُلقية)', value: 'moral' });
-            else if (State.activeTab === 'timeline') filters.push({ label: 'العهد المكي', value: 'العهد المكي' }, { label: 'العهد المدني', value: 'العهد المدني' });
-            else if (State.activeTab === 'library') filters.push({ label: 'للمبتدئين', value: 'beginner' }, { label: 'للمتقدمين', value: 'advanced' });
+            
+            if (State.activeTab === 'traits') filters.push({ label: 'جسدية', value: 'physical' }, { label: 'أخلاقية', value: 'moral' });
+            else if (State.activeTab === 'timeline') filters.push({ label: 'مكي', value: 'العهد المكي' }, { label: 'مدني', value: 'العهد المدني' });
+            else if (State.activeTab === 'library') filters.push({ label: 'مبتدئين', value: 'beginner' }, { label: 'متقدمين', value: 'advanced' });
             else if (State.activeTab === 'bookmarks') filters.push({ label: 'المفضلة 🔖', value: 'bookmarks' }, { label: 'المكتملة ✅', value: 'completed' });
-            else if (State.activeTab === 'stories') filters.push({ label: 'قصص الأنبياء', value: 'prophets' }, { label: 'قصص الصحابة', value: 'companions' }, { label: 'قصص إسلامية', value: 'islamic' });
-            else if (State.activeTab === 'prayers') filters = []; // لا يوجد فلاتر لشاشة الصلاة
+            else if (State.activeTab === 'stories') filters.push({ label: 'أنبياء', value: 'prophets' }, { label: 'صحابة', value: 'companions' }, { label: 'إسلامية', value: 'islamic' });
 
             filters.forEach(f => {
-                const chip = document.createElement('button');
-                chip.className = `filter-chip ${State.currentFilter === f.value ? 'active' : ''}`;
-                chip.textContent = f.label;
-                chip.onclick = () => {
-                    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-                    chip.classList.add('active');
-                    State.currentFilter = f.value;
-                    renderCurrentTab();
-                };
-                categoryFiltersContainer.appendChild(chip);
+                const btn = document.createElement('button'); btn.className = `filter-chip ${State.currentFilter === f.value ? 'active' : ''}`;
+                btn.textContent = f.label; btn.onclick = () => { State.currentFilter = f.value; renderCategoryFilters(); renderCurrentTab(); };
+                container.appendChild(btn);
             });
         }
 
-        searchInput.addEventListener('input', (e) => {
-            State.searchQuery = e.target.value.trim().toLowerCase();
-            renderCurrentTab();
-        });
+        document.getElementById('searchInput').addEventListener('input', (e) => { State.searchQuery = e.target.value.toLowerCase(); renderCurrentTab(); });
 
-        function isBookmarked(id) { return State.bookmarks.includes(id); }
-        function isRead(id) { return State.readItems.includes(id); }
-
-        function toggleBookmark(id) {
-            if (isBookmarked(id)) State.bookmarks = State.bookmarks.filter(i => i !== id);
-            else State.bookmarks.push(id);
-            saveState();
-            renderCurrentTab();
+        function toggleAction(type, id) {
+            let arr = type === 'bookmark' ? State.bookmarks : State.readItems;
+            if (arr.includes(id)) arr.splice(arr.indexOf(id), 1); else arr.push(id);
+            saveState(); renderCurrentTab();
         }
 
-        function toggleRead(id) {
-            if (isRead(id)) State.readItems = State.readItems.filter(i => i !== id);
-            else State.readItems.push(id);
-            saveState();
-            renderCurrentTab();
+        function renderData(containerId, data, filterKey, renderHtml) {
+            const container = document.getElementById(containerId);
+            let items = data.filter(i => (State.currentFilter === 'all' || (filterKey && i[filterKey] && i[filterKey].includes(State.currentFilter))) && (i.title || i.name || '').toLowerCase().includes(State.searchQuery));
+            if (!items.length) return container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted); background: var(--bg-card); border-radius: var(--radius-md); border: 1px dashed var(--border-color);">لا توجد نتائج مطابقة.</div>`;
+            container.innerHTML = items.map(renderHtml).join('');
+        }
+
+        function renderPrayers() {
+            renderData('prayersListContainer', PRAYERS_DATA, null, (p, idx) => `
+                <div class="data-card prayer-card-item" style="cursor:pointer" onclick="setPrayerDisplay(${idx}); if(!isPrayerPaused) togglePrayerPause(); window.scrollTo({top:0, behavior:'smooth'});">
+                    <h3 style="color: var(--accent); margin-bottom: 0.5rem; font-size:1.3rem">${p.title}</h3>
+                    <p style="font-family:'Amiri', serif; font-size:1.15rem; line-height:1.6; flex-grow:1">${p.text.substring(0, 70)}...</p>
+                </div>
+            `);
+            if (State.activeTab === 'prayers' && prayerProgress === 0 && !isPrayerPaused) { setPrayerDisplay(getRecommendedPrayerIndex()); startPrayerRotator(); }
         }
 
         function renderStories() {
-            const container = document.getElementById('storiesContainer');
-            let items = STORIES_DATA.filter(item => (State.currentFilter === 'all' || item.category === State.currentFilter) && item.title.toLowerCase().includes(State.searchQuery));
-            if (!items.length) return container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-icon">📖</div><p>لا توجد نتائج.</p></div>`;
-
-            container.innerHTML = items.map(item => `
-                <div class="person-card">
-                    <div>
-                        <div class="person-top">
-                            <div class="avatar-emblem" style="background: rgba(180, 83, 9, 0.1); color: var(--gold); border-color: var(--gold);">📖</div>
-                            <div><h3>${item.title}</h3><span class="person-meta">${item.categoryName}</span></div>
-                        </div>
-                        <p class="person-desc">${item.summary}</p>
-                    </div>
+            renderData('storiesContainer', STORIES_DATA, 'category', s => `
+                <div class="data-card">
+                    <div class="card-meta" style="color:var(--accent); margin-bottom:5px;">${s.categoryName}</div>
+                    <h3 class="card-title">${s.title}</h3>
+                    <p class="card-body mt-3">${s.summary}</p>
                     <div class="card-actions">
-                        <button class="action-btn" onclick="openModal('story', '${item.id}')">قراءة القصة</button>
-                        <div style="display: flex; gap: 0.4rem;">
-                            <button class="action-btn ${isRead(item.id) ? 'active' : ''}" onclick="toggleRead('${item.id}')" title="تحديد كمقروء">✓</button>
-                            <button class="action-btn ${isBookmarked(item.id) ? 'active' : ''}" onclick="toggleBookmark('${item.id}')" title="حفظ القصة">★</button>
+                        <button class="action-btn" onclick="openModal('story','${s.id}')">قراءة القصة</button>
+                        <div style="display:flex; gap:5px;">
+                            <button class="action-btn icon-only ${State.readItems.includes(s.id)?'active':''}" onclick="toggleAction('read','${s.id}')" title="مكتمل">✓</button>
+                            <button class="action-btn icon-only ${State.bookmarks.includes(s.id)?'active':''}" onclick="toggleAction('bookmark','${s.id}')" title="حفظ">🔖</button>
                         </div>
                     </div>
-                </div>
-            `).join('');
+                </div>`);
         }
 
         function renderTraits() {
-            const container = document.getElementById('traitsContainer');
-            let items = TRAITS_DATA.filter(item => (State.currentFilter === 'all' || item.category === State.currentFilter) && item.title.toLowerCase().includes(State.searchQuery));
-            if (!items.length) return container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1;"><div class="empty-icon">✨</div><p>لا توجد نتائج.</p></div>`;
-
-            container.innerHTML = items.map(item => `
-                <div class="person-card">
-                    <div>
-                        <div class="person-top">
-                            <div class="avatar-emblem">${item.icon}</div>
-                            <div><h3>${item.title}</h3><span class="person-meta">${item.categoryName}</span></div>
-                        </div>
-                        <p class="person-desc">${item.summary}</p>
-                    </div>
+            renderData('traitsContainer', TRAITS_DATA, 'category', t => `
+                <div class="data-card">
+                    <div class="card-header"><div class="card-icon">${t.icon}</div><div><h3 class="card-title">${t.title}</h3><span class="card-meta">${t.categoryName}</span></div></div>
+                    <p class="card-body">${t.summary}</p>
                     <div class="card-actions">
-                        <button class="action-btn" onclick="openModal('trait', '${item.id}')">التفاصيل</button>
-                        <div style="display: flex; gap: 0.4rem;">
-                            <button class="action-btn ${isRead(item.id) ? 'active' : ''}" onclick="toggleRead('${item.id}')">✓</button>
-                            <button class="action-btn ${isBookmarked(item.id) ? 'active' : ''}" onclick="toggleBookmark('${item.id}')">★</button>
-                        </div>
+                        <button class="action-btn" onclick="openModal('trait','${t.id}')">التفاصيل</button>
+                        <div style="display:flex; gap:5px;"><button class="action-btn icon-only ${State.bookmarks.includes(t.id)?'active':''}" onclick="toggleAction('bookmark','${t.id}')">🔖</button></div>
                     </div>
-                </div>
-            `).join('');
+                </div>`);
         }
 
         function renderTimeline() {
-            const container = document.getElementById('timelineContainer');
-            let items = TIMELINE_DATA.filter(item => (State.currentFilter === 'all' || item.period.includes(State.currentFilter)) && item.title.toLowerCase().includes(State.searchQuery));
-            if (!items.length) return container.innerHTML = `<div class="empty-state"><div class="empty-icon">📜</div><p>لا توجد نتائج.</p></div>`;
-
-            container.innerHTML = items.map((item, index) => `
-                <div class="timeline-item">
-                    <div class="timeline-marker">${index + 1}</div>
-                    <div class="timeline-card">
-                        <span class="timeline-period">${item.period} (${item.year})</span>
-                        <h3 style="margin: 0.5rem 0;">${item.title}</h3>
-                        <p class="timeline-body">${item.summary}</p>
-                        <div class="card-actions">
-                            <button class="action-btn" onclick="openModal('timeline', '${item.id}')">التفاصيل</button>
-                            <div style="display: flex; gap: 0.4rem;">
-                                <button class="action-btn ${isRead(item.id) ? 'active' : ''}" onclick="toggleRead('${item.id}')">✓</button>
-                                <button class="action-btn ${isBookmarked(item.id) ? 'active' : ''}" onclick="toggleBookmark('${item.id}')">★</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
+            renderData('timelineContainer', TIMELINE_DATA, 'period', (t, i) => `
+                <div class="timeline-item"><div class="timeline-marker">${i + 1}</div>
+                <div class="data-card" style="margin-bottom:0"><span style="background: rgba(var(--accent-rgb),0.1); color: var(--accent); padding: 4px 12px; border-radius: var(--radius-pill); font-size:0.85rem; font-weight:bold; align-self:flex-start;">${t.period} - ${t.year}</span>
+                <h3 style="margin-top:15px; font-size:1.4rem">${t.title}</h3><p style="margin:10px 0; color:var(--text-secondary);">${t.summary}</p>
+                <div class="card-actions" style="margin-top:15px;">
+                    <button class="action-btn" onclick="openModal('timeline','${t.id}')">دراسة المحطة</button>
+                    <button class="action-btn icon-only ${State.bookmarks.includes(t.id)?'active':''}" onclick="toggleAction('bookmark','${t.id}')">🔖</button>
+                </div></div></div>`);
         }
 
         function renderWives() {
-            const container = document.getElementById('wivesContainer');
-            let items = WIVES_DATA.filter(item => item.name.toLowerCase().includes(State.searchQuery));
-            if (!items.length) return container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1;"><p>لا توجد نتائج.</p></div>`;
-
-            container.innerHTML = items.map(wife => `
-                <div class="person-card">
-                    <div>
-                        <div class="person-top">
-                            <div class="avatar-emblem">${wife.name.charAt(0)}</div>
-                            <div><h3>${wife.name}</h3><span class="person-meta">${wife.title}</span></div>
-                        </div>
-                        <p class="person-desc">${wife.bio}</p>
-                    </div>
+            renderData('wivesContainer', WIVES_DATA, null, w => `
+                <div class="data-card">
+                    <div class="card-header"><div class="card-icon" style="font-family: Tajawal;">${w.name.charAt(0)}</div><div><h3 class="card-title">${w.name}</h3><span class="card-meta">${w.title}</span></div></div>
+                    <p class="card-body">${w.bio}</p>
                     <div class="card-actions">
-                        <button class="action-btn" onclick="openModal('wife', '${wife.id}')">المزيد</button>
-                        <div style="display:flex; gap:0.4rem;">
-                            <button class="action-btn ${isRead(wife.id) ? 'active' : ''}" onclick="toggleRead('${wife.id}')">✓</button>
-                            <button class="action-btn ${isBookmarked(wife.id) ? 'active' : ''}" onclick="toggleBookmark('${wife.id}')">★</button>
-                        </div>
+                        <button class="action-btn" onclick="openModal('wife','${w.id}')">سيرتها</button>
+                        <button class="action-btn icon-only ${State.bookmarks.includes(w.id)?'active':''}" onclick="toggleAction('bookmark','${w.id}')">🔖</button>
                     </div>
-                </div>
-            `).join('');
+                </div>`);
         }
 
         function renderLibrary() {
-            const container = document.getElementById('libraryContainer');
-            let items = BOOKS_DATA.filter(book => (State.currentFilter === 'all' || book.level === State.currentFilter) && book.title.toLowerCase().includes(State.searchQuery));
-            if (!items.length) return container.innerHTML = `<div class="empty-state" style="grid-column: 1/-1;"><p>لا توجد نتائج.</p></div>`;
-
-            container.innerHTML = items.map(book => `
-                <div class="book-card">
-                    <div>
-                        <span class="book-badge level-${book.level}">${book.levelText}</span>
-                        <h3 class="book-title">${book.title}</h3>
-                        <p class="book-desc">${book.desc}</p>
+            renderData('libraryContainer', BOOKS_DATA, 'level', b => `
+                <div class="data-card">
+                    <span style="background:rgba(var(--accent-rgb),0.1); color:var(--accent); padding:4px 12px; border-radius:var(--radius-pill); font-size:0.85rem; font-weight:bold; align-self:flex-start; margin-bottom:15px;">${b.levelText}</span>
+                    <h3 class="card-title">${b.title}</h3><p class="card-body mt-2">${b.desc}</p>
+                    <div class="card-actions" style="margin-top:auto;">
+                        <button class="action-btn ${State.readItems.includes(b.id)?'active':''}" onclick="toggleAction('read','${b.id}')">تمت القراءة ✓</button>
+                        <button class="action-btn icon-only ${State.bookmarks.includes(b.id)?'active':''}" onclick="toggleAction('bookmark','${b.id}')">🔖</button>
                     </div>
-                    <div class="card-actions">
-                        <button class="action-btn ${isRead(book.id) ? 'active' : ''}" onclick="toggleRead('${book.id}')">✓</button>
-                        <button class="action-btn ${isBookmarked(book.id) ? 'active' : ''}" onclick="toggleBookmark('${book.id}')">★</button>
-                    </div>
-                </div>
-            `).join('');
+                </div>`);
         }
 
         function renderBookmarks() {
-            const container = document.getElementById('bookmarksContainer');
-            const showCompleted = State.currentFilter === 'completed';
-            const showBookmarks = State.currentFilter === 'bookmarks';
-            const savedIds = showCompleted ? State.readItems : (showBookmarks ? State.bookmarks : [...new Set([...State.bookmarks, ...State.readItems])]);
-
-            if (!savedIds.length) return container.innerHTML = `<div class="empty-state"><div class="empty-icon">🔖</div><p>لا توجد عناصر محفوظة حتى الآن.</p></div>`;
-
-            let html = '<div class="cards-grid">';
-            savedIds.forEach(id => {
-                const tr = TRAITS_DATA.find(i => i.id === id);
-                if (tr) html += `<div class="person-card"><h3>${tr.title}</h3><p>${tr.summary}</p><button class="action-btn active" onclick="toggleBookmark('${id}')">إزالة</button></div>`;
-                
-                const tl = TIMELINE_DATA.find(i => i.id === id);
-                if (tl) html += `<div class="timeline-card" style="margin-bottom:0"><h3>${tl.title}</h3><p>${tl.summary}</p><button class="action-btn active" onclick="toggleBookmark('${id}')">إزالة</button></div>`;
-                
-                const w = WIVES_DATA.find(i => i.id === id);
-                if (w) html += `<div class="person-card"><h3>${w.name}</h3><p>${w.bio.slice(0, 100)}...</p><button class="action-btn active" onclick="toggleBookmark('${id}')">إزالة</button></div>`;
-                
-                const b = BOOKS_DATA.find(i => i.id === id);
-                if (b) html += `<div class="book-card"><h3>${b.title}</h3><p>${b.desc.slice(0, 100)}...</p><button class="action-btn active" onclick="toggleBookmark('${id}')">إزالة</button></div>`;
-
-                const s = STORIES_DATA.find(i => i.id === id);
-                if (s) html += `<div class="person-card"><h3>${s.title}</h3><p>${s.summary.slice(0, 100)}...</p><button class="action-btn active" onclick="toggleBookmark('${id}')">إزالة</button></div>`;
+            const arr = State.currentFilter === 'completed' ? State.readItems : (State.currentFilter === 'bookmarks' ? State.bookmarks : [...new Set([...State.bookmarks, ...State.readItems])]);
+            if (!arr.length) return document.getElementById('bookmarksContainer').innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 4rem; background: var(--bg-card); border-radius: var(--radius-md); border: 1px dashed var(--border-color); color: var(--text-muted);">قائمتك فارغة حالياً</div>`;
+            let html = '';
+            arr.forEach(id => {
+                let item = STORIES_DATA.find(i=>i.id===id) || TRAITS_DATA.find(i=>i.id===id) || TIMELINE_DATA.find(i=>i.id===id) || WIVES_DATA.find(i=>i.id===id) || BOOKS_DATA.find(i=>i.id===id);
+                if(item) html += `<div class="data-card"><h3 class="card-title">${item.title||item.name}</h3><p class="card-body">${(item.summary||item.bio||item.desc||'').substring(0,80)}...</p><div class="card-actions"><button class="action-btn active" onclick="toggleAction('bookmark','${id}');toggleAction('read','${id}')">إزالة من القائمة</button></div></div>`;
             });
-            container.innerHTML = html + '</div>';
+            document.getElementById('bookmarksContainer').innerHTML = html;
         }
 
         function renderCurrentTab() {
-            if (State.activeTab === 'traits') renderTraits();
-            else if (State.activeTab === 'timeline') renderTimeline();
-            else if (State.activeTab === 'wives') renderWives();
-            else if (State.activeTab === 'library') renderLibrary();
-            else if (State.activeTab === 'bookmarks') renderBookmarks();
-            else if (State.activeTab === 'prayers') renderPrayers();
-            else if (State.activeTab === 'stories') renderStories();
+            const t = State.activeTab;
+            if(t==='prayers') renderPrayers(); else if(t==='stories') renderStories(); else if(t==='traits') renderTraits();
+            else if(t==='timeline') renderTimeline(); else if(t==='wives') renderWives(); else if(t==='library') renderLibrary();
+            else if(t==='bookmarks') renderBookmarks();
         }
 
         const modal = document.getElementById('detailModal');
-        const modalBody = document.getElementById('modalBody');
-
         function openModal(type, id) {
-            let content = '';
-            if (type === 'trait') {
-                const tr = TRAITS_DATA.find(t => t.id === id);
-                content = `<h2>${tr.title}</h2><p>${tr.details}</p><br><strong>الأثر:</strong> ${tr.impact}`;
-            } else if (type === 'timeline') {
-                const tl = TIMELINE_DATA.find(t => t.id === id);
-                content = `<h2>${tl.title}</h2><p>${tl.details}</p><br><strong>الدرس:</strong> ${tl.lessons}`;
-            } else if (type === 'wife') {
-                const w = WIVES_DATA.find(t => t.id === id);
-                content = `<h2>${w.name}</h2><p>${w.bio}</p><br><strong>موقف:</strong> ${w.highlight}`;
-            } else if (type === 'story') {
-                const s = STORIES_DATA.find(t => t.id === id);
-                content = `
-                    <h2 style="color: var(--accent); margin-bottom: 0.2rem;">${s.title}</h2>
-                    <div style="margin-bottom: 1.5rem; color: var(--gold); font-size: 0.9rem; font-weight: bold;">${s.categoryName}</div>
-                    <p style="line-height: 1.9; font-size: 1.15rem; text-align: justify; font-family: 'Amiri', serif;">${s.fullText}</p>
-                    <br><div class="lesson-box"><strong>العبرة المستفادة:</strong> ${s.lessons}</div>`;
-            }
-            modalBody.innerHTML = content;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            let d, html = '';
+            const boxStyle = `background: rgba(var(--accent-rgb), 0.1); padding: 1.25rem; border-radius: var(--radius-sm); border-right: 4px solid var(--accent); margin-top: 25px;`;
+            
+            if(type==='story') { d = STORIES_DATA.find(i=>i.id===id); html = `<span class="card-meta" style="color:var(--accent)">${d.categoryName}</span><h2 style="margin:5px 0 20px; font-size:1.8rem">${d.title}</h2><p style="font-family:'Amiri', serif; font-size:1.3rem; line-height:2.2">${d.fullText}</p><div style="${boxStyle}"><strong>العبرة:</strong> ${d.lessons}</div>`; }
+            else if(type==='trait') { d = TRAITS_DATA.find(i=>i.id===id); html = `<h2 style="margin-bottom:20px; font-size:1.8rem">${d.title}</h2><p style="font-size:1.15rem; line-height:1.9">${d.details}</p><div style="${boxStyle}"><strong>الأثر التربوي:</strong> ${d.impact}</div>`; }
+            else if(type==='timeline') { d = TIMELINE_DATA.find(i=>i.id===id); html = `<h2 style="margin-bottom:20px; font-size:1.8rem">${d.title}</h2><p style="font-size:1.15rem; line-height:1.9">${d.details}</p><div style="${boxStyle}"><strong>الدرس المستفاد:</strong> ${d.lessons}</div>`; }
+            else if(type==='wife') { d = WIVES_DATA.find(i=>i.id===id); html = `<h2 style="margin-bottom:20px; font-size:1.8rem">${d.name}</h2><p style="font-size:1.15rem; line-height:1.9">${d.bio}</p><div style="${boxStyle}"><strong>أبرز المواقف:</strong> ${d.highlight}</div>`; }
+            
+            document.getElementById('modalBody').innerHTML = html;
+            modal.classList.add('active'); document.body.style.overflow = 'hidden';
         }
 
-        document.getElementById('closeModal').onclick = () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        };
+        document.getElementById('closeModal').onclick = () => { modal.classList.remove('active'); document.body.style.overflow = 'auto'; };
 
+        /* التهيئة */
         window.addEventListener('DOMContentLoaded', () => {
-            applyTheme(State.theme);
-            displayRandomQuote();
-            updateCounts();
-            goHome();
+            applyTheme(State.theme); displayRandomQuote(); updateCounts(); goHome();
         });
     </script>
 </body>
